@@ -1,1 +1,1 @@
-# ICPC16web
+# ICPC 2016 website
