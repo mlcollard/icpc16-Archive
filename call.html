@@ -1,0 +1,293 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Program</title>
+<link rel="stylesheet" type="text/css" href="./css/base_style.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    var n = true;
+      $("#expand").click(function(){
+      if (n) {
+        n = false;
+        $( "#menu0" ).addClass( "navToggle" );
+        $( "#menu1" ).addClass( "navToggle" );
+        $( "#menu2" ).addClass( "navToggle" );
+        $( "#menu3" ).addClass( "navToggle" );
+        $( "#menu4" ).addClass( "navToggle" );
+        $( "#menu5" ).addClass( "navToggle" );
+        $( "#menu6" ).addClass( "navToggle" );
+        $( "#menu7" ).addClass( "navToggle" );
+        $( "#menu8" ).addClass( "navToggle" );
+      } else {
+        n = true;
+        $( "#menu0" ).removeClass( "navToggle" );
+        $( "#menu1" ).removeClass( "navToggle" );
+        $( "#menu2" ).removeClass( "navToggle" );
+        $( "#menu3" ).removeClass( "navToggle" );
+        $( "#menu4" ).removeClass( "navToggle" );
+        $( "#menu5" ).removeClass( "navToggle" );
+        $( "#menu6" ).removeClass( "navToggle" );
+        $( "#menu7" ).removeClass( "navToggle" );
+        $( "#menu8" ).removeClass( "navToggle" );
+      }
+      });
+  });
+</script>
+<style type="text/css">
+  p, hr {
+      margin-left:15px;
+    margin-right:15px;
+  }
+  .container {
+    color:black;
+    background-color:rgba(255,255,255,0.8);
+    padding-bottom:30px;
+  }
+  .container h1 {
+    font-size:24px;
+    margin-left:30px;
+    margin-right:30px;
+    font-weight:600;
+  }
+  .container h2 {
+    color:black;
+    font-weight:500;
+    text-align:left;
+    margin-left:30px;
+    margin-right:30px;
+    margin-bottom:5px;
+  }
+  .container hr {
+    border:0;
+      height:1px;
+    background:rgba(0,0,0,0.20);
+    margin-left:30px;
+    margin-right:30px;
+  }
+  td {
+    border: 1px solid blue;
+  }
+  .time {
+    float:left;
+    margin-top:5px;
+    margin-bottom:0;
+    clear:both;
+    width:80px;
+    margin-left:30px;
+    margin-right:0;
+    font-weight:100;
+  }
+  .title {
+    float:left;
+    margin-top:5px;
+    margin-bottom:0;
+    margin-left:15px;
+    margin-right:30px;
+    padding-left:0;
+    font-weight:500;
+  }
+  .subtitle {
+    clear:both;
+    margin:0;
+    margin-top:5px;
+    margin-right:30px;
+    padding:0;
+    font-weight:500;
+    padding-left:150px;
+  }
+  .description {
+    clear:both;
+    margin:0;
+    margin-right:30px;
+    padding:0;
+    padding-left:150px;
+    font-weight:100;
+  }
+  .print {
+    clear:both;
+    margin:0;
+    padding:0;
+    padding-left:150px;
+    color:#956e73;
+    font-weight:900;
+  }
+  .container h2 {
+    margin-left: 60px;
+    margin-right: 60px;
+    margin: 30px 60px 0 60px;
+    color:#956e73;
+    text-transform: uppercase;
+  }
+  .container p, ul {
+    margin-left: 90px;
+    margin-right: 90px;
+    font-weight: 100;
+  }
+  .container li {
+    margin-top: 15px;
+  }
+  .container ul {
+    list-style: none;
+  }
+  .container ul li:before {
+    content:"•"; 
+    font-size:10pt;
+    margin-left: -16px;
+    margin-right: 10px;
+  }
+  .heavy {
+    font-weight: 500;
+  }
+  @media only screen and (min-width: 715px) {
+      /* For tablet portrait: */
+  }
+  @media only screen and (min-width: 920px) {
+      /* For tablet landscape: */
+  }
+  @media only screen and (min-width: 1190px) {
+      /* For desktop: */
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header"> 
+    <div class="header_top">
+      <span>Contact: <a href="mailto:icpc2016@gmail.com" target="_top" style="color:white; text-decoration:none;">icpc2016@gmail.com</a></span>
+      <span style="float:right;">ICPC 2016 &nbsp;&nbsp;&nbsp;&nbsp; may 16-17, 2016 &nbsp;&nbsp;&nbsp;&nbsp; Renaissance Austin Hotel 9721 Arboretum Boulevard Austin, Texas 78759 USA</span>
+    </div>
+    <div class="header_mid">
+      <div class="logo">
+        <img src="./images/icpc_logo.png" width="202" height="50" alt="ICPC '16 Austin">
+      </div>
+      <div class="social">
+        <img style="float:right" src="./images/twitter.png" alt="Twitter">
+        <img style="float:right; padding-right:10px;" src="./images/facebook.png" alt="Twitter">
+      </div>
+    </div>
+    
+    <!-- Navigation Menu -->
+    <div class="header_bottom">
+
+      <div id="expand" class="navExpand">
+        <div style="width:40px; height:40px; margin:auto; ">
+          <img src="./images/menu.gif" alt="MENU" width="40" height="40">
+        </div>
+      </div>
+      <a href="index.html"><div class="navItem" id="menu0"><div style="width:43px; margin:auto;">HOME</div></div></a>
+      <a href="#"><div class="navItem" style="color:#FFF; background-color:rgba(255,255,255,0.2); border-right:none;" id="menu1"><div style="width:150px; margin:auto;">CALL FOR PAPERS</div></div></a>
+      <a href="organization.html"><div class="navItem" id="menu4"><div style="width:102px; margin:auto;">ORGANIZATION</div></div></a>
+      <a href="http://2016.icse.cs.txstate.edu/venue" target="_blank"><div class="navItem" id="menu7"><div style="width:46px; margin:auto;">VENUE</div></div></a>
+      <a href="http://2016.icse.cs.txstate.edu" target="_blank"><div class="navItem" id="menu8"><div style="width:52px; margin:auto;">AUSTIN</div></div></a>
+      <div class="navItem" id="menu5" style="background-color:white;"><div style="width:155px; margin:auto; color:white">REGISTRATION &amp; VISA</div></div>
+      <div class="navItem" id="menu6" style="background-color:white;"><div style="width:210px; margin:auto; color:white;">SUPPORTERS</div></div>
+    </div>
+    <!-- End Navigation Menu -->
+
+  </div>
+  <!-- End Header -->
+  <hr style="border:1px solid rgba(255,255,255,0.00); margin:0px; padding:0px; clear:both;">
+  
+    <!-- Main Content -->
+    <div class="content">
+    
+      <!-- Sidebar -->
+      <div class="sidebar">
+        
+        <div style="width:60px; height:60px; margin:auto;">
+          <img src="./images/news.png" width="60" height="60" alt="ICSE 2016"/>
+        </div>
+        
+        <h2>LATEST NEWS</h2>
+        
+        
+      </div>
+      <!-- End Sidebar -->
+      
+      <div class="container">
+        
+        <h2>Call For Papers</h2>
+        <hr style="margin: 0 60px 15px 60px;">
+        
+        <p>The International Conference on Program Comprehension (ICPC) is the principal venue for works in the area of program comprehension. Topics of interest for all tracks include but are not limited to:</p>
+
+        <ul>
+          <li>Tool support for program comprehension;</li>
+          <li>Novel visualization techniques and interfaces to support program comprehension, including searching, browsing and analyzing;</li>
+          <li>Cognitive theories for program comprehension, including experiments, empirical studies, and case studies;</li>
+          <li>Individual, collaborative, distributed, and global program comprehension;</li>
+          <li>Comprehension of specific types of software systems, such as open/closed source, mobile applications, web-based systems, legacy systems, product lines, libraries, multi-threaded applications, and systems of systems;</li>
+          <li>Comprehension in the context of diverse software process models and specific lifecycle activities, such as: maintenance, evolution, reengineering, migration, security, auditing, and testing;</li>
+          <li>Comprehension of software artifacts;</li>
+          <li>Empirical evaluations of program comprehension tools, techniques, and approaches;</li>
+          <li>Comprehension and legal issues, such as due diligence, intellectual property, reverse engineering, and litigation;</li>
+          <li>Issues and case studies in the transfer of program comprehension technology to industry.</li>
+        </ul>
+
+        <h2>Technical Research Track</h2>
+        <hr style="margin: 0 60px 15px 60px;">
+
+        <p>The research track of ICPC 2016 promises to provide a quality forum for researchers and practitioners from academia, industry, and government to present and to discuss state-of-the-art results and best practices in the field of program comprehension. Submissions must not be longer than 10 pages for the main text, inclusive of figures, tables, appendices, and references. The best full research papers at ICPC 2016 will be invited to be revised and extended for consideration in a special issue of the Journal of Software: Evolution and Process (JSEP) by Wiley.</p>
+
+        <p><span class="heavy">Program Chairs:</span> Jonathan I. Maletic, Gabriele Bavota</p>
+
+        <p><span class="heavy">Research Track Dates:</span><br>
+        Abstract Submission: Monday, February 8, 2016<br>
+        Paper Submission: Monday, February 15, 2016<br>
+        Author Notification: Monday, March 21, 2016<br>
+        Camera Ready: Monday, April 18, 2016</p>
+
+        <h2>Short Paper Track</h2>
+        <hr style="margin: 0 60px 15px 60px;">
+
+        <p>The short paper track allows for submission of papers that report on early-research achievements and industry results. Submissions must not be longer than 4 pages for the main text, inclusive of figures, tables, appendices, and references.</p>
+
+        <p><span class="heavy">Program Chairs:</span> Emily Hill, David Lo</p>
+
+        <p><span class="heavy">Research Track Dates:</span><br>
+        Abstract Submission: Friday, March 25, 2016<br>
+        Paper Submission: Monday, March 28, 2016<br>
+        Author Notification: Thursday, April 14, 2016<br>
+        Camera Ready: Monday, April 25, 2016</p>
+
+        <h2>Tool Demonstration Track</h2>
+        <hr style="margin: 0 60px 15px 60px;">
+
+        <p>The tool demonstration track provides an opportunity for live presentations of academic prototypes and industry tools. Tool demonstration proposals that complement full technical papers are especially encouraged. Submissions must not be longer than 2 pages for the main text, inclusive of figures, tables, appendices, and references.</p>
+
+        <p><span class="heavy">Program Chairs:</span> Bonita Sharif, Mircea Lungu</p>
+
+        <p><span class="heavy">Research Track Dates:</span><br>
+        Abstract Submission: Friday, March 25, 2016<br>
+        Paper Submission: Monday, March 28, 2016<br>
+        Author Notification: Thursday, April 14, 2016<br>
+        Camera Ready: Monday, April 25, 2016</p>
+
+        <h2>Paper Submission</h2>
+        <hr style="margin: 0 60px 15px 60px;">
+
+        <p>All papers must conform, at time of submission, to the ICSE Formatting Guidelines. Submissions must be in PDF format and must be submitted online via the ICPC 2016 EasyChair conference management system. Papers must not have been previously accepted for publication nor concurrently submitted for review in another journal, book, conference, or workshop. All accepted papers will be published in the conference electronic proceedings, and will also be available in a digital library. At least one author of the paper must register and present the paper/demo at the conference; otherwise the paper will be excluded from both the program and the proceedings.</p>
+
+      </div>
+      
+      <hr style="border:1px solid rgba(255,255,255,0.00); margin:0px; padding:0px; clear:both;">
+    </div>
+    <!-- End Main Content -->
+  
+  <hr style="border:1px solid rgba(255,255,255,0.00); margin:0px; padding:0px; clear:both;">
+</div>
+
+<div class="footer">
+  <div class="footerBottom">
+    <span>Contact: <a href="mailto:icpc2016@gmail.com" target="_top" style="color:white; text-decoration:none;">icpc2016@gmail.com</a></span>
+    <span style="float:right;">ICPC 2016 &nbsp;&nbsp;&nbsp;&nbsp; may 16-17, 2016 &nbsp;&nbsp;&nbsp;&nbsp; Renaissance Austin Hotel 9721 Arboretum Boulevard Austin, Texas 78759 USA</span>
+  </div>
+</div>
+
+</body>
+</html>

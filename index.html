@@ -1,14 +1,241 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-	<title>24rd IEEE International Conference on Program Comprehension - ICPC 2016</title>
+<meta charset="UTF-8">
+<title>Home</title>
+<link rel="stylesheet" type="text/css" href="./css/base_style.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    var n = true;
+      $("#expand").click(function(){
+      if (n) {
+        n = false;
+        $( "#menu0" ).addClass( "navToggle" );
+        $( "#menu1" ).addClass( "navToggle" );
+        $( "#menu2" ).addClass( "navToggle" );
+        $( "#menu3" ).addClass( "navToggle" );
+        $( "#menu4" ).addClass( "navToggle" );
+        $( "#menu5" ).addClass( "navToggle" );
+        $( "#menu6" ).addClass( "navToggle" );
+        $( "#menu7" ).addClass( "navToggle" );
+        $( "#menu8" ).addClass( "navToggle" );
+      } else {
+        n = true;
+        $( "#menu0" ).removeClass( "navToggle" );
+        $( "#menu1" ).removeClass( "navToggle" );
+        $( "#menu2" ).removeClass( "navToggle" );
+        $( "#menu3" ).removeClass( "navToggle" );
+        $( "#menu4" ).removeClass( "navToggle" );
+        $( "#menu5" ).removeClass( "navToggle" );
+        $( "#menu6" ).removeClass( "navToggle" );
+        $( "#menu7" ).removeClass( "navToggle" );
+        $( "#menu8" ).removeClass( "navToggle" );
+      }
+      });
+  });
+</script>
+<style type="text/css">
+  .imageDisplay {
+    width:100%; 
+    height:inherit; 
+    margin-bottom:10px;
+  }
+  .box_A {
+    width:100%;
+    float:left;
+    margin-bottom:10px;
+    background-color:rgba(255,255,255,0.2);
+  }
+  .box_B {
+    width:100%;
+    float:left;
+    margin-bottom:10px;
+    background-color:rgba(255,255,255,0.2);
+  }
+  .box_C {
+    width:100%;
+    float:left;
+    margin-bottom:10px;
+  }
+  .box_C h2 {
+    text-align:left; margin-left:15px;
+  }
+  .box_C p {
+    margin-top:-15px;
+    margin-left:50px;
+    margin-bottom:-5px;
+  }
+  p, hr {
+      margin-left:15px;
+    margin-right:15px;
+  }
+  .map {
+    margin:auto;
+    float:none;
+    width:274px;
+    height:200px;
+    background-image:url(./images/map.png);
+  }
+  .map:hover {
+    background-image:url(./images/map-color.png);
+  }
+  @media only screen and (min-width: 715px) {
+      /* For tablet portrait: */
+    .imageDisplay {width:100%; margin-left:0px; height:auto;}
+    .box_A {width:100%;}
+    .box_B {width:100%;}
+    .box_C {width:100%;}
+    .map {float:none; margin:auto}
+  }
+  @media only screen and (min-width: 920px) {
+      /* For tablet landscape: */
+    .imageDisplay {width:660px;   height:285px; margin-left:10px;}
+    .box_A {width:325px; height:470px; margin-left:10px;}
+    .box_B {width:660px; margin-left:10px;}
+    .box_C {width:660px; height:400px; margin-left:10px;}
+    .map {float:left; margin:inherit; margin-right:15px;}
+  }
+  @media only screen and (min-width: 1190px) {
+      /* For desktop: */
+    .imageDisplay {width:930px;   height:400px;  margin-left:10px;}
+    .box_A {width:303px; height:470px; margin-left:10px;}
+    .box_B {width:303px; height:470px; margin-left:10px;}
+    .box_C {width:616px; height:400px; margin-left:10px;}
+    .map {float:none; margin:auto}
+  }
+</style>
 </head>
 <body>
-<h1>IEEE International Conference on Program Comprehension - ICPC</h1>
 
-The 24rd IEEE International Conference on Program Comprehension (ICPC) will co-locate with ICSE 2016 in Austin, TX, USA.
+<div class="page">
 
-Watch this space for more information.
+  <!-- Header -->
+  <div class="header"> 
+    <div class="header_top">
+      <span>Contact: <a href="mailto:icpc2016@gmail.com" target="_top" style="color:white; text-decoration:none;">icpc2016@gmail.com</a></span>
+      <span style="float:right;">ICPC 2016 &nbsp;&nbsp;&nbsp;&nbsp; may 16-17, 2016 &nbsp;&nbsp;&nbsp;&nbsp; Renaissance Austin Hotel 9721 Arboretum Boulevard Austin, Texas 78759 USA</span>
+    </div>
+    <div class="header_mid">
+      <div class="logo">
+        <img src="./images/icpc_logo.png" width="202" height="50" alt="ICPC '16 Austin">
+      </div>
+      <div class="social">
+        <img style="float:right" src="./images/twitter.png" alt="Twitter">
+        <img style="float:right; padding-right:10px;" src="./images/facebook.png" alt="Twitter">
+      </div>
+    </div>
+    
+    <!-- Navigation Menu -->
+    <div class="header_bottom">
+
+      <div id="expand" class="navExpand">
+        <div style="width:40px; height:40px; margin:auto; ">
+          <img src="./images/menu.gif" alt="MENU" width="40" height="40">
+        </div>
+      </div>
+      <a href="#"><div class="navItem" style="color:#FFF; background-color:rgba(255,255,255,0.2); border-right:none;" id="menu0"><div style="width:43px; margin:auto;">HOME</div></div></a>
+      <a href="call.html"><div class="navItem" id="menu1"><div style="width:150px; margin:auto;">CALL FOR PAPERS</div></div></a>
+      <a href="organization.html"><div class="navItem" id="menu4"><div style="width:102px; margin:auto;">ORGANIZATION</div></div></a>
+      <a href="http://2016.icse.cs.txstate.edu/venue" target="_blank"><div class="navItem" id="menu7"><div style="width:46px; margin:auto;">VENUE</div></div></a>
+      <a href="http://2016.icse.cs.txstate.edu" target="_blank"><div class="navItem" id="menu8"><div style="width:52px; margin:auto;">AUSTIN</div></div></a>
+      <div class="navItem" id="menu5" style="background-color:white;"><div style="width:155px; margin:auto; color:white">REGISTRATION &amp; VISA</div></div>
+      <div class="navItem" id="menu6" style="background-color:white;"><div style="width:210px; margin:auto; color:white;">SUPPORTERS</div></div>
+    </div>
+    <!-- End Navigation Menu -->
+
+  </div>
+  <!-- End Header -->
+  <hr style="border:1px solid rgba(255,255,255,0.00); margin:0px; padding:0px; clear:both;">
+  
+    <!-- Main Content -->
+    <div class="content">
+    
+      <!-- Sidebar -->
+      <div class="sidebar">
+        
+        <div style="width:60px; height:60px; margin:auto;">
+          <img src="./images/news.png" width="60" height="60" alt="ICSE 2016"/>
+        </div>
+        
+        <h2>LATEST NEWS</h2>
+        
+        
+      </div>
+      <!-- End Sidebar -->
+      
+      <div class="container">
+        <div class="imageDisplay">
+          <img src="./images/city.jpg" alt="City" style="margin:0px; width:100%" />
+        </div>
+      
+        <div class="box_A">
+          <h2>WELCOME</h2>
+          <hr/>
+          <p>Welcome to the web site of the 24th International Conference on Program Comprehension.</p>
+          <p>The International Conference on Program Comprehension (ICPC) is the principal venue for works in the area of program comprehension, and it promises to provide a quality forum for researchers and practitioners from academia, industry, and government to present and to discuss state-of-the-art results and best practices in the field of program comprehension.</p>
+          <p>Research papers will be presented in both a Technical Research Track and a Short Paper Track. Live presentations of academic prototypes and industry tools will be presented in an interactive Tool Demo Track. Details, including Topics of Interest, can be found in the <a href="call.html" style="color:white;">Call For Papers.</a></p>
+        </div>
+        
+        <div class="box_A">
+          <h2>CO-LOCATED</h2>
+          <hr/>
+          <div style="width:160px; height:163px; margin:auto;">
+            <img src="./images/icse_logo.png" width="160" height="163" alt="ICSE 2016"/>
+          </div>
+          <p>The 2016 edition of the International Conference on Program Comprehension (ICPC) will be held in Austin, Texas co-located with the 38th International Conference on Software Engineering (ICSE'16), which is being held from May 14-22, 2016. </p>
+          <p>ICPC will be held on Monday and Tuesday, May 16-17.</p>
+        </div>
+        
+        <div class="box_B">
+          <h2>  VENUE</h2>
+          <hr/>
+          <a href="https://www.google.com/maps/place/Renaissance+Austin+Hotel/@30.3932744,-97.7503965,17z/data=!3m1!5s0x8644cc825f67a3c9:0x7edf0a3a0afb13d5!4m2!3m1!1s0x8644cc8252d7f82f:0x4595dc1dea42c274!6m1!1e1" target="_blank">
+            <div class="map">
+            </div>
+          </a>
+          <p>ICPC 2016 will be held at the Rennaisance Austin Hotel in the lovely Austin Arboretum Area on the northwestern edge of Austin proper. Known as “new Austin,” the Austin Arboretum Area has both a business and a residential side. But the area boasts quaint neighborhoods, hike-and-bike trails, and pet-friendly parks. </p>
+        </div>
+      
+        <div class="box_C">
+          <h2>IMPORTANT DATES</h2>
+          <hr/>
+          
+          <h2>Technical Research Track</h2>
+          <p>Abstract Submission: Monday, February 8, 2016<br>
+          Paper Submission: Monday, February 15, 2016<br>
+          Author Notification: Monday, March 21, 2016<br>
+          Camera Ready: Monday, April 18, 2016</p>
+
+          <h2>Short Paper Track</h2>
+          <p>Abstrack Submission: Friday, March 25, 2016<br>
+          Paper Submission: Monday, March 28, 2016<br>
+          Author Notification: Thursday, April 14, 2016<br>
+          Camera Ready: Monday, April 25, 2016</p>
+          
+          <h2>Tool Demonstration Track</h2>
+          <p>Abstract Submission: Friday, March 25, 2016<br>
+          Paper Submission: Monday, March 28, 2016<br>
+          Author Notification: Thursday, April 14, 2016<br>
+          Camera Ready: Monday, April 25, 2016</p>
+          
+        </div>
+        
+      </div>
+      
+      <hr style="border:1px solid rgba(255,255,255,0.00); margin:0px; padding:0px; clear:both;">
+    </div>
+    <!-- End Main Content -->
+  
+  <hr style="border:1px solid rgba(255,255,255,0.00); margin:0px; padding:0px; clear:both;">
+</div>
+
+<div class="footer">
+  <div class="footerBottom">
+    <span>Contact: <a href="mailto:icpc2016@gmail.com" target="_top" style="color:white; text-decoration:none;">icpc2016@gmail.com</a></span>
+    <span style="float:right;">ICPC 2016 &nbsp;&nbsp;&nbsp;&nbsp; may 16-17, 2016 &nbsp;&nbsp;&nbsp;&nbsp; Renaissance Austin Hotel 9721 Arboretum Boulevard Austin, Texas 78759 USA</span>
+  </div>
+</div>
 
 </body>
 </html>
