@@ -97,6 +97,13 @@ h3 {
     width:100%;
     display:none;
 }
+.spacer {
+    border:1px solid white;
+    float:left;
+    height:38px;
+    background-color: white;
+    display:none;
+}
 .navItem:hover {
     color:#FFF;
     background-color:rgba(255,255,255,0.2);
@@ -175,6 +182,7 @@ h3 {
     .sponsors {width:704px;}
     .sponsorBox {width:342px; margin:5px;}
     .footerBottom {width:695px; display:block;}
+    .spacer {width:271px; display:block;}
 }
 @media only screen and (min-width: 920px) {
     /* For tablet landscape: */
@@ -194,6 +202,7 @@ h3 {
     .sponsors {width:912px;}
     .sponsorBox {width:218px; margin:5px;}
     .footerBottom {width:900px; display:block;}
+    .spacer {width:361px; display:block;}
 }
 @media only screen and (min-width: 1190px) {
     /* For desktop: */
@@ -213,6 +222,7 @@ h3 {
     .sponsors {width:1180px;}
     .sponsorBox {width:285px; margin:5px;}
     .footerBottom {width:1170px; display:block;}
+    .spacer {width:481px; display:block;}
     /*
     .navExpand {display:none;}
     .navItem {width:auto; padding:0 28px 0 29px; font-size:14px; line-height:38px; display:block; border:1px solid #FFF;}
