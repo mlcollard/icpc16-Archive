@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Home</title>
+<title>ICPC16</title>
 <link rel="stylesheet" type="text/css" href="./css/base_style.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script>
@@ -41,6 +41,16 @@
     height:inherit; 
     margin-bottom:10px;
   }
+  .imageText {
+    font-weight:bold;
+    text-align:center;
+    line-height: 0%;
+    width:100%;
+    position:absolute;
+    color:rgba(0,0,0,0);
+    padding-top:100px;
+    display: none;
+  }
   .box_A {
     width:100%;
     float:left;
@@ -69,6 +79,9 @@
   p, hr {
       margin-left:15px;
     margin-right:15px;
+  }
+  a {
+    color:white;
   }
   .map {
     margin:auto;
@@ -99,6 +112,7 @@
   @media only screen and (min-width: 1190px) {
       /* For desktop: */
     .imageDisplay {width:930px;   height:400px;  margin-left:10px;}
+    .imageText {width:930px; display: inline;}
     .box_A {width:303px; height:470px; margin-left:10px;}
     .box_B {width:303px; height:470px; margin-left:10px;}
     .box_C {width:616px; height:400px; margin-left:10px;}
@@ -154,18 +168,24 @@
       <div class="sidebar">
         
         <div style="width:60px; height:60px; margin:auto;">
-          <img src="./images/news.png" width="60" height="60" alt="ICSE 2016"/>
+          <img src="./images/news.png" width="60" height="60" alt="Latest News"/>
         </div>
         
         <h2>LATEST NEWS</h2>
-        
         
       </div>
       <!-- End Sidebar -->
       
       <div class="container">
         <div class="imageDisplay">
-          <img src="./images/city.jpg" alt="City" style="margin:0px; width:100%" />
+          <span class="imageText">
+            <span style="font-size:42px; line-height:100%;">ICPC'16</span><br>
+            <span style="font-size:30px; line-height:180%;">May 16-17, 2016</span><br>
+            <span style="font-size:32px; line-height:100%;">Austin, Texas<br><br></span>
+            <span style="font-size:22px; line-height:140%;">Co-located with</span><br>
+            <span style="font-size:22px; line-height:130%;">ICSE 2016</span>
+          </span>
+          <img src="./images/city.jpg" alt="City" style="margin:0px; width:100%; -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;" unselectable="on" onselectstart="return false;" onmousedown="return false;"/>
         </div>
       
         <div class="box_A">
@@ -173,16 +193,16 @@
           <hr/>
           <p>Welcome to the web site of the 24th International Conference on Program Comprehension.</p>
           <p>The International Conference on Program Comprehension (ICPC) is the principal venue for works in the area of program comprehension, and it promises to provide a quality forum for researchers and practitioners from academia, industry, and government to present and to discuss state-of-the-art results and best practices in the field of program comprehension.</p>
-          <p>Research papers will be presented in both a Technical Research Track and a Short Paper Track. Live presentations of academic prototypes and industry tools will be presented in an interactive Tool Demo Track. Details, including Topics of Interest, can be found in the <a href="call.html" style="color:white;">Call For Papers.</a></p>
+          <p>Research papers will be presented in both a Technical Research Track and a Short Paper Track. Live presentations of academic prototypes and industry tools will be presented in an interactive Tool Demo Track. Details, including Topics of Interest, can be found in the <a href="call.html">Call For Papers.</a></p>
         </div>
         
         <div class="box_A">
           <h2>CO-LOCATED</h2>
           <hr/>
           <div style="width:160px; height:163px; margin:auto;">
-            <img src="./images/icse_logo.png" width="160" height="163" alt="ICSE 2016"/>
+            <a href="http://2016.icse.cs.txstate.edu" target="_blank"><img src="./images/icse_logo.png" width="160" height="163" alt="ICSE 2016"/></a>
           </div>
-          <p>The 2016 edition of the International Conference on Program Comprehension (ICPC) will be held in Austin, Texas co-located with the 38th International Conference on Software Engineering (ICSE'16), which is being held from May 14-22, 2016. </p>
+          <p>The 2016 edition of the International Conference on Program Comprehension (ICPC) will be held in Austin, Texas co-located with the 38th International Conference on Software Engineering (<a href="http://2016.icse.cs.txstate.edu" target="_blank">ICSE'16</a>), which is being held from May 14-22, 2016. </p>
           <p>ICPC will be held on Monday and Tuesday, May 16-17.</p>
         </div>
         
