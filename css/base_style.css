@@ -69,6 +69,13 @@ h3 {
     height:50px;
     margin:auto;
 }
+.logo_date {
+    float:left; 
+    margin: 10px 0 0 36px; 
+    font-size:24px; 
+    font-weight:500;
+    display: none;
+}
 .social {
     width:110px;
     height:50px;
@@ -107,6 +114,8 @@ h3 {
 .navItem:hover {
     color:#FFF;
     background-color:rgba(255,255,255,0.2);
+    border-left: 1px solid white;
+    border-right: 1px solid white;
 }
 .navToggle {
     display:block;
@@ -129,6 +138,16 @@ h3 {
 .sidebar p {
     font-size:12px;
     margin-top:10px;
+}
+.box_Header {
+    width:100%;
+    float:right;
+    margin-bottom: 10px;
+    background-color:rgba(255,255,255,0.2);
+}
+.box_Header h2 {
+    margin-left: 15px;
+    margin-right: 15px;
 }
 .container {
     background:rgba(0,0,0,0.0);
@@ -171,13 +190,15 @@ h3 {
     .header {width:695px;}
     .header_top {display:block;}
     .logo {float:left;}
+    .logo_date {display: block;}
     .social {display:none;}
     .navExpand {display:none;}
     .navContract {display:none;}
     .navItem {width:auto; padding:0 2px 0 2px; font-size:12px; line-height:38px; display:block; border:1px solid #FFF;}
     .content {width:695px;}
     .sidebar {display:block;}
-    .container {width:465px}
+    .box_Header {width:455px;}
+    .container {width:455px}
     .footer {max-width:735px;}
     .sponsors {width:704px;}
     .sponsorBox {width:342px; margin:5px;}
@@ -197,7 +218,8 @@ h3 {
     .navItem {width:auto; padding:0 13px 0 14px; font-size:14px; line-height:38px; display:block; border:1px solid #FFF;}
     .content {width:900px;}
     .sidebar {display:block;}
-    .container {width:670px}
+    .box_Header {width:660px;}
+    .container {width:660px}
     .footer {max-width:980px;}
     .sponsors {width:912px;}
     .sponsorBox {width:218px; margin:5px;}
@@ -217,7 +239,8 @@ h3 {
     .navItem {width:auto; padding:0 28px 0 29px; font-size:14px; line-height:38px; display:block; border:1px solid #FFF;}
     .content {width:1170px;}
     .sidebar {display:block;}
-    .container {width:940px}
+    .box_Header {width:930px;}
+    .container {width:930px}
     .footer {max-width:1330px;}
     .sponsors {width:1180px;}
     .sponsorBox {width:285px; margin:5px;}
