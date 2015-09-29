@@ -34,6 +34,9 @@
       }
       });
   });
+  $(function(){
+      $("#news").load("news.html"); 
+    });
 </script>
 <style type="text/css">
   p, hr {
@@ -222,19 +225,16 @@
     
       <!-- Sidebar -->
       <div class="sidebar">
-        
         <div style="width:60px; height:60px; margin:auto;">
-          <img src="./images/news.png" width="60" height="60" alt="ICSE 2016"/>
+          <img src="./images/news.png" width="60" height="60" alt="Latest News"/>
         </div>
-        
-        <h2>LATEST NEWS</h2>
-        
-        
+        <h2>Latest News</h2>
+        <div id="news"></div>
       </div>
       <!-- End Sidebar -->
 
       <div class="box_Header">
-        <h2>24<sup>th</sup> IEEE INTERNATIONAL CONFERENCE ON PROGRAM COMPREHENSION</h2>
+        <h2>24<sup>TH</sup> IEEE INTERNATIONAL CONFERENCE ON PROGRAM COMPREHENSION</h2>
       </div>
       
       <div class="container">
