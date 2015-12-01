@@ -1,0 +1,651 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Organization - ICPC16</title>
+<link rel="stylesheet" type="text/css" href="./css/base_style.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    var n = true;
+      $("#expand").click(function(){
+      if (n) {
+        n = false;
+        $( "#menu0" ).addClass( "navToggle" );
+        $( "#menu1" ).addClass( "navToggle" );
+        $( "#menu2" ).addClass( "navToggle" );
+        $( "#menu3" ).addClass( "navToggle" );
+        $( "#menu4" ).addClass( "navToggle" );
+        $( "#menu5" ).addClass( "navToggle" );
+        $( "#menu6" ).addClass( "navToggle" );
+        $( "#menu7" ).addClass( "navToggle" );
+        $( "#menu8" ).addClass( "navToggle" );
+      } else {
+        n = true;
+        $( "#menu0" ).removeClass( "navToggle" );
+        $( "#menu1" ).removeClass( "navToggle" );
+        $( "#menu2" ).removeClass( "navToggle" );
+        $( "#menu3" ).removeClass( "navToggle" );
+        $( "#menu4" ).removeClass( "navToggle" );
+        $( "#menu5" ).removeClass( "navToggle" );
+        $( "#menu6" ).removeClass( "navToggle" );
+        $( "#menu7" ).removeClass( "navToggle" );
+        $( "#menu8" ).removeClass( "navToggle" );
+      }
+      });
+  });
+  $(function(){
+      $("#news").load("news.html"); 
+    });
+</script>
+<style type="text/css">
+  p, hr {
+      margin-left:15px;
+    margin-right:15px;
+  }
+  .container {
+    color:black;
+    background-color:rgba(255,255,255,0.8);
+    padding-bottom:30px;
+  }
+  .container h1 {
+    font-size:24px;
+    margin-left:30px;
+    margin-right:30px;
+    font-weight:600;
+  }
+  .container h2 {
+    color:black;
+    font-weight:500;
+    text-align:left;
+    clear:both;
+    text-transform: uppercase;
+    margin-left: 0px;
+    color:#956e73;
+    text-transform: uppercase;
+  }
+  .container h3 {
+    color:black;
+    font-weight:500;
+    text-align:left;
+    margin-left:30px;
+    margin-right:30px;
+    margin-bottom:5px;
+    text-align:center; 
+    clear:both;
+    text-transform: uppercase;
+  }
+  .container hr {
+    border:0;
+    height:1px;
+    background:rgba(0,0,0,0.20);
+    margin-left:30px;
+    margin-right:30px;
+  }
+  .container p {
+    font-weight: 100;
+  }
+  td {
+    border: 1px solid blue;
+  }
+  .time {
+    float:left;
+    margin-top:5px;
+    margin-bottom:0;
+    clear:both;
+    width:80px;
+    margin-left:30px;
+    margin-right:0;
+    font-weight:100;
+  }
+  .title {
+    float:left;
+    margin-top:5px;
+    margin-bottom:0;
+    margin-left:15px;
+    margin-right:30px;
+    padding-left:0;
+    font-weight:500;
+  }
+  .subtitle {
+    clear:both;
+    margin:0;
+    margin-top:5px;
+    margin-right:30px;
+    padding:0;
+    font-weight:500;
+    padding-left:150px;
+  }
+  .description {
+    clear:both;
+    margin:0;
+    margin-right:30px;
+    padding:0;
+    padding-left:150px;
+    font-weight:100;
+  }
+  .print {
+    clear:both;
+    margin:0;
+    padding:0;
+    padding-left:150px;
+    color:#956e73;
+    font-weight:900;
+  }
+  .container a {
+    color:#956e73;
+    font-weight:900;
+    text-decoration: none;
+  }
+  .profileRow {
+      width: 100%;
+      height: 1px;
+      margin: auto;
+  }
+  .profileBox {
+      width:50%; 
+      float:left;
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+  .profileImage {
+      width:130px; 
+      margin:auto;
+  }
+  .profileText {
+      text-align:left;
+      margin-top: 0;
+      line-height: 1.2;
+  }
+  .subMenu {
+    width:100%;
+    float: left;
+  }
+  #subMenu1 {
+    text-align: center;
+  }
+  #subMenu2 {
+    text-align: center;
+  }
+  #subMenu3 {
+    text-align: center;
+  }
+  .creditBox {
+    width:100%;
+    height: 50px;
+    float: left;
+  }
+  @media only screen and (min-width: 715px) {
+      /* For tablet portrait: */
+      .profileRow {width:100%;}
+      .profileBox {width:50%;}
+      #subMenu1 {text-align: center;}
+      #subMenu2 {text-align: center;}
+      #subMenu3 {text-align: center;}
+      .subMenu {width:100%;}
+      .creditBox {width:100%;}
+  }
+  @media only screen and (min-width: 920px) {
+      /* For tablet landscape: */
+      .profileRow {width:80%;}
+      .profileBox {width:50%;}
+      #subMenu1 {text-align: center;}
+      #subMenu2 {text-align: center;}
+      #subMenu3 {text-align: center;}
+      .subMenu {width:100%;}
+      .creditBox {width:50%;}
+  }
+  @media only screen and (min-width: 1190px) {
+      /* For desktop: */
+      .profileRow {width:60%;}
+      .profileBox {width:50%;}
+      #subMenu1 {text-align: left;}
+      #subMenu2 {text-align: center;}
+      #subMenu3 {text-align: right;}
+      .subMenu {width:33.3%;}
+      .creditBox {width:50%;}
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header"> 
+    <div class="header_top">
+      <span>Contact: <a href="mailto:icpc2016@gmail.com" target="_top" style="color:white; text-decoration:none;">icpc2016@gmail.com</a></span>
+      <span style="float:right;">ICPC 2016 &nbsp;&nbsp;&nbsp;&nbsp; May 16-17, 2016 &nbsp;&nbsp;&nbsp;&nbsp; Renaissance Austin Hotel 9721 Arboretum Boulevard Austin, Texas 78759 USA</span>
+    </div>
+    <div class="header_mid">
+      <div class="logo">
+        <img src="./images/icpc_logo.png" width="210" height="50" alt="ICPC '16 Austin">
+      </div>
+      <h2 class="logo_date">May 16<span style="font-size:12px;"> </span>-17</h2>
+      <div class="social">
+        <img style="float:right" src="./images/twitter.png" alt="Twitter">
+        <img style="float:right; padding-right:10px;" src="./images/facebook.png" alt="Twitter">
+      </div>
+    </div>
+    
+    <!-- Navigation Menu -->
+    <div class="header_bottom">
+
+      <div id="expand" class="navExpand">
+        <div style="width:40px; height:40px; margin:auto; ">
+          <img src="./images/menu.gif" alt="MENU" width="40" height="40">
+        </div>
+      </div>
+      <a href="index.html"><div class="navItem" id="menu0"><div style="width:44px; margin:auto;">HOME</div></div></a>
+      <a href="call.html"><div class="navItem" id="menu1"><div style="width:149px; margin:auto;">CALL FOR PAPERS</div></div></a>
+      <a href="#"><div class="navItem" style="color:#FFF; background-color:rgba(255,255,255,0.2); border-right:none; border-left:none;" id="menu4"><div style="width:102px; margin:auto;">ORGANIZATION</div></div></a>
+      <a href="http://2016.icse.cs.txstate.edu/venue" target="_blank"><div class="navItem" id="menu7"><div style="width:46px; margin:auto;">VENUE</div></div></a>
+      <a href="http://2016.icse.cs.txstate.edu" target="_blank"><div class="navItem" id="menu8"><div style="width:52px; margin:auto;">AUSTIN</div></div></a>
+      <div class="spacer" id="menu6"></div>
+    </div>
+    <!-- End Navigation Menu -->
+
+  </div>
+  <!-- End Header -->
+  <hr style="border:1px solid rgba(255,255,255,0.00); margin:0px; padding:0px; clear:both;">
+  
+    <!-- Main Content -->
+    <div class="content">
+    
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div style="width:60px; height:60px; margin:auto;">
+          <img src="./images/news.png" width="60" height="60" alt="Latest News"/>
+        </div>
+        <h2>Latest News</h2>
+        <div id="news"></div>
+      </div>
+      <!-- End Sidebar -->
+
+      <div class="box_Header">
+        <h2>24<sup>TH</sup> IEEE INTERNATIONAL CONFERENCE ON PROGRAM COMPREHENSION</h2>
+      </div>
+      
+      <div class="container">
+        
+        <div style="margin: 30px 60px 0px 60px;">
+          <div class="subMenu"><h2 id="subMenu1"><a href="organization.html" style="color:black;">ORGANIZING COMMITTEE</a></h2></div>
+          <div class="subMenu"><h2 id="subMenu2"><a href="organization-program.html">PROGRAM COMMITTEE</a></h2></div>
+          <div class="subMenu"><h2 id="subMenu3"><a href="organization-steering.html" style="color:black;">STEERING COMMITTEE</a></h2></div>
+        </div>
+
+        <hr style="margin: 0 60px 15px 60px; clear:both;">
+
+        <div style="margin: 0 60px 15px 60px;">
+
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://mcis.polymtl.ca/~bram/" target="_blank">
+              Bram Adams</a><br>
+              École Polytechnique de Montréal, Canada
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.antoniol.net/" target="_blank">
+              Giuliano Antoniol</a><br>
+              École Polytechnique de Montréal, Canada
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.veneraarnaoudova.com" target="_blank">
+              Venera Arnaoudova</a><br>
+              Washington State University, USA
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://sback.it" target="_blank">
+              Alberto Bacchelli</a><br>
+              Delft University of Technology, Netherlands
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://olgabaysal.com/" target="_blank">
+              Olga Baysal</a><br>
+              Carleton University, Canada
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://cs.joensuu.fi/~rbednari/" target="_blank">
+              Roman Bednarik</a><br>
+              University of Eastern Finland, Finland
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://research.microsoft.com/~abegel" target="_blank">
+              Andrew Begel</a><br>
+              Microsoft Research, USA
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://research.microsoft.com/en-us/people/cbird/" target="_blank">
+              Christian Bird</a><br>
+              Microsoft Research, USA
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://selab.fbk.eu/ceccato/" target="_blank">
+              Mariano Ceccato</a><br>
+              Fondazione Bruno Kessler, Italy
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.info.fundp.ac.be/~acl" target="_blank">
+              Anthony Cleve</a><br>
+              University of Namur, Belgium
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.unisa.it/docenti/andreadelucia/english/index" target="_blank">
+              Andrea De Lucia</a><br>
+              University of Salerno, Italy
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="https://www.uantwerpen.be/en/rg/ansymo/" target="_blank">
+              Serge Demeyer</a><br>
+              Universiteit Antwerpen, Belgium
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.ing.unisannio.it/mdipenta" target="_blank">
+              Massimiliano Di Penta</a><br>
+              University of Sannio, Italy
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://business.kent.edu/staff/natalia-dragan" target="_blank">
+              Natalia Dragan</a><br>
+              Kent State University, USA
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://seal.ifi.uzh.ch/fritz" target="_blank">
+              Thomas Fritz</a><br>
+              University of Zurich, Switzerland
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.ifi.uzh.ch/seal/people/gall.html" target="_blank">
+              Harald Gall</a><br>
+              University of Zurich, Switzerland
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www-di.inf.puc-rio.br/~afgarcia/" target="_blank">
+              Alessandro Garcia</a><br>
+              Pontifícia Universidade Católica do Rio de Janeiro, Brazil
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://turingmachine.org" target="_blank">
+              Daniel German</a><br>
+              University of Victoria, Canada
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.uwaterloo.ca/~migod" target="_blank">
+              Mike Godfrey</a><br>
+              University of Waterloo, Canada
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.unisa.it/docenti/gravino/index" target="_blank">
+              Carmine Gravino</a><br>
+              University of Salerno, Italy
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.yann-gael.gueheneuc.net/Work/Info/" target="_blank">
+              Yann-Gaël Guéhéneuc</a><br>
+              École Polytechnique de Montréal, Canada
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.inf.u-szeged.hu/~gyimi/" target="_blank">
+              Tibor Gyimothy</a><br>
+              University of Szeged, Hungary
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.cs.fsu.edu/~shaiduc" target="_blank">
+              Sonia Haiduc</a><br>
+              Florida State University, USA
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="https://sites.google.com/site/stefanhanenberg/" target="_blank">
+              Stefan Hanenberg</a><br>
+              University of Duisburg-Essen, Germany
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.cs.ucl.ac.uk/staff/mharman" target="_blank">
+              Mark Harman</a><br>
+              University College London, UK
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.cs.queensu.ca/~ahmed/home/" target="_blank">
+              Ahmed E. Hassan</a><br>
+              Queen's University, Canada
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://softwareprocess.es/" target="_blank">
+              Abram Hindle</a><br>
+              University of Alberta, Canada
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.cs.wichita.edu/~kagdi" target="_blank">
+              Huzefa Kagdi</a><br>
+              Wichita State University, USA
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.khomh.net/" target="_blank">
+              Foutse Khomh</a><br>
+              École Polytechnique de Montréal, Canada
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.informatik.uni-bremen.de/~koschke" target="_blank">
+              Rainer Koschke</a><br>
+              University of Bremen, Germany
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.dma.jim.osaka-u.ac.jp/view?l=en&u=6848" target="_blank">
+              Shinji Kusumoto</a><br>
+              Osaka University, Japan 
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.inf.unisi.ch/faculty/lanza/" target="_blank">
+              Michele Lanza</a><br>
+              University of Lugano, Switzerland
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.utdallas.edu/~amarcus/" target="_blank">
+              Andrian Marcus</a><br>
+              The University of Texas at Dallas, USA
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.cs.upt.ro/~cristina/" target="_blank">
+              Cristina Marinescu</a><br>
+              Politehnica University of Timisoara, Romania
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://leonmoonen.com/" target="_blank">
+              Leon Moonen</a><br>
+              Simula Research Laboratory, Norway
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.distat.unimol.it/people/oliveto" target="_blank">
+              Rocco Oliveto</a><br>
+              University of Molise, Italy
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.sesa.dmi.unisa.it/people/apanichella/index.html" target="_blank">
+              Annibale Panichella</a><br>
+              Delft University of Technology, Netherlands
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.chrisparnin.me" target="_blank">
+              Chris Parnin</a><br>
+              North Carolina State University, USA
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.cs.wm.edu/~denys/" target="_blank">
+              Denys Poshyvanyk</a><br>
+              College of William and Mary, USA
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.cs.wayne.edu/~vip/" target="_blank">
+              Václav Rajlich</a><br>
+              Wayne State University, USA
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="https://www.cqse.eu/en/team/tobias-roehm/" target="_blank">
+              Tobias Roehm</a><br>
+              CQSE GmbH, Germany
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www2.unibas.it/gscanniello/" target="_blank">
+              Giuseppe Scanniello</a><br>
+              University of Basilicata, Italy
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.win.tue.nl/~aserebre/" target="_blank">
+              Alexander Serebrenik</a><br>
+              Eindhoven University of Technology, Netherlands
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://davidshepherd.weebly.com/" target="_blank">
+              David Shepherd</a><br>
+              ABB Inc., USA
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://users.encs.concordia.ca/~eshihab/" target="_blank">
+              Emad Shihab</a><br>
+              Concordia University, Canada
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.infosun.fim.uni-passau.de/spl/people-jsiegmund.php" target="_blank">
+              Janet Siegmund</a><br>
+              University of Passau, Germany
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://selab.fbk.eu/tonella/#/" target="_blank">
+              Paolo Tonella</a><br>
+              Fondazione Bruno Kessler - IRST, Italy
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://users.encs.concordia.ca/~nikolaos/" target="_blank">
+              Nikolaos Tsantalis</a><br>
+              Concordia University, Canada
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="https://www.linkedin.com/in/aikofallasyamashita" target="_blank">
+              Aiko Yamashita</a><br>
+              Mesan y Simula Research Laboratory
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.st.ewi.tudelft.nl/~zaidman" target="_blank">
+              Andy Zaidman</a><br>
+              Delft University of Technology, Netherlands
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+      
+      <hr style="border:1px solid rgba(255,255,255,0.00); margin:0px; padding:0px; clear:both;">
+    </div>
+    <!-- End Main Content -->
+  
+  <hr style="border:1px solid rgba(255,255,255,0.00); margin:0px; padding:0px; clear:both;">
+</div>
+
+<div class="footer">
+  <div class="footerBottom">
+    <span>Contact: <a href="mailto:icpc2016@gmail.com" target="_top" style="color:white; text-decoration:none;">icpc2016@gmail.com</a></span>
+    <span style="float:right;">ICPC 2016 &nbsp;&nbsp;&nbsp;&nbsp; May 16-17, 2016 &nbsp;&nbsp;&nbsp;&nbsp; Renaissance Austin Hotel 9721 Arboretum Boulevard Austin, Texas 78759 USA</span>
+  </div>
+</div>
+
+</body>
+</html>
