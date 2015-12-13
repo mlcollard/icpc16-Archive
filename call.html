@@ -32,6 +32,16 @@
         $( "#menu7" ).removeClass( "navToggle" );
         $( "#menu8" ).removeClass( "navToggle" );
       }
+      })
+      $("#moreDetails").click(function(){
+        $("#moreDetails").addClass("hidden");
+        $("#lessDetails").removeClass("hidden");
+        $("#detailContent").removeClass("hidden");
+      })
+      $("#lessDetails").click(function(){
+        $("#moreDetails").removeClass("hidden");
+        $("#lessDetails").addClass("hidden");
+        $("#detailContent").addClass("hidden");
       });
   });
   $(function(){
@@ -133,8 +143,12 @@
     margin-right: 90px;
     font-weight: 100;
   }
+  .container ul {
+    margin-top: -7px;
+    margin-left: 70px;
+  }
   .container li {
-    margin-top: 10px;
+    margin-top: 5px;
   }
   .container ul {
     list-style: none;
@@ -164,6 +178,19 @@
   }
   .heavy {
     font-weight: 500;
+  }
+  .hidden {
+    display: none;
+  }
+  #moreDetails {
+    font-weight: 900;
+    color:#956e73;
+    cursor: pointer;
+  }
+  #lessDetails {
+    font-weight: 900;
+    color:#956e73;
+    cursor: pointer;
   }
   @media only screen and (min-width: 715px) {
       /* For tablet portrait: */
@@ -264,7 +291,7 @@
 
         <p>The research track of ICPC 2016 promises to provide a quality forum for researchers and practitioners from academia, industry, and government to present and to discuss state-of-the-art results and best practices in the field of program comprehension. Submissions must not be longer than 10 pages for the main text, inclusive of figures, tables, appendices, and references. The best full research papers at ICPC 2016 will be invited to be revised and extended for consideration in a special issue of the Journal of Software: Evolution and Process (JSEP) by Wiley.</p>
 
-        <p><span class="heavy">Program Chairs:</span> Jonathan I. Maletic, Gabriele Bavota</p>
+        <p><span class="heavy">Program Chairs:</span> <a href="http://www.cs.kent.edu/~jmaletic/" target="_blank">Jonathan I. Maletic</a>, <a href="http://www.inf.unibz.it/~gbavota/" target="_blank">Gabriele Bavota</a></p>
 
         <p style="font-weight:500; margin-bottom:0;">Research Track Dates:</p>
         <p class="left">Abstract Submission:</p>
@@ -282,7 +309,7 @@
 
         <p>The Short Paper Track includes, but is not limited to, preliminary results, negative results, and experience reports from academia and industry. Submissions must not be longer than 4 pages for the main text, inclusive of figures, tables, appendices, and references.</p>
 
-        <p><span class="heavy">Program Chairs:</span> Emily Hill, David Lo</p>
+        <p><span class="heavy">Program Chairs:</span> <a href="http://users.drew.edu/ehill1/" target="_blank">Emily Hill</a>, <a href="http://www.mysmu.edu/faculty/davidlo/" target="_blank">David Lo</a></p>
 
         <p style="font-weight:500; margin-bottom:0;">Short Paper Track Dates:</p>
         <p class="left">Abstract Submission:</p>
@@ -298,9 +325,40 @@
         <h2>Tool Demonstration Track</h2>
         <hr style="margin: 0 60px 15px 60px;">
 
-        <p>The tool demonstration track provides an opportunity for live presentations of academic prototypes and industry tools. Tool demonstration proposals that complement full technical papers are especially encouraged. Submissions must not be longer than 2 pages for the main text, inclusive of figures, tables, appendices, and references.</p>
+        <p>The Tool Demonstration Track provides an opportunity for live presentations of academic prototypes and industry tools. This track is a good opportunity for you to have active and lively discussions about your work to further the visibility of your tools. A prize (to be announced) will be offered to the best tool demo paper and presentation. Submissions must be at most 3 pages, inclusive of figures, tables, appendices, and references. This means 2 pages for the text + 1 page for screenshots/appendix or related material.</p>
 
-        <p><span class="heavy">Program Chairs:</span> Bonita Sharif, Mircea Lungu</p>
+        <p>We highly encourage authors of other ICPC tracks to submit to the Tool Demonstration Track as well. </p>
+
+        <p id="moreDetails">Submission Guidelines & Review and Evaluation Criteria Details</p>
+        <p id="lessDetails" class="hidden">Less Details</p>
+
+        <span id="detailContent" class="hidden">
+        <p><span class="heavy">Submission Guidelines:</span><br/>
+        Submissions of proposals for tool demonstration must</p>
+
+        <ul>
+          <li>adhere to the conference proceedings format (proceedings style);</li>
+          <li>have a maximum of 3 pages including all text, figures and references (2 page submissions are also welcome).</li>
+          <li>have a download link with instructions on how to install the tool.</li>
+          <li>(optional) be accompanied by a 3-to-5 minute screencast, either with annotations or voice-over, that provides a concise version of the tool demo scenario.</li>
+        </ul>
+
+        <p>The tool can be an early research prototype or a polished product ready for deployment. Papers about commercial tools are allowed, as long as the guidelines described above are followed. The screencast, if submitted, should be posted on YouTube (private, not shared), and its URL should be clearly mentioned in the paper. Optionally, the video could be hosted on the tool’s website, in which case this website should be referenced in the paper.</p>
+
+        <p><span class="heavy">Review and Evaluation Criteria:</span><br/>
+        Each submission will be reviewed by the tool demonstration program committee. The committee will review each submission on its merits regarding the following criteria</p>
+
+        <ul>
+          <li>relevance to program comprehension</li>
+          <li>clear design goals/requirements</li>
+          <li>motivating the use cases of the tool and (if available) existing experiments or case studies using the tool</li>
+          <li>novelty of the tool</li>
+          <li>discussion of related work and tools</li>
+          <li>quality and clarity of the demonstration scenario, as shown in the screencast (if submitted).</li>
+        </ul>
+        </span>
+
+        <p><span class="heavy">Program Chairs:</span> <a href="http://www.csis.ysu.edu/~bsharif/" target="_blank">Bonita Sharif</a> (bsharif@ysu.edu), <a href="http://mir.lu/" target="_blank">Mircea Lungu</a> (m.f.lungu@rug.nl)</p>
 
         <p style="font-weight:500; margin-bottom:0;">Tool Demo Track Dates:</p>
         <p class="left">Abstract Submission:</p>
