@@ -43,6 +43,23 @@
       margin-left:15px;
     margin-right:15px;
   }
+  .box_Header h2 {
+    margin-left: 15px;
+    margin-right: 15px;
+    color:black;
+    font-weight:500;
+    text-align:left;
+    clear:both;
+    text-transform: uppercase;
+    margin-left: 0px;
+    color:#956e73;
+    text-transform: uppercase;
+  }
+  .box_Header a {
+    color:#FFF;
+    font-weight:100;
+    text-decoration: none;
+  }
   .container {
     color:black;
     background-color:rgba(255,255,255,0.8);
@@ -170,6 +187,7 @@
   #subMenu3 {
     text-align: center;
   }
+  
   .creditBox {
     width:100%;
     height: 50px;
@@ -221,7 +239,7 @@
       <div class="logo">
         <img src="./images/icpc_logo.png" width="210" height="50" alt="ICPC '16 Austin">
       </div>
-      <h2 class="logo_date">May 16<span style="font-size:12px;"> </span>-17</h2>
+      <h2 id="headerText">24<sup>TH</sup> IEEE INTERNATIONAL CONFERENCE ON PROGRAM COMPREHENSION</h2>
       <div class="social">
         <img style="float:right" src="./images/twitter.png" alt="Twitter">
         <img style="float:right; padding-right:10px;" src="./images/facebook.png" alt="Twitter">
@@ -254,29 +272,63 @@
     
       <!-- Sidebar -->
       <div class="sidebar">
-        <div style="width:60px; height:60px; margin:auto;">
-          <img src="./images/news.png" width="60" height="60" alt="Latest News"/>
-        </div>
-        <h2>Latest News</h2>
+
+        <h2 style="text-align:left; margin:0;">IMPORTANT DATES</h2>
+        <hr style="margin:0;">
+        <p class="track">Technical Research Track</p>
+        <p class="left">Abstract Submission:</p>
+        <p class="right">Feb 8, 2016</p>
+        <p class="left">Paper Submission:</p>
+        <p class="right">Feb 15, 2016</p>
+        <p class="left">Author Notification:</p>
+        <p class="right">Mar 21, 2016</p>
+        <p class="left">Camera Ready:</p>
+        <p class="right">Apr 18, 2016</p>
+        <hr class="clear">
+
+        <p class="track">Short Paper Track</p>
+        <p class="left">Abstract Submission:</p>
+        <p class="right">Mar 25, 2016</p>
+        <p class="left">Paper Submission:</p>
+        <p class="right">Mar 28, 2016</p>
+        <p class="left">Author Notification:</p>
+        <p class="right">Apr 14, 2016</p>
+        <p class="left">Camera Ready:</p>
+        <p class="right">Apr 25, 2016</p>
+        <hr class="clear">
+
+        <p class="track">Tool Demonstration Track</p>
+        <p class="left">Abstract Submission:</p>
+        <p class="right">Mar 25, 2016</p>
+        <p class="left">Paper Submission:</p>
+        <p class="right">Mar 28, 2016</p>
+        <p class="left">Author Notification:</p>
+        <p class="right">Apr 14, 2016</p>
+        <p class="left">Camera Ready:</p>
+        <p class="right">Apr 25, 2016</p>
+        <hr class="clear">
+
+        <h2 style="text-align:left; margin:15px 0 0 0;">LATEST NEWS</h2>
+        <hr>
         <div id="news"></div>
+
       </div>
       <!-- End Sidebar -->
 
-      <div class="box_Header">
-        <h2>24<sup>TH</sup> IEEE INTERNATIONAL CONFERENCE ON PROGRAM COMPREHENSION</h2>
-      </div>
-      
-      <div class="container">
-        
-        <div style="margin: 30px 60px 0px 60px;">
-          <div class="subMenu"><h2 id="subMenu1"><a href="organization.html" style="color:black;">ORGANIZING COMMITTEE</a></h2></div>
-          <div class="subMenu"><h2 id="subMenu2"><a href="organization-program.html">PROGRAM COMMITTEE</a></h2></div>
-          <div class="subMenu"><h2 id="subMenu3"><a href="organization-steering.html" style="color:black;">STEERING COMMITTEE</a></h2></div>
+      <div class="box_Header" >
+        <div style="margin: 0px 60px 0px 60px;">
+          <div class="subMenu"><h2 id="subMenu1"><a href="organization-program.html" style="font-weight:900; text-decoration: underline;">PROGRAM COMMITTEE</a></h2></div>
+          <div class="subMenu"><h2 id="subMenu2"><a href="organization.html">ORGANIZING COMMITTEE</a></h2></div>
+          <div class="subMenu"><h2 id="subMenu3"><a href="organization-steering.html">STEERING COMMITTEE</a></h2></div>
         </div>
+      </div>
 
-        <hr style="margin: 0 60px 15px 60px; clear:both;">
+      <div class="container">
 
-        <div style="margin: 0 60px 15px 60px;">
+        <div style="margin: 30px 60px 15px 60px;">
+
+          <h2 style="margin-bottom:0;" id="TechnicalResearchTrack"><a href="call.html#TechnicalResearchTrack">TECHNICAL RESEARCH TRACK</a></h2>
+          <hr style="margin: 0 0 15px 0;">
 
           <div class="creditBox">
             <p class="profileText">
@@ -629,8 +681,94 @@
             </p>
           </div>
 
-        </div>
+          <h2 style="margin-bottom:0;" id="ShortPaperTrack"><a href="call.html#ShortPaperTrack">SHORT PAPER TRACK</a></h2>
+          <hr style="margin: 0 0 15px 0;">
 
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.cs.wm.edu/~bdit/" target="_blank">
+              Bogdan Dit</a><br>
+              Boise State University, USA
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://latifaguerrouj.ca/" target="_blank">
+              Latifa Guerrouj</a><br>
+              McGill University, Canada
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.mysmu.edu/faculty/lxjiang/" target="_blank">
+              Lingxiao Jiang</a><br>
+              Singapore Management University, Singapore
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://posl.ait.kyushu-u.ac.jp/~kamei/" target="_blank">
+              Yasutaka Kamei</a><br>
+              Kyushu University, Japan
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://wwwen.uni.lu/snt/people/lucia_lucia" target="_blank">
+              Lucia Lucia</a><br>
+              University of Luxembourg, Luxembourg
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.ifi.uzh.ch/seal/people/panichella.html" target="_blank">
+              Sebastiano Panichella</a><br>
+              University of Zurich, Switzerland
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.se.fudan.edu.cn/pengxin" target="_blank">
+              Xin Peng</a><br>
+              Fudan University, China
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.shivanirao.info/" target="_blank">
+              Shivani Rao</a><br>
+              LinkedIn, USA
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://research.microsoft.com/en-us/people/suthumma/" target="_blank">
+              Suresh Thummalapenta</a><br>
+              Microsoft, USA
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://www.cs.utsa.edu/~xwang/" target="_blank">
+              Xiaoyin Wang</a><br>
+              University of Texas at San Antonio, USA
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="http://mypage.zju.edu.cn/en/xinxia" target="_blank">
+              Xin Xia</a><br>
+              Zhejiang University, China
+            </p>
+          </div>
+          <div class="creditBox">
+            <p class="profileText">
+              <a href="https://sites.google.com/site/hongyujohn/" target="_blank">
+              Hongyu Zhang</a><br>
+              Tsinghua University, China
+            </p>
+          </div>
+        </div>
       </div>
       
       <hr style="border:1px solid rgba(255,255,255,0.00); margin:0px; padding:0px; clear:both;">

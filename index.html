@@ -60,7 +60,7 @@
   .imageDisplay {
     width:100%; 
     height:inherit; 
-    margin-bottom:10px;
+    margin-bottom:0px;
   }
   .imageText {
     font-weight:bold;
@@ -98,11 +98,8 @@
     width:100%;
     float:left;
     margin-bottom:10px;
-  }
-  .box_C h2 {
-    text-align:left;
-    margin:15px 15px 0px 15px;
-    clear:both;
+    background-color:rgba(255,255,255,0.2);
+    display:block;
   }
   .box_C .left {
     float: left;
@@ -141,33 +138,33 @@
   @media only screen and (min-width: 715px) {
     /* For tablet portrait: */
     .container {width:455px}
-    .imageDisplay {width:100%; margin-left:0px; height:auto;}
+    .imageDisplay {width:100%; margin-left:0px; margin-bottom:10px; height:auto;}
     .box_Header {width:100%;}
     .box_A {width:100%;}
     .box_B {width:100%;}
-    .box_C {width:100%;}
+    .box_C {display:none}
     .map {float:none; margin:auto}
   }
   @media only screen and (min-width: 920px) {
     /* For tablet landscape: */
     .container {width:670px}
-    .imageDisplay {width:660px;   height:285px; margin-left:10px;}
+    .imageDisplay {width:660px; height:285px; margin-left:10px; margin-bottom:10px;}
     .box_Header {width:660px; margin-left: 10px;}
     .box_Header h2 {margin-left: 0px; margin-right: 0px;}
     .box_A {width:325px; height:470px; margin-left:10px;}
     .box_B {width:660px; margin-left:10px;}
-    .box_C {width:660px; height:400px; margin-left:10px;}
+    .box_C {display:none}
     .map {float:left; margin:inherit; margin-right:15px;}
   }
   @media only screen and (min-width: 1190px) {
     /* For desktop: */
     .container {width:940px}
-    .imageDisplay {width:930px;   height:400px;  margin-left:10px;}
+    .imageDisplay {width:930px; height:400px; margin-left:10px; margin-bottom:10px;}
     .imageText {width:930px; display: inline;}
     .box_Header {width:930px; margin-left: 10px;}
     .box_A {width:303px; height:470px; margin-left:10px;}
     .box_B {width:303px; height:470px; margin-left:10px;}
-    .box_C {width:616px; height:400px; margin-left:10px;}
+    .box_C {display:none}
     .map {float:none; margin:auto}
   }
 </style>
@@ -186,6 +183,7 @@
       <div class="logo">
         <img src="./images/icpc_logo.png" width="210" height="50" alt="ICPC '16 Austin">
       </div>
+      <h2 id="headerText">24<sup>TH</sup> IEEE INTERNATIONAL CONFERENCE ON PROGRAM COMPREHENSION</h2>
       <div class="social">
         <img style="float:right" src="./images/twitter.png" alt="Twitter">
         <img style="float:right; padding-right:10px;" src="./images/facebook.png" alt="Twitter">
@@ -202,7 +200,7 @@
       </div>
       <a href="#"><div class="navItem" style="color:#FFF; background-color:rgba(255,255,255,0.2); border-right:none;" id="menu0"><div style="width:44px; margin:auto;">HOME</div></div></a>
       <a href="call.html"><div class="navItem" id="menu1"><div style="width:149px; margin:auto;">CALL FOR PAPERS</div></div></a>
-      <a href="organization.html"><div class="navItem" id="menu4"><div style="width:102px; margin:auto;">ORGANIZATION</div></div></a>
+      <a href="organization-program.html"><div class="navItem" id="menu4"><div style="width:102px; margin:auto;">ORGANIZATION</div></div></a>
       <a href="http://2016.icse.cs.txstate.edu/venue" target="_blank"><div class="navItem" id="menu7"><div style="width:46px; margin:auto;">VENUE</div></div></a>
       <a href="http://2016.icse.cs.txstate.edu" target="_blank"><div class="navItem" id="menu8"><div style="width:52px; margin:auto;">AUSTIN</div></div></a>
       <div class="spacer" id="menu6"></div>
@@ -218,11 +216,46 @@
     
       <!-- Sidebar -->
       <div class="sidebar">
-        <div style="width:60px; height:60px; margin:auto;">
-          <img src="./images/news.png" width="60" height="60" alt="Latest News"/>
-        </div>
-        <h2>Latest News</h2>
+
+        <h2 style="text-align:left; margin:0;">IMPORTANT DATES</h2>
+        <hr style="margin:0;">
+        <p class="track">Technical Research Track</p>
+        <p class="left">Abstract Submission:</p>
+        <p class="right">Feb 8, 2016</p>
+        <p class="left">Paper Submission:</p>
+        <p class="right">Feb 15, 2016</p>
+        <p class="left">Author Notification:</p>
+        <p class="right">Mar 21, 2016</p>
+        <p class="left">Camera Ready:</p>
+        <p class="right">Apr 18, 2016</p>
+        <hr class="clear">
+
+        <p class="track">Short Paper Track</p>
+        <p class="left">Abstract Submission:</p>
+        <p class="right">Mar 25, 2016</p>
+        <p class="left">Paper Submission:</p>
+        <p class="right">Mar 28, 2016</p>
+        <p class="left">Author Notification:</p>
+        <p class="right">Apr 14, 2016</p>
+        <p class="left">Camera Ready:</p>
+        <p class="right">Apr 25, 2016</p>
+        <hr class="clear">
+
+        <p class="track">Tool Demonstration Track</p>
+        <p class="left">Abstract Submission:</p>
+        <p class="right">Mar 25, 2016</p>
+        <p class="left">Paper Submission:</p>
+        <p class="right">Mar 28, 2016</p>
+        <p class="left">Author Notification:</p>
+        <p class="right">Apr 14, 2016</p>
+        <p class="left">Camera Ready:</p>
+        <p class="right">Apr 25, 2016</p>
+        <hr class="clear">
+
+        <h2 style="text-align:left; margin:15px 0 0 0;">LATEST NEWS</h2>
+        <hr>
         <div id="news"></div>
+
       </div>
       <!-- End Sidebar -->
       
@@ -237,10 +270,6 @@
           </span>
           <img src="./images/city.jpg" alt="City" style="margin:0px; width:100%; -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;" unselectable="on" onselectstart="return false;" onmousedown="return false;"/>
         </div>
-
-        <div class="box_Header">
-          <h2>24<sup>TH</sup> IEEE INTERNATIONAL CONFERENCE ON PROGRAM COMPREHENSION</h2>
-        </div>
       
         <div class="box_A">
           <h2>WELCOME</h2>
@@ -248,6 +277,45 @@
           <p>Welcome to the web site of the 24<sup>th</sup> International Conference on Program Comprehension.</p>
           <p>The International Conference on Program Comprehension (ICPC) is the principal venue for works in the area of program comprehension, and it promises to provide a quality forum for researchers and practitioners from academia, industry, and government to present and to discuss state-of-the-art results and best practices in the field of program comprehension.</p>
           <p>Research papers will be presented in both a Technical Research Track and a Short Paper Track. Live presentations of academic prototypes and industry tools will be presented in an interactive Tool Demo Track. Details, including Topics of Interest, can be found in the <a href="call.html">Call For Papers.</a></p>
+        </div>
+
+        <div class="box_C">
+          <h2>IMPORTANT DATES</h2>
+          <hr>
+          <div style="margin:auto; margin-bottom:15px; max-width:300px;">
+            <p class="track">Technical Research Track</p>
+            <p class="left">Abstract Submission:</p>
+            <p class="right">Feb 8, 2016</p>
+            <p class="left">Paper Submission:</p>
+            <p class="right">Feb 15, 2016</p>
+            <p class="left">Author Notification:</p>
+            <p class="right">Mar 21, 2016</p>
+            <p class="left">Camera Ready:</p>
+            <p class="right">Apr 18, 2016</p>
+            <hr class="clear">
+
+            <p class="track">Short Paper Track</p>
+            <p class="left">Abstract Submission:</p>
+            <p class="right">Mar 25, 2016</p>
+            <p class="left">Paper Submission:</p>
+            <p class="right">Mar 28, 2016</p>
+            <p class="left">Author Notification:</p>
+            <p class="right">Apr 14, 2016</p>
+            <p class="left">Camera Ready:</p>
+            <p class="right">Apr 25, 2016</p>
+            <hr class="clear">
+
+            <p class="track">Tool Demonstration Track</p>
+            <p class="left">Abstract Submission:</p>
+            <p class="right">Mar 25, 2016</p>
+            <p class="left">Paper Submission:</p>
+            <p class="right">Mar 28, 2016</p>
+            <p class="left">Author Notification:</p>
+            <p class="right">Apr 14, 2016</p>
+            <p class="left">Camera Ready:</p>
+            <p class="right">Apr 25, 2016</p>
+            <hr class="clear">
+          </div>
         </div>
         
         <div class="box_A">
@@ -268,45 +336,6 @@
             </div>
           </a>
           <p>ICPC 2016 will be held at the Rennaisance Austin Hotel in the lovely Austin Arboretum Area on the northwestern edge of Austin proper. Known as “new Austin,” the Austin Arboretum Area has both a business and a residential side. But the area boasts quaint neighborhoods, hike-and-bike trails, and pet-friendly parks. </p>
-        </div>
-      
-        <div class="box_C">
-          <h2 style="margin-bottom:15px">IMPORTANT DATES</h2>
-          <hr/>
-          
-          <h2>Technical Research Track</h2>
-          <p class="left">Abstract Submission:</p>
-          <p class="right">Feb 8, 2016</p>
-          <p class="left">Paper Submission:</p>
-          <p class="right">Feb 15, 2016</p>
-          <p class="left">Author Notification:</p>
-          <p class="right">Mar 21, 2016</p>
-          <p class="left">Camera Ready:</p>
-          <p class="right">Apr 18, 2016</p>
-          <hr class="invisible">
-
-          <h2>Short Paper Track</h2>
-          <p class="left">Abstract Submission:</p>
-          <p class="right">Mar 25, 2016</p>
-          <p class="left">Paper Submission:</p>
-          <p class="right">Mar 28, 2016</p>
-          <p class="left">Author Notification:</p>
-          <p class="right">Apr 14, 2016</p>
-          <p class="left">Camera Ready:</p>
-          <p class="right">Apr 25, 2016</p>
-          <hr class="invisible">
-          
-          <h2>Tool Demonstration Track</h2>
-          <p class="left">Abstract Submission:</p>
-          <p class="right">Mar 25, 2016</p>
-          <p class="left">Paper Submission:</p>
-          <p class="right">Mar 28, 2016</p>
-          <p class="left">Author Notification:</p>
-          <p class="right">Apr 14, 2016</p>
-          <p class="left">Camera Ready:</p>
-          <p class="right">Apr 25, 2016</p>
-          <hr class="invisible">
-          
         </div>
         
       </div>

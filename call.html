@@ -135,7 +135,7 @@
     margin-left: 60px;
     margin-right: 60px;
     margin: 30px 60px 0 60px;
-    color:#956e73;
+    color:#000;
     text-transform: uppercase;
   }
   .container p, ul {
@@ -217,7 +217,7 @@
       <div class="logo">
         <img src="./images/icpc_logo.png" width="210" height="50" alt="ICPC '16 Austin">
       </div>
-      <h2 class="logo_date">May 16<span style="font-size:12px;"> </span>-17</h2>
+      <h2 id="headerText">24<sup>TH</sup> IEEE INTERNATIONAL CONFERENCE ON PROGRAM COMPREHENSION</h2>
       <div class="social">
         <img style="float:right" src="./images/twitter.png" alt="Twitter">
         <img style="float:right; padding-right:10px;" src="./images/facebook.png" alt="Twitter">
@@ -234,7 +234,7 @@
       </div>
       <a href="index.html"><div class="navItem" id="menu0"><div style="width:44px; margin:auto;">HOME</div></div></a>
       <a href="#"><div class="navItem" style="color:#FFF; background-color:rgba(255,255,255,0.2); border-right:none; border-left:none;" id="menu1"><div style="width:149px; margin:auto;">CALL FOR PAPERS</div></div></a>
-      <a href="organization.html"><div class="navItem" id="menu4"><div style="width:102px; margin:auto;">ORGANIZATION</div></div></a>
+      <a href="organization-program.html"><div class="navItem" id="menu4"><div style="width:102px; margin:auto;">ORGANIZATION</div></div></a>
       <a href="http://2016.icse.cs.txstate.edu/venue" target="_blank"><div class="navItem" id="menu7"><div style="width:46px; margin:auto;">VENUE</div></div></a>
       <a href="http://2016.icse.cs.txstate.edu" target="_blank"><div class="navItem" id="menu8"><div style="width:52px; margin:auto;">AUSTIN</div></div></a>
       <div class="spacer" id="menu6"></div>
@@ -250,22 +250,53 @@
     
       <!-- Sidebar -->
       <div class="sidebar">
-        <div style="width:60px; height:60px; margin:auto;">
-          <img src="./images/news.png" width="60" height="60" alt="Latest News"/>
-        </div>
-        <h2>Latest News</h2>
+
+        <h2 style="text-align:left; margin:0;">IMPORTANT DATES</h2>
+        <hr style="margin:0;">
+        <p class="track">Technical Research Track</p>
+        <p class="left">Abstract Submission:</p>
+        <p class="right">Feb 8, 2016</p>
+        <p class="left">Paper Submission:</p>
+        <p class="right">Feb 15, 2016</p>
+        <p class="left">Author Notification:</p>
+        <p class="right">Mar 21, 2016</p>
+        <p class="left">Camera Ready:</p>
+        <p class="right">Apr 18, 2016</p>
+        <hr class="clear">
+
+        <p class="track">Short Paper Track</p>
+        <p class="left">Abstract Submission:</p>
+        <p class="right">Mar 25, 2016</p>
+        <p class="left">Paper Submission:</p>
+        <p class="right">Mar 28, 2016</p>
+        <p class="left">Author Notification:</p>
+        <p class="right">Apr 14, 2016</p>
+        <p class="left">Camera Ready:</p>
+        <p class="right">Apr 25, 2016</p>
+        <hr class="clear">
+
+        <p class="track">Tool Demonstration Track</p>
+        <p class="left">Abstract Submission:</p>
+        <p class="right">Mar 25, 2016</p>
+        <p class="left">Paper Submission:</p>
+        <p class="right">Mar 28, 2016</p>
+        <p class="left">Author Notification:</p>
+        <p class="right">Apr 14, 2016</p>
+        <p class="left">Camera Ready:</p>
+        <p class="right">Apr 25, 2016</p>
+        <hr class="clear">
+
+        <h2 style="text-align:left; margin:15px 0 0 0;">LATEST NEWS</h2>
+        <hr>
         <div id="news"></div>
+
       </div>
       <!-- End Sidebar -->
-      
-      <div class="box_Header">
-          <h2>24<sup>TH</sup> IEEE INTERNATIONAL CONFERENCE ON PROGRAM COMPREHENSION</h2>
-      </div>
 
       <div class="container">
         
         <a href="images/CFP_Flyer.pdf" target="_blank">
-          <h2 style="float:left; margin-right:0">Call For Papers</h2>
+          <h2 style="float:left; margin-right:0; color:#956e73; font-weight:900;">Call For Papers</h2>
           <img src="images/pdf.png" alt="PDF" style="margin:32px 0 0 5px;">
         </a>
         <hr style="margin: 0 60px 15px 60px; clear:both;">
@@ -286,7 +317,7 @@
           <li>Issues and case studies in the transfer of program comprehension technology to industry.</li>
         </ul>
 
-        <h2>Technical Research Track</h2>
+        <h2 id="TechnicalResearchTrack">Technical Research Track</h2>
         <hr style="margin: 0 60px 15px 60px;">
 
         <p>The research track of ICPC 2016 promises to provide a quality forum for researchers and practitioners from academia, industry, and government to present and to discuss state-of-the-art results and best practices in the field of program comprehension. Submissions must not be longer than 10 pages for the main text, inclusive of figures, tables, appendices, and references. The best full research papers at ICPC 2016 will be invited to be revised and extended for consideration in a special issue of the Journal of Software: Evolution and Process (JSEP) by Wiley.</p>
@@ -304,12 +335,14 @@
         <p class="right">Apr 18, 2016</p>
         <hr class="invisible">
 
-        <h2>Short Paper Track</h2>
+        <h2 id="ShortPaperTrack">Short Paper Track</h2>
         <hr style="margin: 0 60px 15px 60px;">
 
         <p>The Short Paper Track includes, but is not limited to, preliminary results, negative results, and experience reports from academia and industry. Submissions must not be longer than 4 pages for the main text, inclusive of figures, tables, appendices, and references.</p>
 
         <p><span class="heavy">Program Chairs:</span> <a href="http://users.drew.edu/ehill1/" target="_blank">Emily Hill</a>, <a href="http://www.mysmu.edu/faculty/davidlo/" target="_blank">David Lo</a></p>
+
+        <p><a href="organization-program.html#ShortPaperTrack">Program Committee</a></p>
 
         <p style="font-weight:500; margin-bottom:0;">Short Paper Track Dates:</p>
         <p class="left">Abstract Submission:</p>
