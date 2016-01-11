@@ -217,10 +217,23 @@ h3 {
     height:80px;
     color:black;
     background-color:#ebe5e5;
-    margin:5px 0 5px 0;
+    margin:0px;
     text-align:center;
     line-height:120px;
     float:left;
+}
+.sponsorTitle {
+    width:100%;
+    float:none;
+}
+.sponsorH2 {
+    text-align:center; margin:10px;
+}
+.sponsorContainer {
+    text-align:center;
+    margin:0px;
+    width:100%;
+    float:none;
 }
 .footerBottom {
     width:100%;
@@ -256,7 +269,10 @@ h3 {
     .container {width:455px}
     .footer {max-width:735px;}
     .sponsors {width:704px;}
-    .sponsorBox {width:342px; margin:5px;}
+    .sponsorBox {width:352px; margin:0px;}
+    .sponsorTitle{width:245px;float:left;}
+    .sponsorH2{text-align:left; margin-left:5px; margin-top:0px;}
+    .sponsorContainer {width:930px;float:left;}
     .footerBottom {width:695px; display:block; font-size:10px;}
     .spacer {width:116px; display:block;}
     #headerText {text-align:center; margin:0px; display:inherit;}
@@ -278,7 +294,10 @@ h3 {
     .container {width:660px}
     .footer {max-width:980px;}
     .sponsors {width:912px;}
-    .sponsorBox {width:218px; margin:5px;}
+    .sponsorBox {width:228px; margin:0px;}
+    .sponsorTitle{width:245px;float:left;}
+    .sponsorH2{text-align:left; margin-left:5px; margin-top:0px;}
+    .sponsorContainer {width:930px;float:left;}
     .footerBottom {width:900px; display:block; font-size:12px;}
     .spacer {width:183px; display:block;}
     #headerText {text-align:left; margin:10px; display: inherit;}
@@ -301,6 +320,9 @@ h3 {
     .footer {max-width:1330px;}
     .sponsors {width:1180px;}
     .sponsorBox {width:25%; margin:0px;}
+    .sponsorTitle{width:245px;float:left;}
+    .sponsorH2{text-align:left; margin-left:5px; margin-top:30px;}
+    .sponsorContainer {width:930px;float:left;}
     .footerBottom {width:1170px; display:block; font-size:15px;}
     .spacer {width:273px; display:block;}
     #headerText {text-align:left; margin:10px; display: inherit;}
