@@ -204,7 +204,7 @@ h3 {
 }
 .footer {
     width:100%;
-    padding:50px 0 50px 0;
+    padding:10px 0 50px 0;
     margin:auto;
     background-color:rgba(204,204,204,0.20);
 }
@@ -214,9 +214,9 @@ h3 {
 }
 .sponsorBox {
     width:100%;
-    height:120px;
+    height:80px;
     color:black;
-    background-color:white;
+    background-color:#ebe5e5;
     margin:5px 0 5px 0;
     text-align:center;
     line-height:120px;
@@ -300,7 +300,7 @@ h3 {
     .container {width:930px}
     .footer {max-width:1330px;}
     .sponsors {width:1180px;}
-    .sponsorBox {width:285px; margin:5px;}
+    .sponsorBox {width:25%; margin:0px;}
     .footerBottom {width:1170px; display:block; font-size:15px;}
     .spacer {width:273px; display:block;}
     #headerText {text-align:left; margin:10px; display: inherit;}
