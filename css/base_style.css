@@ -213,7 +213,7 @@ h3 {
     margin:auto;
 }
 .sponsorBox {
-    width:100%;
+    width:50%;
     height:80px;
     color:black;
     background-color:#ebe5e5;
@@ -269,10 +269,10 @@ h3 {
     .container {width:455px}
     .footer {max-width:735px;}
     .sponsors {width:704px;}
-    .sponsorBox {width:352px; margin:0px;}
+    .sponsorBox {width:25%; margin:0px;}
     .sponsorTitle{width:245px;float:left;}
     .sponsorH2{text-align:left; margin-left:5px; margin-top:0px;}
-    .sponsorContainer {width:930px;float:left;}
+    .sponsorContainer {width:100%;float:left;}
     .footerBottom {width:695px; display:block; font-size:10px;}
     .spacer {width:116px; display:block;}
     #headerText {text-align:center; margin:0px; display:inherit;}
@@ -294,10 +294,10 @@ h3 {
     .container {width:660px}
     .footer {max-width:980px;}
     .sponsors {width:912px;}
-    .sponsorBox {width:228px; margin:0px;}
+    .sponsorBox {width:25%; margin:0px;}
     .sponsorTitle{width:245px;float:left;}
-    .sponsorH2{text-align:left; margin-left:5px; margin-top:0px;}
-    .sponsorContainer {width:930px;float:left;}
+    .sponsorH2{text-align:left; margin-left:5px; margin-top:30px;}
+    .sponsorContainer {width:660px;float:left;}
     .footerBottom {width:900px; display:block; font-size:12px;}
     .spacer {width:183px; display:block;}
     #headerText {text-align:left; margin:10px; display: inherit;}
