@@ -168,6 +168,14 @@ h3 {
 .sidebar hr {
     margin:0;
 }
+#newsBox {
+    float: left;
+    clear: both;
+    background-color:rgba(255,255,255,0.2);
+    margin-top: 15px;
+    padding: 0 10px 15px 10px;
+}
+
 .clear {
     margin:0; 
     clear:both; 
@@ -274,7 +282,7 @@ h3 {
     .sponsorH2{text-align:left; margin-left:5px; margin-top:0px;}
     .sponsorContainer {width:100%;float:left;}
     .footerBottom {width:695px; display:block; font-size:10px;}
-    .spacer {width:116px; display:block;}
+    .spacer {width:8px; display:block;}
     #headerText {text-align:center; margin:0px; display:inherit;}
 }
 @media only screen and (min-width: 920px) {
@@ -299,7 +307,7 @@ h3 {
     .sponsorH2{text-align:left; margin-left:5px; margin-top:30px;}
     .sponsorContainer {width:660px;float:left;}
     .footerBottom {width:900px; display:block; font-size:12px;}
-    .spacer {width:183px; display:block;}
+    .spacer {width:52px; display:block;}
     #headerText {text-align:left; margin:10px; display: inherit;}
 }
 @media only screen and (min-width: 1190px) {
@@ -324,7 +332,7 @@ h3 {
     .sponsorH2{text-align:left; margin-left:5px; margin-top:30px;}
     .sponsorContainer {width:930px;float:left;}
     .footerBottom {width:1170px; display:block; font-size:15px;}
-    .spacer {width:273px; display:block;}
+    .spacer {width:112px; display:block;}
     #headerText {text-align:left; margin:10px; display: inherit;}
     /*
     .navExpand {display:none;}
