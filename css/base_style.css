@@ -44,6 +44,9 @@ h3 {
     text-align:center;
     margin:10px;
 }
+a {
+    color:white;
+  }
 .page {
     max-width:1330px;
     margin:auto;
@@ -168,14 +171,34 @@ h3 {
 .sidebar hr {
     margin:0;
 }
+#twitter {
+    background:rgba(255,255,255,0.2); 
+    height:471px; 
+    overflow:hidden; 
+    position:relative; 
+    z-index: 0;
+}
+#twitter hr {
+    margin-left: 10px;
+    margin-right: 10px;
+}
 #newsBox {
     float: left;
     clear: both;
     background-color:rgba(255,255,255,0.2);
     margin-top: 15px;
-    padding: 0 10px 15px 10px;
 }
-
+#newsBox hr {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#newsBox .date {
+    font-size: 15px;
+    margin:10px 0 0 10px;
+}
+#newsBox .text {
+    margin:0 10px 0 20px;
+}
 .clear {
     margin:0; 
     clear:both; 

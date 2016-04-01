@@ -9,38 +9,34 @@
 <script>
   $(document).ready(function(){
     var n = true;
-      $("#expand").click(function(){
-      if (n) {
-        n = false;
-        $( "#menu0" ).addClass( "navToggle" );
-        $( "#menu1" ).addClass( "navToggle" );
-        $( "#menu2" ).addClass( "navToggle" );
-        $( "#menu3" ).addClass( "navToggle" );
-        $( "#menu4" ).addClass( "navToggle" );
-        $( "#menu5" ).addClass( "navToggle" );
-        $( "#menu6" ).addClass( "navToggle" );
-        $( "#menu7" ).addClass( "navToggle" );
-        $( "#menu8" ).addClass( "navToggle" );
-      } else {
-        n = true;
-        $( "#menu0" ).removeClass( "navToggle" );
-        $( "#menu1" ).removeClass( "navToggle" );
-        $( "#menu2" ).removeClass( "navToggle" );
-        $( "#menu3" ).removeClass( "navToggle" );
-        $( "#menu4" ).removeClass( "navToggle" );
-        $( "#menu5" ).removeClass( "navToggle" );
-        $( "#menu6" ).removeClass( "navToggle" );
-        $( "#menu7" ).removeClass( "navToggle" );
-        $( "#menu8" ).removeClass( "navToggle" );
-      }
-      });
+    $("#news").load("news.html"); 
+    $("#sponsors").load("sponsors.html"); 
+    $("#expand").click(function(){
+    if (n) {
+      n = false;
+      $( "#menu0" ).addClass( "navToggle" );
+      $( "#menu1" ).addClass( "navToggle" );
+      $( "#menu2" ).addClass( "navToggle" );
+      $( "#menu3" ).addClass( "navToggle" );
+      $( "#menu4" ).addClass( "navToggle" );
+      $( "#menu5" ).addClass( "navToggle" );
+      $( "#menu6" ).addClass( "navToggle" );
+      $( "#menu7" ).addClass( "navToggle" );
+      $( "#menu8" ).addClass( "navToggle" );
+    } else {
+      n = true;
+      $( "#menu0" ).removeClass( "navToggle" );
+      $( "#menu1" ).removeClass( "navToggle" );
+      $( "#menu2" ).removeClass( "navToggle" );
+      $( "#menu3" ).removeClass( "navToggle" );
+      $( "#menu4" ).removeClass( "navToggle" );
+      $( "#menu5" ).removeClass( "navToggle" );
+      $( "#menu6" ).removeClass( "navToggle" );
+      $( "#menu7" ).removeClass( "navToggle" );
+      $( "#menu8" ).removeClass( "navToggle" );
+    }
+    });
   });
-  $(function(){
-      $("#news").load("news.html"); 
-    });
-  $(function(){
-      $("#sponsors").load("sponsors.html"); 
-    });
 </script>
 <style type="text/css">
   p, hr {
@@ -201,6 +197,9 @@
     margin:0;
     float: left;
   }
+  #loneCredit {
+    margin-top:0px;
+  }
   @media only screen and (min-width: 715px) {
       /* For tablet portrait: */
       .profileRow {width:100%;}
@@ -210,6 +209,7 @@
       #subMenu3 {text-align: center;}
       .subMenu {width:100%;}
       .creditBox {width:100%;}
+      #loneCredit {margin-top:0px;}
   }
   @media only screen and (min-width: 920px) {
       /* For tablet landscape: */
@@ -220,6 +220,7 @@
       #subMenu3 {text-align: center;}
       .subMenu {width:100%;}
       .creditBox {width:50%;}
+      #loneCredit {margin-top:-16px;}
   }
   @media only screen and (min-width: 1190px) {
       /* For desktop: */
@@ -230,6 +231,7 @@
       #subMenu3 {text-align: right;}
       .subMenu {width:33.3%;}
       .creditBox {width:50%;}
+      #loneCredit {margin-top:-16px;}
   }
 </style>
 </head>
@@ -295,9 +297,9 @@
 
         <p class="track">Short Paper Track</p>
         <p class="left">Abstract Submission:</p>
-        <p class="right">Mar 25, 2016</p>
+        <p class="right" style="text-decoration:line-through;">Mar 25, 2016</p>
         <p class="left">Paper Submission:</p>
-        <p class="right">Mar 28, 2016</p>
+        <p class="right" style="text-decoration:line-through;">Mar 28, 2016</p>
         <p class="left">Author Notification:</p>
         <p class="right">Apr 14, 2016</p>
         <p class="left">Camera Ready:</p>
@@ -306,19 +308,27 @@
 
         <p class="track">Tool Demonstration Track</p>
         <p class="left">Abstract Submission:</p>
-        <p class="right">Mar 25, 2016</p>
+        <p class="right" style="text-decoration:line-through;">Mar 25, 2016</p>
         <p class="left">Paper Submission:</p>
-        <p class="right">Mar 28, 2016</p>
+        <p class="right" style="text-decoration:line-through;">Mar 28, 2016</p>
         <p class="left">Author Notification:</p>
         <p class="right">Apr 14, 2016</p>
         <p class="left">Camera Ready:</p>
         <p class="right">Apr 25, 2016</p>
         <hr class="clear">
 
+        <br> 
+
+        <div id="twitter">
+          <h2 style="text-align:center;">TWEETS <a style="text-decoration:none;" href="https://twitter.com/icpc16" target="_blank">@icpc16</a></h2>
+          <hr>
+          <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/icpc16" data-widget-id="715744792026685440" data-chrome="noheader nofooter noborders transparent">Tweets by @icpc16</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+
         <div id="newsBox">
           <h2 style="text-align:center;">LATEST NEWS</h2>
           <hr>
-          <div id="news"></div>
+          <div id="news" style="height:400px; overflow:scroll;"></div>
         </div>
 
       </div>
@@ -723,7 +733,7 @@
               </p>
             </div>
           </div>
-          <div class="creditRow">
+          <div class="creditRow" id="loneCredit">
             <div class="creditBox">
               <p class="profileText">
                 <a href="http://www.st.ewi.tudelft.nl/~zaidman" target="_blank">

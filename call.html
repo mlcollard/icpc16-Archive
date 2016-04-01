@@ -9,48 +9,44 @@
 <script>
   $(document).ready(function(){
     var n = true;
-      $("#expand").click(function(){
-      if (n) {
-        n = false;
-        $( "#menu0" ).addClass( "navToggle" );
-        $( "#menu1" ).addClass( "navToggle" );
-        $( "#menu2" ).addClass( "navToggle" );
-        $( "#menu3" ).addClass( "navToggle" );
-        $( "#menu4" ).addClass( "navToggle" );
-        $( "#menu5" ).addClass( "navToggle" );
-        $( "#menu6" ).addClass( "navToggle" );
-        $( "#menu7" ).addClass( "navToggle" );
-        $( "#menu8" ).addClass( "navToggle" );
-      } else {
-        n = true;
-        $( "#menu0" ).removeClass( "navToggle" );
-        $( "#menu1" ).removeClass( "navToggle" );
-        $( "#menu2" ).removeClass( "navToggle" );
-        $( "#menu3" ).removeClass( "navToggle" );
-        $( "#menu4" ).removeClass( "navToggle" );
-        $( "#menu5" ).removeClass( "navToggle" );
-        $( "#menu6" ).removeClass( "navToggle" );
-        $( "#menu7" ).removeClass( "navToggle" );
-        $( "#menu8" ).removeClass( "navToggle" );
-      }
-      })
-      $("#moreDetails").click(function(){
-        $("#moreDetails").addClass("hidden");
-        $("#lessDetails").removeClass("hidden");
-        $("#detailContent").removeClass("hidden");
-      })
-      $("#lessDetails").click(function(){
-        $("#moreDetails").removeClass("hidden");
-        $("#lessDetails").addClass("hidden");
-        $("#detailContent").addClass("hidden");
-      });
+    $("#news").load("news.html"); 
+    $("#sponsors").load("sponsors.html"); 
+    $("#expand").click(function(){
+    if (n) {
+      n = false;
+      $( "#menu0" ).addClass( "navToggle" );
+      $( "#menu1" ).addClass( "navToggle" );
+      $( "#menu2" ).addClass( "navToggle" );
+      $( "#menu3" ).addClass( "navToggle" );
+      $( "#menu4" ).addClass( "navToggle" );
+      $( "#menu5" ).addClass( "navToggle" );
+      $( "#menu6" ).addClass( "navToggle" );
+      $( "#menu7" ).addClass( "navToggle" );
+      $( "#menu8" ).addClass( "navToggle" );
+    } else {
+      n = true;
+      $( "#menu0" ).removeClass( "navToggle" );
+      $( "#menu1" ).removeClass( "navToggle" );
+      $( "#menu2" ).removeClass( "navToggle" );
+      $( "#menu3" ).removeClass( "navToggle" );
+      $( "#menu4" ).removeClass( "navToggle" );
+      $( "#menu5" ).removeClass( "navToggle" );
+      $( "#menu6" ).removeClass( "navToggle" );
+      $( "#menu7" ).removeClass( "navToggle" );
+      $( "#menu8" ).removeClass( "navToggle" );
+    }
+    })
+    $("#moreDetails").click(function(){
+      $("#moreDetails").addClass("hidden");
+      $("#lessDetails").removeClass("hidden");
+      $("#detailContent").removeClass("hidden");
+    })
+    $("#lessDetails").click(function(){
+      $("#moreDetails").removeClass("hidden");
+      $("#lessDetails").addClass("hidden");
+      $("#detailContent").addClass("hidden");
+    });
   });
-  $(function(){
-      $("#news").load("news.html"); 
-    });
-  $(function(){
-      $("#sponsors").load("sponsors.html"); 
-    });
 </script>
 <style type="text/css">
   p, hr {
@@ -269,9 +265,9 @@
 
         <p class="track">Short Paper Track</p>
         <p class="left">Abstract Submission:</p>
-        <p class="right">Mar 25, 2016</p>
+        <p class="right" style="text-decoration:line-through;">Mar 25, 2016</p>
         <p class="left">Paper Submission:</p>
-        <p class="right">Mar 28, 2016</p>
+        <p class="right" style="text-decoration:line-through;">Mar 28, 2016</p>
         <p class="left">Author Notification:</p>
         <p class="right">Apr 14, 2016</p>
         <p class="left">Camera Ready:</p>
@@ -280,19 +276,27 @@
 
         <p class="track">Tool Demonstration Track</p>
         <p class="left">Abstract Submission:</p>
-        <p class="right">Mar 25, 2016</p>
+        <p class="right" style="text-decoration:line-through;">Mar 25, 2016</p>
         <p class="left">Paper Submission:</p>
-        <p class="right">Mar 28, 2016</p>
+        <p class="right" style="text-decoration:line-through;">Mar 28, 2016</p>
         <p class="left">Author Notification:</p>
         <p class="right">Apr 14, 2016</p>
         <p class="left">Camera Ready:</p>
         <p class="right">Apr 25, 2016</p>
         <hr class="clear">
 
+        <br> 
+
+        <div id="twitter">
+          <h2 style="text-align:center;">TWEETS <a style="text-decoration:none;" href="https://twitter.com/icpc16" target="_blank">@icpc16</a></h2>
+          <hr>
+          <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/icpc16" data-widget-id="715744792026685440" data-chrome="noheader nofooter noborders transparent">Tweets by @icpc16</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+
         <div id="newsBox">
           <h2 style="text-align:center;">LATEST NEWS</h2>
           <hr>
-          <div id="news"></div>
+          <div id="news" style="height:400px; overflow:scroll;"></div>
         </div>
 
       </div>
@@ -359,9 +363,9 @@
 
         <p style="font-weight:500; margin-bottom:0;">Short Paper Track Dates:</p>
         <p class="left">Abstract Submission:</p>
-        <p class="right">Mar 25, 2016</p>
+        <p class="right" style="text-decoration:line-through;">Mar 25, 2016</p>
         <p class="left">Paper Submission:</p>
-        <p class="right">Mar 28, 2016</p>
+        <p class="right" style="text-decoration:line-through;">Mar 28, 2016</p>
         <p class="left">Author Notification:</p>
         <p class="right">Apr 14, 2016</p>
         <p class="left">Camera Ready:</p>
@@ -410,9 +414,9 @@
 
         <p style="font-weight:500; margin-bottom:0;">Tool Demo Track Dates:</p>
         <p class="left">Abstract Submission:</p>
-        <p class="right">Mar 25, 2016</p>
+        <p class="right" style="text-decoration:line-through;">Mar 25, 2016</p>
         <p class="left">Paper Submission:</p>
-        <p class="right">Mar 28, 2016</p>
+        <p class="right" style="text-decoration:line-through;">Mar 28, 2016</p>
         <p class="left">Author Notification:</p>
         <p class="right">Apr 14, 2016</p>
         <p class="left">Camera Ready:</p>

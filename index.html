@@ -27,44 +27,42 @@
 <script>
   $(document).ready(function(){
     var n = true;
-      $("#expand").click(function(){
-      if (n) {
-        n = false;
-        $( "#menu0" ).addClass( "navToggle" );
-        $( "#menu1" ).addClass( "navToggle" );
-        $( "#menu2" ).addClass( "navToggle" );
-        $( "#menu3" ).addClass( "navToggle" );
-        $( "#menu4" ).addClass( "navToggle" );
-        $( "#menu5" ).addClass( "navToggle" );
-        $( "#menu6" ).addClass( "navToggle" );
-        $( "#menu7" ).addClass( "navToggle" );
-        $( "#menu8" ).addClass( "navToggle" );
-      } else {
-        n = true;
-        $( "#menu0" ).removeClass( "navToggle" );
-        $( "#menu1" ).removeClass( "navToggle" );
-        $( "#menu2" ).removeClass( "navToggle" );
-        $( "#menu3" ).removeClass( "navToggle" );
-        $( "#menu4" ).removeClass( "navToggle" );
-        $( "#menu5" ).removeClass( "navToggle" );
-        $( "#menu6" ).removeClass( "navToggle" );
-        $( "#menu7" ).removeClass( "navToggle" );
-        $( "#menu8" ).removeClass( "navToggle" );
-      }
-      });
+    $("#news").load("news.html"); 
+    $("#sponsors").load("sponsors.html"); 
+    $("#expand").click(function(){
+    if (n) {
+      n = false;
+      $( "#menu0" ).addClass( "navToggle" );
+      $( "#menu1" ).addClass( "navToggle" );
+      $( "#menu2" ).addClass( "navToggle" );
+      $( "#menu3" ).addClass( "navToggle" );
+      $( "#menu4" ).addClass( "navToggle" );
+      $( "#menu5" ).addClass( "navToggle" );
+      $( "#menu6" ).addClass( "navToggle" );
+      $( "#menu7" ).addClass( "navToggle" );
+      $( "#menu8" ).addClass( "navToggle" );
+    } else {
+      n = true;
+      $( "#menu0" ).removeClass( "navToggle" );
+      $( "#menu1" ).removeClass( "navToggle" );
+      $( "#menu2" ).removeClass( "navToggle" );
+      $( "#menu3" ).removeClass( "navToggle" );
+      $( "#menu4" ).removeClass( "navToggle" );
+      $( "#menu5" ).removeClass( "navToggle" );
+      $( "#menu6" ).removeClass( "navToggle" );
+      $( "#menu7" ).removeClass( "navToggle" );
+      $( "#menu8" ).removeClass( "navToggle" );
+    }
+    });
   });
-  $(function(){
-      $("#news").load("news.html"); 
-    });
-  $(function(){
-      $("#sponsors").load("sponsors.html"); 
-    });
 </script>
 <style type="text/css">
   .imageDisplay {
     width:100%; 
     height:inherit; 
     margin-bottom:0px;
+    background-image:url(./images/city.jpg);
+    background-position: center; 
   }
   .imageText {
     font-weight:bold;
@@ -142,7 +140,7 @@
   @media only screen and (min-width: 715px) {
     /* For tablet portrait: */
     .container {width:455px}
-    .imageDisplay {width:455px; height:166px; margin-left:0px; margin-bottom:4px; height:auto;}
+    .imageDisplay {width:455px; height:340px; margin-left:0px; margin-bottom:10px;}
     .box_Header {width:100%;}
     .box_A {width:100%;}
     .box_B {width:100%;}
@@ -152,13 +150,13 @@
   @media only screen and (min-width: 920px) {
     /* For tablet landscape: */
     .container {width:670px}
-    .imageDisplay {width:660px; height:241px; margin-left:10px; margin-bottom:10px;}
+    .imageDisplay {width:660px; height:340px; margin-left:10px; margin-bottom:10px;}
     .box_Header {width:660px; margin-left: 10px;}
     .box_Header h2 {margin-left: 0px; margin-right: 0px;}
     .box_A {width:325px; height:500px; margin-left:10px;}
     .box_B {width:660px; margin-left:10px;}
     .box_C {display:none}
-    .map {float:left; margin:inherit; margin-right:15px;}
+    .map {float:left; margin:10px 40px 15px 40px;}
   }
   @media only screen and (min-width: 1190px) {
     /* For desktop: */
@@ -235,9 +233,9 @@
 
         <p class="track">Short Paper Track</p>
         <p class="left">Abstract Submission:</p>
-        <p class="right">Mar 25, 2016</p>
+        <p class="right" style="text-decoration:line-through;">Mar 25, 2016</p>
         <p class="left">Paper Submission:</p>
-        <p class="right">Mar 28, 2016</p>
+        <p class="right" style="text-decoration:line-through;">Mar 28, 2016</p>
         <p class="left">Author Notification:</p>
         <p class="right">Apr 14, 2016</p>
         <p class="left">Camera Ready:</p>
@@ -246,19 +244,27 @@
 
         <p class="track">Tool Demonstration Track</p>
         <p class="left">Abstract Submission:</p>
-        <p class="right">Mar 25, 2016</p>
+        <p class="right" style="text-decoration:line-through;">Mar 25, 2016</p>
         <p class="left">Paper Submission:</p>
-        <p class="right">Mar 28, 2016</p>
+        <p class="right" style="text-decoration:line-through;">Mar 28, 2016</p>
         <p class="left">Author Notification:</p>
         <p class="right">Apr 14, 2016</p>
         <p class="left">Camera Ready:</p>
         <p class="right">Apr 25, 2016</p>
         <hr class="clear">
 
+        <br> 
+
+        <div id="twitter">
+          <h2 style="text-align:center;">TWEETS <a style="text-decoration:none;" href="https://twitter.com/icpc16" target="_blank">@icpc16</a></h2>
+          <hr>
+          <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/icpc16" data-widget-id="715744792026685440" data-chrome="noheader nofooter noborders transparent">Tweets by @icpc16</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+
         <div id="newsBox">
           <h2 style="text-align:center;">LATEST NEWS</h2>
           <hr>
-          <div id="news"></div>
+          <div id="news" style="height:400px; overflow:scroll;"></div>
         </div>
 
       </div>
@@ -273,7 +279,6 @@
             <span style="font-size:22px; line-height:140%;">Co-located with</span><br>
             <span style="font-size:22px; line-height:130%;">ICSE 2016</span>
           </span>
-          <img src="./images/city.jpg" alt="City" style="margin:0px; width:100%; -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;" unselectable="on" onselectstart="return false;" onmousedown="return false;"/>
         </div>
       
         <div class="box_A">
@@ -303,9 +308,9 @@
 
             <p class="track">Short Paper Track</p>
             <p class="left">Abstract Submission:</p>
-            <p class="right">Mar 25, 2016</p>
+            <p class="right" style="text-decoration:line-through;">Mar 25, 2016</p>
             <p class="left">Paper Submission:</p>
-            <p class="right">Mar 28, 2016</p>
+            <p class="right" style="text-decoration:line-through;">Mar 28, 2016</p>
             <p class="left">Author Notification:</p>
             <p class="right">Apr 14, 2016</p>
             <p class="left">Camera Ready:</p>
@@ -314,9 +319,9 @@
 
             <p class="track">Tool Demonstration Track</p>
             <p class="left">Abstract Submission:</p>
-            <p class="right">Mar 25, 2016</p>
+            <p class="right" style="text-decoration:line-through;">Mar 25, 2016</p>
             <p class="left">Paper Submission:</p>
-            <p class="right">Mar 28, 2016</p>
+            <p class="right" style="text-decoration:line-through;">Mar 28, 2016</p>
             <p class="left">Author Notification:</p>
             <p class="right">Apr 14, 2016</p>
             <p class="left">Camera Ready:</p>
@@ -342,7 +347,7 @@
             <div class="map">
             </div>
           </a>
-          <p>ICPC 2016 will be held at the Rennaisance Austin Hotel in the lovely Austin Arboretum Area on the northwestern edge of Austin proper. Known as “new Austin,” the Austin Arboretum Area has both a business and a residential side. But the area boasts quaint neighborhoods, hike-and-bike trails, and pet-friendly parks. </p>
+          <p>ICPC 2016 will be held at the Renaissance Austin Hotel in the lovely Austin Arboretum Area on the northwestern edge of Austin proper. Known as “new Austin,” the Austin Arboretum Area has both a business and a residential side. But the area boasts quaint neighborhoods, hike-and-bike trails, and pet-friendly parks. </p>
         </div>
         
       </div>

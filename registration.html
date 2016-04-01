@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ICPC16</title>
+<title>Registration - ICPC16</title>
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
@@ -27,38 +27,34 @@
 <script>
   $(document).ready(function(){
     var n = true;
-      $("#expand").click(function(){
-      if (n) {
-        n = false;
-        $( "#menu0" ).addClass( "navToggle" );
-        $( "#menu1" ).addClass( "navToggle" );
-        $( "#menu2" ).addClass( "navToggle" );
-        $( "#menu3" ).addClass( "navToggle" );
-        $( "#menu4" ).addClass( "navToggle" );
-        $( "#menu5" ).addClass( "navToggle" );
-        $( "#menu6" ).addClass( "navToggle" );
-        $( "#menu7" ).addClass( "navToggle" );
-        $( "#menu8" ).addClass( "navToggle" );
-      } else {
-        n = true;
-        $( "#menu0" ).removeClass( "navToggle" );
-        $( "#menu1" ).removeClass( "navToggle" );
-        $( "#menu2" ).removeClass( "navToggle" );
-        $( "#menu3" ).removeClass( "navToggle" );
-        $( "#menu4" ).removeClass( "navToggle" );
-        $( "#menu5" ).removeClass( "navToggle" );
-        $( "#menu6" ).removeClass( "navToggle" );
-        $( "#menu7" ).removeClass( "navToggle" );
-        $( "#menu8" ).removeClass( "navToggle" );
-      }
-      });
+    $("#news").load("news.html"); 
+    $("#sponsors").load("sponsors.html"); 
+    $("#expand").click(function(){
+    if (n) {
+      n = false;
+      $( "#menu0" ).addClass( "navToggle" );
+      $( "#menu1" ).addClass( "navToggle" );
+      $( "#menu2" ).addClass( "navToggle" );
+      $( "#menu3" ).addClass( "navToggle" );
+      $( "#menu4" ).addClass( "navToggle" );
+      $( "#menu5" ).addClass( "navToggle" );
+      $( "#menu6" ).addClass( "navToggle" );
+      $( "#menu7" ).addClass( "navToggle" );
+      $( "#menu8" ).addClass( "navToggle" );
+    } else {
+      n = true;
+      $( "#menu0" ).removeClass( "navToggle" );
+      $( "#menu1" ).removeClass( "navToggle" );
+      $( "#menu2" ).removeClass( "navToggle" );
+      $( "#menu3" ).removeClass( "navToggle" );
+      $( "#menu4" ).removeClass( "navToggle" );
+      $( "#menu5" ).removeClass( "navToggle" );
+      $( "#menu6" ).removeClass( "navToggle" );
+      $( "#menu7" ).removeClass( "navToggle" );
+      $( "#menu8" ).removeClass( "navToggle" );
+    }
+    });
   });
-  $(function(){
-      $("#news").load("news.html"); 
-    });
-  $(function(){
-      $("#sponsors").load("sponsors.html"); 
-    });
 </script>
 <style type="text/css">
   .imageDisplay {
@@ -262,10 +258,18 @@
         <p class="right">Apr 25, 2016</p>
         <hr class="clear">
 
+        <br> 
+
+        <div id="twitter">
+          <h2 style="text-align:center;">TWEETS <a style="text-decoration:none;" href="https://twitter.com/icpc16" target="_blank">@icpc16</a></h2>
+          <hr>
+          <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/icpc16" data-widget-id="715744792026685440" data-chrome="noheader nofooter noborders transparent">Tweets by @icpc16</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+
         <div id="newsBox">
           <h2 style="text-align:center;">LATEST NEWS</h2>
           <hr>
-          <div id="news"></div>
+          <div id="news" style="height:400px; overflow:scroll;"></div>
         </div>
 
       </div>
