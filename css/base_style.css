@@ -111,6 +111,10 @@ a {
     width:100%;
     display:none;
 }
+.navCurrent {
+    color:#FFF;
+    background-color:rgba(255,255,255,0.2);
+}
 .spacer {
     border:1px solid white;
     float:left;
@@ -118,11 +122,18 @@ a {
     background-color: white;
     display:none;
 }
+.navLine {
+    float: left;
+    width: 1px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    background-color: #FFF;
+    display: none;
+}
 .navItem:hover {
     color:#FFF;
     background-color:rgba(255,255,255,0.2);
-    border-left: 1px solid white;
-    border-right: 1px solid white;
 }
 .navToggle {
     display:block;
@@ -173,7 +184,7 @@ a {
 }
 #twitter {
     background:rgba(255,255,255,0.2); 
-    height:471px; 
+    max-height:471px; 
     overflow:hidden; 
     position:relative; 
     z-index: 0;
@@ -181,6 +192,10 @@ a {
 #twitter hr {
     margin-left: 10px;
     margin-right: 10px;
+}
+#news {
+    height:400px; 
+    overflow-y:scroll;
 }
 #newsBox {
     float: left;
@@ -291,9 +306,19 @@ a {
     .logo {float:left;}
     .logo_date {display: block;}
     .social {display:none;}
+    #menu0 {width:50px;}
+    #menu1 {width: 100px;}
+    #menu2 {width: 74px;}
+    #menu3 {width: 46px;}
+    #menu4 {width: 132px;}
+    #menu5 {width: 102px;}
+    #menu6 {width: 69px;}
+    #menu7 {width: 54px;}
+    #menu8 {width: 58px;}
     .navExpand {display:none;}
     .navContract {display:none;}
-    .navItem {width:auto; padding:0; font-size:12px; line-height:38px; display:block; border:1px solid #FFF;}
+    .navItem {width:auto; padding:0; font-size:12px; line-height:38px; display:block; border:1px solid #FFF; border-right: none; border-left: none;}
+    .navLine {display: block;}
     .content {width:695px; margin-top:30px;}
     .sidebar {display:block;}
     .box_Header {width:455px;}
@@ -316,9 +341,19 @@ a {
     .header_top {display:block; font-size:12px;}
     .logo {float:left;}
     .social {display:none;}
+    #menu0 {width: 68px;}
+    #menu1 {width: 126px;}
+    #menu2 {width: 98px;}
+    #menu3 {width: 62px;}
+    #menu4 {width: 162px;}
+    #menu5 {width: 130px;}
+    #menu6 {width: 92px;}
+    #menu7 {width: 74px;}
+    #menu8 {width: 78px;}
     .navExpand {display:none;}
     .navContract {display:none;}
-    .navItem {width:auto; padding:0 13px 0 13px; font-size:14px; line-height:38px; display:block; border:1px solid #FFF;}
+    .navItem {width:auto; padding:0; font-size:14px; line-height:38px; display:block; border:1px solid #FFF; border-right: none; border-left: none;}
+    .navLine {display: block;}
     .content {width:900px; margin-top:30px;}
     .sidebar {display:block;}
     .box_Header {width:660px;}
@@ -341,9 +376,19 @@ a {
     .header_top {display:block; font-size:15px;}
     .logo {float:left;}
     .social {display:none;}
+    #menu0 {width: 98px;}
+    #menu1 {width: 156px;}
+    #menu2 {width: 128px;}
+    #menu3 {width: 92px;}
+    #menu4 {width: 192px;}
+    #menu5 {width: 160px;}
+    #menu6 {width: 122px;}
+    #menu7 {width: 104px;}
+    #menu8 {width: 108px;}
     .navExpand {display:none;}
     .navContract {display:none;}
-    .navItem {width:auto; padding:0 30px 0 30px; font-size:14px; line-height:38px; display:block; border:1px solid #FFF;}
+    .navItem {width:auto; padding:0; font-size:14px; line-height:38px; display:block; border:1px solid #FFF; border-right: none; border-left: none;}
+    .navLine {display: block;}
     .content {width:1170px; margin-top:30px;}
     .sidebar {display:block;}
     .box_Header {width:930px;}
