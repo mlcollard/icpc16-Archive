@@ -2,45 +2,55 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 <title>Program - ICPC16</title>
 <link rel="stylesheet" type="text/css" href="./css/base_style.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script>
   $(document).ready(function(){
     var n = true;
-      $("#expand").click(function(){
-      if (n) {
-        n = false;
-        $( "#menu0" ).addClass( "navToggle" );
-        $( "#menu1" ).addClass( "navToggle" );
-        $( "#menu2" ).addClass( "navToggle" );
-        $( "#menu3" ).addClass( "navToggle" );
-        $( "#menu4" ).addClass( "navToggle" );
-        $( "#menu5" ).addClass( "navToggle" );
-        $( "#menu6" ).addClass( "navToggle" );
-        $( "#menu7" ).addClass( "navToggle" );
-        $( "#menu8" ).addClass( "navToggle" );
-      } else {
-        n = true;
-        $( "#menu0" ).removeClass( "navToggle" );
-        $( "#menu1" ).removeClass( "navToggle" );
-        $( "#menu2" ).removeClass( "navToggle" );
-        $( "#menu3" ).removeClass( "navToggle" );
-        $( "#menu4" ).removeClass( "navToggle" );
-        $( "#menu5" ).removeClass( "navToggle" );
-        $( "#menu6" ).removeClass( "navToggle" );
-        $( "#menu7" ).removeClass( "navToggle" );
-        $( "#menu8" ).removeClass( "navToggle" );
-      }
-      });
-  });
-  $(function(){
-      $("#news").load("news.html"); 
+    $("#news").load("news.html"); 
+    $("#sponsors").load("sponsors.html"); 
+    $("#expand").click(function(){
+    if (n) {
+      n = false;
+      $( "#menu0" ).addClass( "navToggle" );
+      $( "#menu1" ).addClass( "navToggle" );
+      $( "#menu2" ).addClass( "navToggle" );
+      $( "#menu3" ).addClass( "navToggle" );
+      $( "#menu4" ).addClass( "navToggle" );
+      $( "#menu5" ).addClass( "navToggle" );
+      $( "#menu6" ).addClass( "navToggle" );
+      $( "#menu7" ).addClass( "navToggle" );
+      $( "#menu8" ).addClass( "navToggle" );
+    } else {
+      n = true;
+      $( "#menu0" ).removeClass( "navToggle" );
+      $( "#menu1" ).removeClass( "navToggle" );
+      $( "#menu2" ).removeClass( "navToggle" );
+      $( "#menu3" ).removeClass( "navToggle" );
+      $( "#menu4" ).removeClass( "navToggle" );
+      $( "#menu5" ).removeClass( "navToggle" );
+      $( "#menu6" ).removeClass( "navToggle" );
+      $( "#menu7" ).removeClass( "navToggle" );
+      $( "#menu8" ).removeClass( "navToggle" );
+    }
+    })
+    $("#moreDetails").click(function(){
+      $("#moreDetails").addClass("hidden");
+      $("#lessDetails").removeClass("hidden");
+      $("#detailContent").removeClass("hidden");
+    })
+    $("#lessDetails").click(function(){
+      $("#moreDetails").removeClass("hidden");
+      $("#lessDetails").addClass("hidden");
+      $("#detailContent").addClass("hidden");
     });
+  });
 </script>
 <style type="text/css">
   p, hr {
-      margin-left:15px;
+    margin-left:15px;
     margin-right:15px;
   }
   .container {
@@ -64,7 +74,7 @@
   }
   .container hr {
     border:0;
-      height:1px;
+    height:1px;
     background:rgba(0,0,0,0.20);
     margin-left:30px;
     margin-right:30px;
@@ -116,6 +126,79 @@
     color:#956e73;
     font-weight:900;
   }
+  .container a {
+    color:#956e73;
+    font-weight:900;
+    text-decoration: none;
+  }
+  .container h2 {
+    margin-left: 60px;
+    margin-right: 60px;
+    margin: 30px 60px 0 60px;
+    color:#000;
+    text-transform: uppercase;
+  }
+  .container h3 {
+    color:#000;
+    font-family: Avenir, Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size:16px;
+    font-weight: 500;
+    text-align:left;
+    margin:10px 75px 0px 75px;
+}
+  .container p, ul {
+    margin: 0px 75px 10px 75px;
+    font-weight: 100;
+  }
+  .container ul {
+    margin-top: -7px;
+    margin-left: 70px;
+  }
+  .container li {
+    margin-top: 5px;
+  }
+  .container ul {
+    list-style: none;
+  }
+  .container ul li:before {
+    content:"•"; 
+    font-size:10pt;
+    margin-left: -16px;
+    margin-right: 10px;
+  }
+  .container .left {
+    float: left;
+    clear: both;
+    width:150px;
+    margin:0 0 0 90px;
+  }
+  .container .right {
+    float: left;
+    text-align: right;
+    width:85px;
+    margin:0;
+  }
+  .container .invisible {
+    clear: both;
+    border: none;
+    height: 0;
+  }
+  .heavy {
+    font-weight: 500;
+  }
+  .hidden {
+    display: none;
+  }
+  #moreDetails {
+    font-weight: 900;
+    color:#956e73;
+    cursor: pointer;
+  }
+  #lessDetails {
+    font-weight: 900;
+    color:#956e73;
+    cursor: pointer;
+  }
   @media only screen and (min-width: 715px) {
       /* For tablet portrait: */
   }
@@ -139,8 +222,9 @@
     </div>
     <div class="header_mid">
       <div class="logo">
-        <img src="./images/icpc_logo.png" width="202" height="50" alt="ICPC '16 Austin">
+        <img src="./images/icpc_logo.png" width="210" height="50" alt="ICPC '16 Austin">
       </div>
+      <h2 id="headerText">24<sup>TH</sup> IEEE INTERNATIONAL CONFERENCE ON PROGRAM COMPREHENSION</h2>
     </div>
     
     <!-- Navigation Menu -->
@@ -151,13 +235,44 @@
           <img src="./images/menu.gif" alt="MENU" width="40" height="40">
         </div>
       </div>
-      <a href="index.html"><div class="navItem" id="menu0"><div style="width:43px; margin:auto;">HOME</div></div></a>
-      <a href="call.html"><div class="navItem" id="menu1"><div style="width:149px; margin:auto;">CALL FOR PAPERS</div></div></a>
-      <a href="organization.html"><div class="navItem" id="menu4"><div style="width:102px; margin:auto;">ORGANIZATION</div></div></a>
-      <a href="#"><div class="navItem" style="color:#FFF; background-color:rgba(255,255,255,0.2); border-right:none;" id="menu3"><div style="width:70px; margin:auto;">PROGRAM</div></div></a>
-      <a href="http://2016.icse.cs.txstate.edu/venue" target="_blank"><div class="navItem" id="menu7"><div style="width:46px; margin:auto;">VENUE</div></div></a>
-      <a href="http://2016.icse.cs.txstate.edu" target="_blank"><div class="navItem" id="menu8"><div style="width:52px; margin:auto;">AUSTIN</div></div></a>
-      <div class="spacer" id="menu6"></div>
+      <div class="navLine"></div>
+
+      <a href="index.html">
+        <div id="menu0" class="navItem">HOME</div></a>
+      <div class="navLine"></div>
+
+      <a href="registration.html">
+        <div id="menu1" class="navItem">REGISTRATION</div></a>
+      <div class="navLine"></div>
+
+      <a href="#">
+        <div id="menu2" class="navItem navCurrent">PROGRAM</div></a>
+      <div class="navLine"></div>
+
+      <a href="call.html">
+        <div id="menu3" class="navItem">CALL</div></a>
+      <div class="navLine"></div>
+
+      <a href="https://easychair.org/conferences/?conf=icpc20160" target="_blank">
+        <div id="menu4" class="navItem">PAPER SUBMISSION</div></a>
+      <div class="navLine"></div>
+
+      <a href="organization-program.html">
+        <div id="menu5" class="navItem">ORGANIZATION</div></a>
+      <div class="navLine"></div>
+
+      <a href="keynote.html">
+        <div id="menu6" class="navItem">KEYNOTE</div></a>
+      <div class="navLine"></div>
+
+      <a href="http://2016.icse.cs.txstate.edu/venue" target="_blank">
+        <div id="menu7" class="navItem">VENUE</div></a>
+      <div class="navLine"></div>
+
+      <a href="http://2016.icse.cs.txstate.edu" target="_blank">
+        <div id="menu8" class="navItem">AUSTIN</div></a>
+      <div class="navLine"></div>
+
     </div>
     <!-- End Navigation Menu -->
 
@@ -170,19 +285,111 @@
     
       <!-- Sidebar -->
       <div class="sidebar">
-        <div style="width:60px; height:60px; margin:auto;">
-          <img src="./images/news.png" width="60" height="60" alt="Latest News"/>
+
+        <h2 style="text-align:left; margin:0;">IMPORTANT DATES</h2>
+        <hr style="margin:0;">
+        <p class="track">Technical Research Track</p>
+        <p class="left">Abstract Submission:</p>
+        <p class="right" style="text-decoration:line-through;">Feb 8, 2016</p>
+        <p class="left">Paper Submission:</p>
+        <p class="right" style="text-decoration:line-through;">Feb 15, 2016</p>
+        <p class="right" style="text-decoration:line-through;">Feb 17, 2016</p>
+        <p class="left">Author Notification:</p>
+        <p class="right" style="text-decoration:line-through;">Mar 21, 2016</p>
+        <p class="left">Camera Ready:</p>
+        <p class="right">Apr 18, 2016</p>
+        <hr class="clear">
+
+        <p class="track">Short Paper Track</p>
+        <p class="left">Abstract Submission:</p>
+        <p class="right" style="text-decoration:line-through;">Mar 25, 2016</p>
+        <p class="left">Paper Submission:</p>
+        <p class="right" style="text-decoration:line-through;">Mar 28, 2016</p>
+        <p class="left">Author Notification:</p>
+        <p class="right">Apr 14, 2016</p>
+        <p class="left">Camera Ready:</p>
+        <p class="right">Apr 25, 2016</p>
+        <hr class="clear">
+
+        <p class="track">Tool Demonstration Track</p>
+        <p class="left">Abstract Submission:</p>
+        <p class="right" style="text-decoration:line-through;">Mar 25, 2016</p>
+        <p class="left">Paper Submission:</p>
+        <p class="right" style="text-decoration:line-through;">Mar 28, 2016</p>
+        <p class="left">Author Notification:</p>
+        <p class="right">Apr 14, 2016</p>
+        <p class="left">Camera Ready:</p>
+        <p class="right">Apr 25, 2016</p>
+        <hr class="clear">
+
+        <br> 
+
+        <div id="twitter">
+          <h2 style="text-align:center;">TWEETS <a style="text-decoration:none;" href="https://twitter.com/icpc16" target="_blank">@icpc16</a></h2>
+          <hr>
+          <a class="twitter-timeline" style="display:block;text-align:center; margin:15px;" data-dnt="true" href="https://twitter.com/icpc16" data-widget-id="715744792026685440" data-chrome="noheader nofooter noborders transparent">View on Twitter</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         </div>
-        <h2>Latest News</h2>
-        <div id="news"></div>
+
+        <div id="newsBox">
+          <h2 style="text-align:center;">LATEST NEWS</h2>
+          <hr>
+          <div id="news"></div>
+        </div>
+
       </div>
       <!-- End Sidebar -->
-      
+
       <div class="container">
         
-        <h1 style="text-align:center;">PROGRAM GUIDE</h1>
-        <hr>
-        <h2 style="text-align:center; margin-top:40px; margin-bottom:14px;">To Be Announced</h2>
+        
+        <h2>Program</h2>
+        <hr style="margin: 0 60px 15px 60px; clear:both;">
+        
+        <p>The program will include the Technical Track full papers listed below, along with a <a href="keynote.html">Keynote</a>, MIP (Most Influential Paper from 2006), along with short papers and tool demonstrations.</p>
+
+        <h2 id="TechnicalResearchTrack">Technical Track Accepted Papers</h2>
+        <hr style="margin: 0 60px 15px 60px;">
+
+        <h3>A Novel Approach for Estimating Truck Factors</h3>
+        <p>Guilherme Avelino, Marco Tulio Valente, Andre Hora, and Leonardo Passos</p>
+        <h3>Identifying Modularization Patterns by Visual Comparison of Multiple Hierarchies</h3>
+        <p>Fabian Beck, Jan Melcher, and Daniel Weiskopf</p>
+        <h3>Rule-Directed Code Clone Synchronization</h3>
+        <p>Xiao Cheng, Hao Zhong, Yuting Chen, Zhenjiang Hu, and Jianjun Zhao</p>
+        <h3>Glyph-Based Software Component Identification</h3>
+        <p>Ignacio Fernandez, Alexandre Bergel, Juan Pablo Sandoval Alcocer, Alejandro José Infante Rica, and Tudor Girba</p>
+        <h3>On Method Ordering</h3>
+        <p>Yorai Geffen and Shahar Maoz</p>
+        <h3>Do Code Smells Hamper Novice Programming? A Controlled Experiment on Scratch Programs</h3>
+        <p>Felienne Hermans and Efthimia Aivaloglou</p>
+        <h3>Navigating the WordPress Plugin Landscape</h3>
+        <p>Mark Hills</p>
+        <h3>Can we find Stable Alternatives for Unstable Eclipse Interfaces?</h3>
+        <p>Simon Kawuma, John Businge, and Engineer Bainomugisha</p>
+        <h3>On Automatically Detecting Similar Android Apps</h3>
+        <p>Mario Linares-Vasquez, Andrew Holtzhauer, and Denys Poshyvanyk</p>
+        <h3>Taming the IDE with Fine-grained Interaction Data</h3>
+        <p>Roberto Minelli, Andrea Mocci, Romain Robbes, and Michele Lanza</p>
+        <h3>Can We Enforce a Benefit for Dynamically Typed Languages in Comparison to Statically Typed Ones? A Controlled Experiment</h3>
+        <p>Sebastian Okon and Stefan Hanenberg</p>
+        <h3>A Textual-based Technique for Smell Detection</h3>
+        <p>Fabio Palomba, Annibale Panichella, Andrea De Lucia, Rocco Oliveto, and Andy Zaidman</p>
+        <h3>Context-Based Code Smells Prioritization for Prefactoring</h3>
+        <p>Natthawute Sae-Lim, Shinpei Hayashi, and Motoshi Saeki</p>
+        <h3>A Cooperative Approach for Combining Client-based and Library-based API Usage Pattern Mining</h3>
+        <p>Mohamed Aymen Saied and Houari Sahraoui</p>
+        <h3>Multistaging to Understand: Distilling the Essence of Java Code Examples</h3>
+        <p>Huascar Sanchez, Jim Whitehead, and Martin Schaef</p>
+        <h3>Improving Code Readability Models with Textual Features</h3>
+        <p>Simone Scalabrino, Mario Linares-Vásquez, Denys Poshyvanyk, and Rocco Oliveto</p>
+        <h3>Are Unreachable Methods Harmful? Results from a Controlled Experiment</h3>
+        <p>Giuseppe Scanniello, Simone Romano, Denys Poshyvanyk, and Christopher Vendome</p>
+        <h3>A Case Study of Program Comprehension Effort and Technical Debt Estimations</h3>
+        <p>Vallary Singh, Will Snipes, Lori Pollock, and Nicholas A. Kraft</p>
+        <h3>Identifying Functionally Similar Code in Complex Codebases</h3>
+        <p>Fang-Hsiang Su, Jonathan Bell, Gail Kaiser, and Simha Sethumadhavan</p>
+        <h3>Learning to Rank for Bug Report Assignee Recommendation</h3>
+        <p>Yuan Tian, Dinusha Wijedasa, David Lo, and Claire Le Goues</p>
 
       </div>
       
@@ -194,6 +401,7 @@
 </div>
 
 <div class="footer">
+  <div class="sponsors" id="sponsors"></div>
   <div class="footerBottom">
     <span>Contact: <a href="mailto:icpc2016@gmail.com" target="_top" style="color:white; text-decoration:none;">icpc2016@gmail.com</a></span>
     <span style="float:right;">ICPC 2016 &nbsp;&nbsp;&nbsp;&nbsp; May 16-17, 2016 &nbsp;&nbsp;&nbsp;&nbsp; Renaissance Austin Hotel 9721 Arboretum Boulevard Austin, Texas 78759 USA</span>
