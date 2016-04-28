@@ -1,0 +1,675 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<title>Program - ICPC16</title>
+<link rel="stylesheet" type="text/css" href="./css/base_style.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    var n = true;
+    $("#news").load("news.html"); 
+    $("#sponsors").load("sponsors.html"); 
+    $("#expand").click(function(){
+    if (n) {
+      n = false;
+      $( "#menu0" ).addClass( "navToggle" );
+      $( "#menu1" ).addClass( "navToggle" );
+      $( "#menu2" ).addClass( "navToggle" );
+      $( "#menu3" ).addClass( "navToggle" );
+      $( "#menu4" ).addClass( "navToggle" );
+      $( "#menu5" ).addClass( "navToggle" );
+      $( "#menu6" ).addClass( "navToggle" );
+      $( "#menu7" ).addClass( "navToggle" );
+      $( "#menu8" ).addClass( "navToggle" );
+    } else {
+      n = true;
+      $( "#menu0" ).removeClass( "navToggle" );
+      $( "#menu1" ).removeClass( "navToggle" );
+      $( "#menu2" ).removeClass( "navToggle" );
+      $( "#menu3" ).removeClass( "navToggle" );
+      $( "#menu4" ).removeClass( "navToggle" );
+      $( "#menu5" ).removeClass( "navToggle" );
+      $( "#menu6" ).removeClass( "navToggle" );
+      $( "#menu7" ).removeClass( "navToggle" );
+      $( "#menu8" ).removeClass( "navToggle" );
+    }
+    })
+    $("#moreDetails").click(function(){
+      $("#moreDetails").addClass("hidden");
+      $("#lessDetails").removeClass("hidden");
+      $("#detailContent").removeClass("hidden");
+    })
+    $("#lessDetails").click(function(){
+      $("#moreDetails").removeClass("hidden");
+      $("#lessDetails").addClass("hidden");
+      $("#detailContent").addClass("hidden");
+    });
+  });
+</script>
+<style type="text/css">
+  p, hr {
+    margin-left:15px;
+    margin-right:15px;
+  }
+  .container {
+    color:black;
+    background-color:rgba(255,255,255,0.8);
+    padding-bottom:30px;
+  }
+  .container h1 {
+    font-size:24px;
+    margin-left:30px;
+    margin-right:30px;
+    font-weight:600;
+  }
+  .container h2 {
+    color:black;
+    font-weight:500;
+    text-align:left;
+    margin-left:30px;
+    margin-right:30px;
+    margin-bottom:5px;
+  }
+  .container hr {
+    border:0;
+    height:1px;
+    background:rgba(0,0,0,0.20);
+    margin-left:0;
+    margin-right:0;
+  }
+  td {
+    border: 1px solid blue;
+  }
+  .description {
+    clear:both;
+    margin:0;
+    margin-right:30px;
+    padding:0;
+    padding-left:150px;
+    font-weight:100;
+  }
+  .print {
+    clear:both;
+    margin:0;
+    padding:0;
+    padding-left:150px;
+    color:#956e73;
+    font-weight:900;
+  }
+  .container a {
+    color:#956e73;
+    font-weight:900;
+    text-decoration: none;
+  }
+  .container h2 {
+    margin-left: 60px;
+    margin-right: 60px;
+    margin: 30px 20px 0 20px;
+    color:#000;
+    text-transform: uppercase;
+  }
+  .container h3 {
+    color:#000;
+    font-family: Avenir, Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size:16px;
+    font-weight: 500;
+    text-align:left;
+    margin:10px 20px 0px 20px;
+}
+  .container ul {
+    margin-top: -7px;
+    margin-left: 70px;
+  }
+  .container li {
+    margin-top: 5px;
+  }
+  .container ul {
+    list-style: none;
+  }
+  .container ul li:before {
+    content:"•"; 
+    font-size:10pt;
+    margin-left: -16px;
+    margin-right: 10px;
+  }
+  .container .left {
+    float: left;
+    clear: both;
+    width:150px;
+    margin:0 0 0 90px;
+  }
+  .container .right {
+    float: left;
+    text-align: right;
+    width:85px;
+    margin:0;
+  }
+  .container .invisible {
+    clear: both;
+    border: none;
+    height: 0;
+  }
+  .heavy {
+    font-weight: 500;
+  }
+  .hidden {
+    display: none;
+  }
+  #moreDetails {
+    font-weight: 900;
+    color:#956e73;
+    cursor: pointer;
+  }
+  #lessDetails {
+    font-weight: 900;
+    color:#956e73;
+    cursor: pointer;
+  }
+  .time {
+    width: 100%;
+    margin: 8px 0 8px 0;
+    padding: 0px;
+    clear: both;
+    font-weight: 100;
+    line-height: 1.2;
+    text-align: center;
+    float: left;
+  }
+  .section {
+    margin: 8px 0 0 20px;
+    padding: 0px;
+    font-weight: 900;
+    line-height: 1.2;
+    clear: both;
+    border: none;
+  }
+  .sectionSplit {
+    margin: 8px 0 0 0;
+    padding: 0px;
+    font-weight: 900;
+    float: left;
+    width: 50%;
+  }
+  .title {
+    margin: 8px 10px 0 20px;
+    padding: 0px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .info {
+    margin: 0 10px 0 20px;
+    padding: 0px;
+    font-weight: 100;
+    line-height: 1.2;
+  }
+  .sectionBox {
+    width:100%;
+    margin-bottom: 0;
+  }
+  .sectionColumnA {
+    float: left;
+    width:50%;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    border:none;
+  }
+  .sectionColumnB {
+    float: left;
+    width:50%;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    border-left: 1px solid rgba(0,0,0,0.20);
+  }
+  .sectionColumnC {
+    float: left;
+    width:50%;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    border-right: 1px solid rgba(0,0,0,0.20);
+  }
+  .dayLinks {
+    margin: 32px 0 0 0;
+    float: left;
+  }
+  #printTitle {
+    display: none;
+  }
+  #defaultTitle {
+    width: 110px;
+    float: left;
+    margin-right: 0;
+  }
+  #day1, #day2 {
+    text-align: center;
+  }
+  .container hr {
+    clear: both;
+    margin: 8px 0 0 0;
+  }
+  .container .clearHr {
+    background-color:rgba(0,0,0,0);
+  }
+  #spacedPapers .title {
+    margin-top: 20px;
+  }
+  @media print {
+    .header {display: none;}
+    .footer {display: none;}
+    .dayLinks {display: none;}
+    .container hr {border-top: 1px solid rgba(0,0,0,0.20); margin: 5px 0 0 2px;}
+    .container .clearHr {border: none;}
+    #defaultTitle{display: none}
+    #printTitle {display: block; text-align: center;}
+    .container h2 {font-size: 12px;}
+    .container h3 {font-size: 10px;}
+    .container .time, .container .section, .container .title, .container .info {font-size: 9px;}
+    .time {margin: 5px 0 5px 0;}
+    .sectionSplit {margin: 5px 0 0 0;}
+    #spacedPapers .title, .title {margin: 5px 5px 0 20px;}
+    .info {margin: 0 5px 0 20px;}
+    br {display: none;}
+  }
+  @media only screen and (min-width: 715px) {
+      /* For tablet portrait: */
+      .container h2, .container h3, .container hr, .section, .title, .info {margin-left: 20px; margin-right: 20px}
+  }
+  @media only screen and (min-width: 920px) {
+      /* For tablet landscape: */
+     .container h2, .container h3, .container hr, .section, .title, .info {margin-left: 40px; margin-right: 40px}
+  }
+  @media only screen and (min-width: 1190px) {
+      /* For desktop: */
+      .container h2, .container h3, .container hr, .section, .title, .info {margin-left: 60px; margin-right: 60px}
+      
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header"> 
+    <div class="header_top">
+      <span>Contact: <a href="mailto:icpc2016@gmail.com" target="_top" style="color:white; text-decoration:none;">icpc2016@gmail.com</a></span>
+      <span style="float:right;">ICPC 2016 &nbsp;&nbsp;&nbsp;&nbsp; May 16-17, 2016 &nbsp;&nbsp;&nbsp;&nbsp; Renaissance Austin Hotel 9721 Arboretum Boulevard Austin, Texas 78759 USA</span>
+    </div>
+    <div class="header_mid">
+      <div class="logo">
+        <img src="./images/icpc_logo.png" width="210" height="50" alt="ICPC '16 Austin">
+      </div>
+      <h2 id="headerText">24<sup>TH</sup> IEEE INTERNATIONAL CONFERENCE ON PROGRAM COMPREHENSION</h2>
+    </div>
+    
+    <!-- Navigation Menu -->
+    <div class="header_bottom">
+
+      <div id="expand" class="navExpand">
+        <div style="width:40px; height:40px; margin:auto; ">
+          <img src="./images/menu.gif" alt="MENU" width="40" height="40">
+        </div>
+      </div>
+      <div class="navLine"></div>
+
+      <a href="index.html">
+        <div id="menu0" class="navItem">HOME</div></a>
+      <div class="navLine"></div>
+
+      <a href="registration.html">
+        <div id="menu1" class="navItem">REGISTRATION</div></a>
+      <div class="navLine"></div>
+
+      <a href="#">
+        <div id="menu2" class="navItem navCurrent">PROGRAM</div></a>
+      <div class="navLine"></div>
+
+      <a href="call.html">
+        <div id="menu3" class="navItem">CALL</div></a>
+      <div class="navLine"></div>
+
+      <a href="https://easychair.org/conferences/?conf=icpc20160" target="_blank">
+        <div id="menu4" class="navItem">PAPER SUBMISSION</div></a>
+      <div class="navLine"></div>
+
+      <a href="organization-program.html">
+        <div id="menu5" class="navItem">ORGANIZATION</div></a>
+      <div class="navLine"></div>
+
+      <a href="keynote.html">
+        <div id="menu6" class="navItem">KEYNOTE</div></a>
+      <div class="navLine"></div>
+
+      <a href="http://2016.icse.cs.txstate.edu/venue" target="_blank">
+        <div id="menu7" class="navItem">VENUE</div></a>
+      <div class="navLine"></div>
+
+      <a href="http://2016.icse.cs.txstate.edu" target="_blank">
+        <div id="menu8" class="navItem">AUSTIN</div></a>
+      <div class="navLine"></div>
+
+    </div>
+    <!-- End Navigation Menu -->
+
+  </div>
+  <!-- End Header -->
+  <hr style="border:1px solid rgba(255,255,255,0.00); margin:0px; padding:0px; clear:both;">
+  
+    <!-- Main Content -->
+    <div class="content">
+    
+      <!-- Sidebar -->
+      <div class="sidebar">
+
+        <div id="twitter">
+          <h2 style="text-align:center;">TWEETS <a style="text-decoration:none;" href="https://twitter.com/icpc16" target="_blank">@icpc16</a></h2>
+          <hr>
+          <a class="twitter-timeline" style="display:block;text-align:center; margin:15px;" data-dnt="true" href="https://twitter.com/icpc16" data-widget-id="715744792026685440" data-chrome="noheader nofooter noborders transparent">View on Twitter</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+
+        <div id="newsBox">
+          <h2 style="text-align:center;">LATEST NEWS</h2>
+          <hr>
+          <div id="news"></div>
+        </div>
+
+      </div>
+      <!-- End Sidebar -->
+
+      <div class="container">
+
+        <h2 id="printTitle">Program - ICPC 2016</h2>
+        <h2 id="defaultTitle">Program</h2>
+        <p class="dayLinks"><a href="#day1">Day 1</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#day2">Day 2</a></p>
+
+        <hr style="margin-top:0; margin-bottom:5px; clear:both;">
+
+        <h3 id="day1">Monday, May 16</h3>
+
+        <p class="time">9:00 - 10:30 am</p>
+        <div class="sectionBox">
+          <p class="section">ICPC 2016 Opening</p>
+        </div>
+        <div class="sectionBox">
+          <p class="section"><a href="keynote.html">Keynote</a></p>
+          <p class="title" style="font-style: italic;">"Better Code"</p>
+          <p class="info">Sean Parent, Adobe Systems</p>
+        </div>
+
+        <hr>
+        <p class="time">10:30 - 11:00 am</p>
+        <div class="sectionBox">
+          <p class="section">Coffee Break</p>
+        </div>
+
+        <hr>
+        <p class="time">11:00 - 12:30 pm</p>
+        <div class="sectionBox">
+          <p class="section">Technical Session: Code Quality</p>
+          
+          <p class="title">A Textual-based Technique for Smell Detection</p>
+          <p class="info">Fabio Palomba, Annibale Panichella, Andrea De Lucia, Rocco Oliveto, and Andy Zaidman</p>
+          
+          <p class="title">Context-Based Code Smells Prioritization for Prefactoring</p>
+          <p class="info">Natthawute Sae-Lim, Shinpei Hayashi, and Motoshi Saeki</p>
+          
+          <p class="title">Do Code Smells Hamper Novice Programming? A Controlled Experiment on Scratch Programs</p>
+          <p class="info">Felienne Hermans and Efthimia Aivaloglou</p>
+          
+          <p class="title">Improving Code Readability Models with Textual Features</p>
+          <p class="info">Simone Scalabrino, Mario Linares-Vásquez, Denys Poshyvanyk, and Rocco Oliveto</p>
+        </div>
+
+        <hr>
+        <p class="time">12:30 - 2:00 pm</p>
+        <div class="sectionBox">
+          <p class="section">Lunch Break</p>
+        </div>
+
+        <hr>
+        <p class="time">2:00 - 3:30 pm</p>
+        <div class="sectionBox">
+          <p class="section">Technical Session: Program Comprehension</p>
+          
+          <p class="title">Multistaging to Understand: Distilling the Essence of Java Code Examples</p>
+          <p class="info">Huascar Sanchez, Jim Whitehead, and Martin Schaef</p>
+          
+          <p class="title">Navigating the WordPress Plugin Landscape</p>
+          <p class="info">Mark Hills</p>
+          
+          <p class="title">A Case Study of Program Comprehension Effort and Technical Debt Estimations</p>
+          <p class="info">Vallary Singh, Lori Pollock, Will Snipes, and Nicholas A. Kraft</p>
+          
+          <p class="title">On Method Ordering</p>
+          <p class="info">Yorai Geffen and Shahar Maoz</p>
+        </div>
+
+        <hr>
+        <p class="time">3:30 - 4:00 pm</p>
+        <div class="sectionBox">
+          <p class="section">Coffee Break</p>
+        </div>
+
+        <hr>
+        <p class="time">4:00 - 5:30 pm</p>
+        <div class="sectionBox">
+          <p class="section">Technical Session: Supporting Software Developers</p>
+          
+          <p class="title">Identifying Modularization Patterns by Visual Comparison of Multiple Hierarchies</p>
+          <p class="info">Fabian Beck, Jan Melcher, and Daniel Weiskopf</p>
+          
+          <p class="title">Glyph-Based Software Component Identification</p>
+          <p class="info">Ignacio Fernandez, Alexandre Bergel, Juan Pablo Sandoval Alcocer, Alejandro José Infante Rica, and Tudor Girba</p>
+          
+          <p class="title">Taming the IDE with Fine-grained Interaction Data</p>
+          <p class="info">Roberto Minelli, Andrea Mocci, Romain Robbes, and Michele Lanza</p>
+          
+          <p class="title">Learning to Rank for Bug Report Assignee Recommendation</p>
+          <p class="info">Yuan Tian, Dinusha Wijedasa, David Lo, and Claire Le Goues</p>
+        </div>
+
+        <hr>
+        <p class="time">6:30 - 7:00 pm</p>
+        <div class="sectionBox">
+          <p class="section">Meet for walk to Banquet</p>
+        </div>
+
+        <hr>
+        <p class="time">7:00 pm</p>
+        <div class="sectionBox">
+          <p class="section" style="padding-bottom:15px;">Banquet: North By Northwest Stonelake, 10010 N Capital of TX Hwy, Austin, TX 78759</p>
+        </div>
+
+        <hr style="margin-top:0; margin-bottom:15px; clear:both;">
+        
+        <h3 id="day2">Tuesday, May 17</h3>
+
+        <p class="time">9:00 - 10:15 am</p>
+        <div class="sectionBox">
+          <p class="section">Most Influential Paper </p>
+
+          <p class="title">What's in a Name? A Study of Identifiers (ICPC’06)</p>
+          <p class="info">Dawn Lawrie, Christopher Morrell, Henry Feild, and David Binkley</p>
+        </div>
+        <br>
+        <p class="time">10:15 - 10:30 am</p>
+        <div class="sectionBox">
+          <p class="section">Tool Demonstration Introduction</p>
+        </div>
+
+        <hr>
+        <p class="time">10:30 - 11:00 am</p>
+        <div class="sectionBox">
+          <p class="section">Coffee Break</p>
+        </div>
+
+        <hr>
+        <p class="time">11:00 - 12:30 pm</p>
+        <div class="sectionBox">
+          <div class="sectionColumnC">
+            <p class="section">Tool Demonstration Session</p>
+            
+            <p class="title">FeedBaG: An Interaction Tracker for Visual Studio</p>
+            <p class="info">Sven Amann, Sebastian Proksch and Sarah Nadi</p>
+
+            <p class="title">InfectoMeter: A Tool that Helps to Place Bug Fixes</p>
+            <p class="info">Mohammad Azadmanesh and Matthias Hauswirth</p>
+
+            <p class="title">Inline: Now You're Coding with Portals</p>
+            <p class="info">Alexander Breckel and Matthias Tichy</p>
+
+            <p class="title">WAVI: A Reverse Engineering Tool for Web Applications</p>
+            <p class="info">Jonathan Cloutier, Sègla Kpodjedo and Ghizlane El Boussaidi</p>
+
+            <p class="title">PORBS: A Parallel Observation-based Slicer</p>
+            <p class="info">Syed Islam and Dave Binkley</p>
+
+            <p class="title">STAC: A Tool for Static Textual Analysis of Code</p>
+            <p class="info">Saket Khatiwada, Michael Kelly and Anas Mahmoud</p>
+
+            <p class="title">Hey! Are You Injecting Side Effect?: A Tool for Detecting Purity Changes in Java Methods</p>
+            <p class="info">Naoto Ogura, Jiachen Yang, Keisuke Hotta, Yoshiki Higo and Shinji Kusumoto</p>
+
+            <p class="title">WB4SP: A Tool to Build the Word Base for Specific Programs</p>
+            <p class="info">Weisong Sun, Xiaobing Sun, Hui Yang and Bin Li</p>
+
+          </div>
+          <div class="sectionColumnA" id="spacedPapers">
+            <p class="section">Short Paper Session: Analyzing Androids</p>
+            <p class="title">Investigating the Android Apps' Success: An Empirical Study</p>
+            <p class="info">Latifa Guerrouj and Olga Baysal</p>
+            <p class="title">Retrofitting Automatic Testing through Library Tests Reusing</p>
+            <p class="info">Lei Ma, Cheng Zhang, Bing Yu, and Jianjun Zhao</p>
+            <p class="title">Measuring Energy Footprint of Software Features</p>
+            <p class="info">Syed Islam, Adel Noureddine and Rabih Bashroush</p>
+            <p class="title">Human-Machine Resolution of Invisible Control Flow</p>
+            <p class="info">Suraj Kothari, Ahmed Tamrawi, and Jon Mathews</p>
+            <p class="title">Extracting Configuration Parameter Interactions using Static Analysis</p>
+            <p class="info">Chelsea Metcalf, Farhaan Fowze, Tuba Yavuz, and Jose Fortes</p>
+            <p class="title">Android Build Dependency Analysis</p>
+            <p class="info">Bo Zhang, Vasil Tenev, and Martin Becker</p>
+          </div>
+        </div>
+
+        <hr class="clearHr">
+        <hr>
+        <p class="time">12:30 - 2:00 pm</p>
+        <div class="sectionBox">
+          <p class="section">Lunch Break</p>
+        </div>
+
+        <hr>
+        <p class="time">2:00 - 3:30 pm</p>
+        <div class="sectionBox">
+          <div class="sectionColumnA">
+            <p class="section">Technical Session: Language Usage</p>
+
+            <p class="title">Can we find Stable Alternatives for Unstable Eclipse Interfaces?</p>
+            <p class="info">Simon Kawuma, John Businge, and Engineer Bainomugisha</p>
+            <br>
+            <p class="title">A Cooperative Approach for Combining Client-based and Library-based API Usage Pattern Mining</p>
+            <p class="info">Mohamed Aymen Saied and Houari Sahraoui</p>
+            <br>
+            <p class="title">A Novel Approach for Estimating Truck Factors</p>
+            <p class="info">Guilherme Avelino, Marco Tulio Valente, Andre Hora, and Leonardo Passos</p>
+            <br>
+            <p class="title">Can We Enforce a Benefit for Dynamically Typed Languages in Comparison to Statically Typed Ones? A Controlled Experiment</p>
+            <p class="info">Sebastian Okon and Stefan Hanenberg</p>
+          </div>
+          <div class="sectionColumnB">
+            <p class="section">Short Paper Session:  Comprehension You Can Use</p>
+
+            <p class="title">Software Development and Tool Usability</p>
+            <p class="info">Brian Dillon and Richard Thompson</p>
+
+            <p class="title">Detecting Exploratory Programming Behaviors for Introductory Programming Exercises</p>
+            <p class="info">Erina Makihara, Hiroshi Igaki, Norihiro Yoshida, Kenji Fujiwara, and Hajimu Iida</p>
+
+            <p class="title">Embedding Programming Context into Source Code</p>
+            <p class="info">Alexander Breckel and Matthias Tichy</p>
+
+            <p class="title">Synchronized Static and Dynamic Visualization in a Web-Based Programming Environment</p>
+            <p class="info">Jeong Yang, Young Lee, and David Hicks</p>
+
+            <p class="title">Case Studies of Optimized Sequence Diagram for Program Comprehension</p>
+            <p class="info">Madhusudan Srinivasan, Jeong Yang, and Young Lee</p>
+
+            <p class="title">Comprehending Source Code of Large Software System for Reuse</p>
+            <p class="info">Aniket Kulkarni</p>
+            <br>
+          </div>
+        </div>
+
+        <hr class="clearHr">
+        <hr>
+        <p class="time">3:30 - 4:00 pm</p>
+        <div class="sectionBox">
+          <p class="section">Coffee Break</p>
+        </div>
+
+        <hr>
+        <p class="time">4:00 - 5:30 pm</p>
+        <div class="sectionBox">
+          <div class="sectionColumnA">
+            <p class="section">Technical Session: Assessing Code</p>
+            
+            <p class="title">Identifying Functionally Similar Code in Complex Codebases</p>
+            <p class="info">Fang-Hsiang Su, Jonathan Bell, Gail Kaiser, and Simha Sethumadhavan</p>
+            <br>
+            <p class="title">On Automatically Detecting Similar Android Apps</p>
+            <p class="info">Mario Linares-Vasquez, Andrew Holtzhauer, and Denys Poshyvanyk</p>
+            <br>
+            <p class="title">Rule-Directed Code Clone Synchronization</p>
+            <p class="info">Xiao Cheng, Hao Zhong, Yuting Chen, Zhenjiang Hu, and Jianjun Zhao</p>
+            <br>
+            <p class="title">Are Unreachable Methods Harmful? Results from a Controlled Experiment</p>
+            <p class="info">Simone Romano, Christopher Vendome, Giuseppe Scanniello, and Denys Poshyvanyk</p>
+          </div>
+          <div class="sectionColumnB">
+            <p class="section">Short Paper Session: Attack of the Development Team</p>
+
+            <p class="title">Towards Quality Gates in Continuous Delivery and Deployment</p>
+            <p class="info">Gerald Schermann, Jürgen Cito, Philipp Leitner, and Harald Gall</p>
+
+            <p class="title">Revisiting the Relationship Between Code Smells and Refactoring</p>
+            <p class="info">Norihiro Yoshida, Tsubasa Saika, Eunjong Choi, Ali Ouni, and Katsuro Inoue</p>
+
+            <p class="title">Generating Clone References with Less Human Subjectivity</p>
+            <p class="info">Yusuke Yuki, Yoshiki Higo, Keisuke Hotta, and Shinji Kusumoto</p>
+
+            <p class="title">Attack of Micro Clones</p>
+            <p class="info">Rijnard van Tonder and Claire Le Goues</p>
+
+            <p class="title">Understanding interactive debugging with swarm debug infrastructure</p>
+            <p class="info">Fabio Petrillo, Zéphyrin Soh, Foutse Khomh, Marcelo Pimenta, Carla Freitas, and Yann-Gaël Guéhéneuc</p>
+          </div>
+        </div>
+
+        <hr class="clearHr">
+
+        <hr>
+        <p class="time">5:30 - 6:30 pm</p>
+        <div class="sectionBox">
+          <p class="section">Open Steering Committee Meeting with Presentation of ICPC 2017</p>
+        </div>
+
+      </div>
+      
+      <hr style="border:1px solid rgba(255,255,255,0.00); margin:0px; padding:0px; clear:both;">
+    </div>
+    <!-- End Main Content -->
+  
+  <hr style="border:1px solid rgba(255,255,255,0.00); margin:0px; padding:0px; clear:both;">
+</div>
+
+<div class="footer">
+  <div class="sponsors" id="sponsors"></div>
+  <div class="footerBottom">
+    <span>Contact: <a href="mailto:icpc2016@gmail.com" target="_top" style="color:white; text-decoration:none;">icpc2016@gmail.com</a></span>
+    <span style="float:right;">ICPC 2016 &nbsp;&nbsp;&nbsp;&nbsp; May 16-17, 2016 &nbsp;&nbsp;&nbsp;&nbsp; Renaissance Austin Hotel 9721 Arboretum Boulevard Austin, Texas 78759 USA</span>
+  </div>
+</div>
+
+</body>
+</html>
