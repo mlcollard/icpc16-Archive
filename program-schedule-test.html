@@ -1,0 +1,1015 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<title>Program - ICPC16</title>
+<link rel="stylesheet" type="text/css" href="./css/base_style.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    var n = true;
+    $("#news").load("news.html"); 
+    $("#sponsors").load("sponsors.html"); 
+    $("#expand").click(function(){
+    if (n) {
+      n = false;
+      $( "#menu0" ).addClass( "navToggle" );
+      $( "#menu1" ).addClass( "navToggle" );
+      $( "#menu2" ).addClass( "navToggle" );
+      $( "#menu3" ).addClass( "navToggle" );
+      $( "#menu4" ).addClass( "navToggle" );
+      $( "#menu5" ).addClass( "navToggle" );
+      $( "#menu6" ).addClass( "navToggle" );
+      $( "#menu7" ).addClass( "navToggle" );
+      $( "#menu8" ).addClass( "navToggle" );
+    } else {
+      n = true;
+      $( "#menu0" ).removeClass( "navToggle" );
+      $( "#menu1" ).removeClass( "navToggle" );
+      $( "#menu2" ).removeClass( "navToggle" );
+      $( "#menu3" ).removeClass( "navToggle" );
+      $( "#menu4" ).removeClass( "navToggle" );
+      $( "#menu5" ).removeClass( "navToggle" );
+      $( "#menu6" ).removeClass( "navToggle" );
+      $( "#menu7" ).removeClass( "navToggle" );
+      $( "#menu8" ).removeClass( "navToggle" );
+    }
+    })
+    $("#moreDetails").click(function(){
+      $("#moreDetails").addClass("hidden");
+      $("#lessDetails").removeClass("hidden");
+      $("#detailContent").removeClass("hidden");
+    })
+    $("#lessDetails").click(function(){
+      $("#moreDetails").removeClass("hidden");
+      $("#lessDetails").addClass("hidden");
+      $("#detailContent").addClass("hidden");
+    });
+  });
+</script>
+<style type="text/css">
+  p, hr {
+    margin-left:15px;
+    margin-right:15px;
+  }
+  .container {
+    color:black;
+    background-color:rgba(255,255,255,0.8);
+    padding-bottom:30px;
+  }
+  .container h1 {
+    font-size:24px;
+    margin-left:30px;
+    margin-right:30px;
+    font-weight:600;
+  }
+  .container h2 {
+    color:black;
+    font-weight:500;
+    text-align:left;
+    margin-left:30px;
+    margin-right:30px;
+    margin-bottom:5px;
+  }
+  .container hr {
+    border:0;
+    height:1px;
+    background:rgba(0,0,0,0.20);
+    margin-left:0;
+    margin-right:0;
+  }
+  td {
+    border: 1px solid blue;
+  }
+  .description {
+    clear:both;
+    margin:0;
+    margin-right:30px;
+    padding:0;
+    padding-left:150px;
+    font-weight:100;
+  }
+  .print {
+    clear:both;
+    margin:0;
+    padding:0;
+    padding-left:150px;
+    color:#956e73;
+    font-weight:900;
+  }
+  .container a {
+    color:#956e73;
+    font-weight:900;
+    text-decoration: none;
+  }
+  .container h2 {
+    margin-left: 60px;
+    margin-right: 60px;
+    margin: 30px 20px 0 20px;
+    color:#000;
+    text-transform: uppercase;
+  }
+  .container h3 {
+    color:#000;
+    font-family: Avenir, Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size:16px;
+    font-weight: 500;
+    text-align:left;
+    margin:10px 20px 0px 20px;
+}
+  .container ul {
+    margin-top: -7px;
+    margin-left: 70px;
+  }
+  .container li {
+    margin-top: 5px;
+  }
+  .container ul {
+    list-style: none;
+  }
+  .container ul li:before {
+    content:"•"; 
+    font-size:10pt;
+    margin-left: -16px;
+    margin-right: 10px;
+  }
+  .container .left {
+    float: left;
+    clear: both;
+    width:150px;
+    margin:0 0 0 90px;
+  }
+  .container .right {
+    float: left;
+    text-align: right;
+    width:85px;
+    margin:0;
+  }
+  .container .invisible {
+    clear: both;
+    border: none;
+    height: 0;
+  }
+  .heavy {
+    font-weight: 500;
+  }
+  .hidden {
+    display: none;
+  }
+  #moreDetails {
+    font-weight: 900;
+    color:#956e73;
+    cursor: pointer;
+  }
+  #lessDetails {
+    font-weight: 900;
+    color:#956e73;
+    cursor: pointer;
+  }
+  .time {
+    width: 100%;
+    margin: 8px 0 8px 0;
+    padding: 0px;
+    clear: both;
+    font-weight: 100;
+    line-height: 1.2;
+    text-align: center;
+    float: left;
+  }
+  .section {
+    margin: 8px 0 0 20px;
+    padding: 0px;
+    font-weight: 900;
+    line-height: 1.2;
+    clear: both;
+    border: none;
+  }
+  .sectionSplit {
+    margin: 8px 0 0 0;
+    padding: 0px;
+    font-weight: 900;
+    float: left;
+    width: 50%;
+  }
+  .title {
+    margin: 8px 10px 0 20px;
+    padding: 0px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .info {
+    margin: 0 10px 0 20px;
+    padding: 0px;
+    font-weight: 100;
+    line-height: 1.2;
+  }
+  .abstract {
+    margin: 0 10px 0 20px;
+    padding: 0px;
+    font-weight: 100;
+    line-height: 1.2;
+    font-style: italic;
+    margin-top: 0px;
+    clear: both;
+    max-height: 0px;
+    margin-top: 0px;
+    overflow: hidden;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transition: all 1s ease;
+    
+  }
+  input[type="checkbox"]:checked + .abstract{
+    max-height: 500px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+
+  .abstract p {
+    text-indent: 20px;
+    margin: 0px;
+    font-size: 12px;
+  }
+  .sectionBox {
+    width:100%;
+    margin-bottom: 0;
+  }
+  .sectionColumnA {
+    float: left;
+    width:50%;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    border-right: 1px solid rgb(190,184,185);
+  }
+  .sectionColumnB {
+    float: left;
+    width:50%;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    border-left: 1px solid rgb(190,184,185);
+    position: relative;
+    left: -1px;
+  }
+  .dayLinks {
+    margin: 32px 0 0 0;
+    float: left;
+  }
+  #printTitle {
+    display: none;
+  }
+  #defaultTitle {
+    width: 110px;
+    float: left;
+    margin-right: 0;
+  }
+  #day1, #day2 {
+    text-align: center;
+  }
+  .container hr {
+    clear: both;
+    margin: 8px 0 0 0;
+  }
+  .container .clearHr {
+    background-color:rgba(0,0,0,0);
+  }
+  #spacedPapers .title {
+    margin-top: 20px;
+  }
+  .pdfLink {
+    display: inline-block;
+    width: 45px;
+  }
+  .pdfImg {
+    margin: 0;
+    width: 12px;
+    margin: 0 0 0 4px;
+  }
+  .starImg {
+    margin: 0;
+    width: 12px;
+    margin: 0 4px 0 0;
+  }
+  input[type="checkbox"] {
+    display:none;
+  }
+  label {
+    color:#956e73;
+    font-weight: 900;
+    cursor:pointer;
+  }
+  #proceedingsLink {
+    float:none; clear: both; margin: auto; width: 315px;;
+  }
+  
+  @media print {
+    .title {color:black;}
+    .infoLinkBox {display: none;}
+    .header {display: none;}
+    .footer {display: none;}
+    .dayLinks {display: none;}
+    .container hr {border-top: 1px solid rgba(0,0,0,0.20); margin: 5px 0 0 2px;}
+    .container .clearHr {border: none;}
+    #defaultTitle{display: none}
+    #printTitle {display: block; text-align: center;}
+    .container h2 {font-size: 12px;}
+    .container h3 {font-size: 10px;}
+    .container .time, .container .section, .container .title, .container .info, .abstract p{font-size: 9px;}
+    .time {margin: 5px 0 5px 0;}
+    .sectionSplit {margin: 5px 0 0 0;}
+    #spacedPapers .title, .title {margin: 5px 5px 0 20px;}
+    .info {margin: 0 5px 0 20px;}
+    br {display: none;}
+  }
+  @media only screen and (min-width: 715px) {
+      /* For tablet portrait: */
+      .container h2, .container h3, .container hr, .section, .title, .info {margin-left: 20px; margin-right: 20px}
+      #proceedingsLink {float:none; clear: both; margin: auto; width: 315px;}
+  }
+  @media only screen and (min-width: 920px) {
+      /* For tablet landscape: */
+     .container h2, .container h3, .container hr, .section, .title, .info {margin-left: 40px; margin-right: 40px}
+     #proceedingsLink {float:right; clear: none; margin: 30px 40px 0 0;}
+  }
+  @media only screen and (min-width: 1190px) {
+      /* For desktop: */
+      .container h2, .container h3, .container hr, .section, .title, .info, .infoLinkBox {margin-left: 60px; margin-right: 60px}
+      #proceedingsLink {float: right; clear: none; margin: 30px 60px 0 0;}
+      .abstract {margin: 0 60px 0 60px;}
+      
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header"> 
+    <div class="header_top">
+      <span>Contact: <a href="mailto:icpc2016@gmail.com" target="_top" style="color:white; text-decoration:none;">icpc2016@gmail.com</a></span>
+      <span style="float:right;">ICPC 2016 &nbsp;&nbsp;&nbsp;&nbsp; May 16-17, 2016 &nbsp;&nbsp;&nbsp;&nbsp; Renaissance Austin Hotel 9721 Arboretum Boulevard Austin, Texas 78759 USA</span>
+    </div>
+    <div class="header_mid">
+      <div class="logo">
+        <img src="./images/icpc_logo.png" width="210" height="50" alt="ICPC '16 Austin">
+      </div>
+      <h2 id="headerText">24<sup>TH</sup> IEEE INTERNATIONAL CONFERENCE ON PROGRAM COMPREHENSION</h2>
+    </div>
+    
+    <!-- Navigation Menu -->
+    <div class="header_bottom">
+
+      <div id="expand" class="navExpand">
+        <div style="width:40px; height:40px; margin:auto; ">
+          <img src="./images/menu.gif" alt="MENU" width="40" height="40">
+        </div>
+      </div>
+      <div class="navLine"></div>
+
+      <a href="index.html">
+        <div id="menu0" class="navItem">HOME</div></a>
+      <div class="navLine"></div>
+
+      <a href="keynote.html">
+        <div id="menu1" class="navItem">KEYNOTE</div></a>
+      <div class="navLine"></div>
+
+      <a href="#">
+        <div id="menu2" class="navItem navCurrent">PROGRAM</div></a>
+      <div class="navLine"></div>
+
+      <a href="banquet.html">
+        <div id="menu3" class="navItem">BANQUET</div></a>
+      <div class="navLine"></div>
+
+      <a href="call.html">
+        <div id="menu4" class="navItem">CALL</div></a>
+      <div class="navLine"></div>
+
+      <a href="organization-program.html">
+        <div id="menu5" class="navItem">ORGANIZATION</div></a>
+      <div class="navLine"></div>
+
+      <a href="registration.html">
+        <div id="menu6" class="navItem">REGISTRATION</div></a>
+      <div class="navLine"></div>
+
+      <a href="http://2016.icse.cs.txstate.edu/venue" target="_blank">
+        <div id="menu7" class="navItem">VENUE</div></a>
+      <div class="navLine"></div>
+
+      <a href="http://2016.icse.cs.txstate.edu" target="_blank">
+        <div id="menu8" class="navItem">AUSTIN</div></a>
+      <div class="navLine"></div>
+
+    </div>
+    <!-- End Navigation Menu -->
+
+  </div>
+  <!-- End Header -->
+  <hr style="border:1px solid rgba(255,255,255,0.00); margin:0px; padding:0px; clear:both;">
+  
+    <!-- Main Content -->
+    <div class="content">
+    
+      <!-- Sidebar -->
+      <div class="sidebar">
+
+        <div id="twitter">
+          <h2 style="text-align:center;">TWEETS <a style="text-decoration:none;" href="https://twitter.com/icpc16" target="_blank">@icpc16</a></h2>
+          <hr>
+          <a class="twitter-timeline" style="display:block;text-align:center; margin:15px;" data-dnt="true" href="https://twitter.com/icpc16" data-widget-id="715744792026685440" data-chrome="noheader nofooter noborders transparent">View on Twitter</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+
+        <div id="newsBox">
+          <h2 style="text-align:center;">LATEST NEWS</h2>
+          <hr>
+          <div id="news"></div>
+        </div>
+
+      </div>
+      <!-- End Sidebar -->
+
+      <div class="container">
+
+        <h2 id="printTitle">Program - ICPC 2016</h2>
+        <h2 id="defaultTitle">Program</h2>
+        <p class="dayLinks"><a href="#day1">Day 1</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#day2">Day 2</a></p>
+
+        <p id="proceedingsLink">Proceedings: <a href="http://131.123.42.38/icpc16/ICPC16Proceedings.pdf" target="_blank"><abbr title="Complete Preprint Proceedings">Preprint PDF<img src="images/pdf.png" alt="PDF" class="pdfImg"></abbr></a>&nbsp; | <a href="http://131.123.42.38/icpc16/ICPC16ReaderProceedings.pdf" target="_blank"><abbr title="Tablet-friendly proceedings with margins cropped">Reader PDF<img src="images/pdf.png" alt="PDF" class="pdfImg"></abbr></a></p>
+
+        <hr style="margin-top:0; margin-bottom:5px; clear:both;">
+
+        <h3 id="day1">Monday, May 16</h3>
+
+        <p class="time">9:00 - 10:30 am</p>
+        <div class="sectionBox">
+          <p class="section">ICPC 2016 Opening</p>
+        </div>
+        <div class="sectionBox">
+          <p class="section"><a href="keynote.html">Keynote: Better Code</a></p>
+          <p class="info">Sean Parent, Adobe Systems</p>
+        </div>
+
+        <hr>
+        <p class="time">10:30 - 11:00 am</p>
+        <div class="sectionBox">
+          <p class="section">Coffee Break</p>
+        </div>
+
+        <hr>
+        <p class="time">11:00 - 12:30 pm</p>
+        <div class="sectionBox">
+          <p class="section">Technical Research: Code Quality &nbsp; <a class="pdfLink" href="http://131.123.42.38/icpc16/sessions/ICPC16_TR_Session1.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+          <p class="info">Session Chair: Michele Lanza</p>
+          <span class="paper">
+            <p class="title">A Textual-based Technique for Smell Detection &nbsp; <label for="checkbox_00">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/palomba87418.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="info"><em>Fabio Palomba</em>, Annibale Panichella, Andrea De Lucia, Rocco Oliveto, and Andy Zaidman</p>
+            <input type="checkbox" id="checkbox_00" value="value">
+            <div class="abstract">
+              <p style="margin-top:10px;">In this paper, we present TACO (Textual Analysis for Code Smell Detection), a technique that exploits textual analysis to detect a family of smells of different nature and different levels of granularity. We run TACO on 10 open source projects, comparing its performance with existing smell detectors purely based on structural information extracted from code components. The analysis of the results indicates that TACO’s precision ranges between 67% and 77%, while its recall ranges between 72% and 84%. Also, TACO often outperforms alternative structural approaches confirming, once again, the usefulness of information that can be derived from the textual part of code components.</p>
+            </div>
+          </span>
+          
+          <span class="paper">
+            <p class="title">Context-Based Code Smells Prioritization for Prefactoring &nbsp; <label for="checkbox_01">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/sae-lim87421.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="info"><em>Natthawute Sae-Lim</em>, Shinpei Hayashi, and Motoshi Saeki</p>
+            <input type="checkbox" id="checkbox_01" value="value">
+            <div class="abstract">
+              <p style="margin-top:10px;">To find opportunities for applying prefactoring, several techniques for detecting bad smells in source code have been proposed. Existing smell detectors are often unsuitable for developers who have a specific context because these detectors do not consider their current context and output the results that are mixed with both smells that are and are not related to such context. Consequently, the developers must spend a considerable amount of time identifying relevant smells. As described in this paper, we propose a technique to prioritize bad code smells using developers’ context. The explicit data of the context are obtained using a list of issues extracted from an issue tracking system. We applied impact analysis to the list of issues and used the results to specify which smells are associated with the context. Consequently, our approach can provide developers with a list of prioritized bad code smells related to their current context. Several evaluations using open source projects demonstrate the effectiveness of our technique.</p>
+            </div>
+          </span>
+          
+          <span class="paper">
+            <p class="title">Do Code Smells Hamper Novice Programming? A Controlled Experiment on Scratch Programs &nbsp; <label for="checkbox_02">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/hermans87433.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="info"><em>Felienne Hermans</em> and Efthimia Aivaloglou</p>
+            <input type="checkbox" id="checkbox_02" value="value">
+            <div class="abstract">
+              <p style="margin-top:10px;">Recently, block-based programming languages like Alice, Scratch and Blockly have become popular tools for programming education. There is substantial research showing that block-based languages are suitable for early programming education. But can block-based programs be smelly too? And does that matter to learners? In this paper we explore the code smells metaphor in the context of block-based programming language Scratch. We conduct a controlled experiment with 61 novice Scratch programmers, in which we divided the novices into three groups. One third receive a non-smelly program, while the other groups receive a program suffering from the Duplication or the Long Method smell respectively. All subjects then perform the same comprehension tasks on their program, after which we measure their time and correctness. The results of the experiment show that code smell indeed influence performance: subjects working on the program exhibiting code smells perform significantly worse, but the smells did not affect the time subjects needed. Investigating different types of tasks in more detail, we find that Long Method mainly decreases system understanding, while Duplication decreases the ease with which subjects modify Scratch programs.</p>
+            </div>
+          </span>
+          
+          <span class="paper">
+            <p class="title">Improving Code Readability Models with Textual Features &nbsp; <label for="checkbox_03">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/scalabrino87429.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="info"><em>Simone Scalabrino</em>, Mario Linares-Vásquez, Denys Poshyvanyk, and Rocco Oliveto</p>
+            <input type="checkbox" id="checkbox_03" value="value">
+            <div class="abstract">
+              <p style="margin-top:10px;">Code reading is one of the most frequent activities in software maintenance; before implementing changes, it is necessary to fully understand source code often written by other developers. Thus, readability is a crucial aspect of source code that may significantly influence program comprehension effort. In general, models used to estimate software readability take into account only structural aspects of source code, e.g., line length and a number of comments. However, source code is a particular form of text; therefore, a code readability model should not ignore the textual aspects of source code encapsulated in identifiers and comments. In this paper, we propose a set of textual features aimed at measuring code readability. We evaluated the proposed textual features on 600 code snippets manually evaluated (in terms of readability) by 5K+ people. The results demonstrate that the proposed features complement classic structural features when predicting code readability judgments. Consequently, a code readability model based on a richer set of features, including the ones proposed in this paper, achieves a significantly higher accuracy as compared to all of the state-of-the-art readability models.</p>
+            </div>
+          </span>
+        </div>
+
+        <hr>
+        <p class="time">12:30 - 2:00 pm</p>
+        <div class="sectionBox">
+          <p class="section">Lunch Break</p>
+        </div>
+
+        <hr>
+        <p class="time">2:00 - 3:30 pm</p>
+        <div class="sectionBox">
+          <p class="section">Technical Research: Program Comprehension &nbsp; <a class="pdfLink" href="http://131.123.42.38/icpc16/sessions/ICPC16_TR_Session2.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+          <p class="info">Session Chair: Romain Robbes</p>
+          
+          <span class="paper">
+            <p class="title">Multistaging to Understand: Distilling the Essence of Java Code Examples &nbsp; <label for="checkbox_04">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/sanchez87415.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="info"><em>Huascar Sanchez</em>, Jim Whitehead, and Martin Schaef</p>
+            <input type="checkbox" id="checkbox_04" value="value">
+            <div class="abstract">
+              <p style="margin-top:10px;">Programmers commonly search the Web to find code examples that can help them solve a specific programming task. While some novice programmers may be willing to spend as much time as needed to understand a found code example, more experienced ones want to spend as little time as possible. They want to get a quick overview of the example’s operation, so they can start working with it immediately. Getting this overview is often non-trivial and requires a tedious and manual inspection process. In this paper, we introduce a technique called Multistaging to Understand, which streamlines this inspection process by distilling the essence of code examples. The essence of a code example conveys the most important aspects of the example’s intended function. Our technique automatically decomposes the code in an example into code stages that can be explored non-sequentially; enabling fast exploratory learning. We discuss the key components of our technique and describe empirical results based on actual code examples on StackOverflow.</p>
+            </div>
+          </span>
+          
+          <span class="paper">
+            <p class="title">Navigating the WordPress Plugin Landscape &nbsp; <label for="checkbox_05">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/hills87427.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="info"><em>Mark Hills</em></p>
+            <input type="checkbox" id="checkbox_05" value="value">
+            <div class="abstract">
+              <p style="margin-top:10px;">WordPress includes a plugin mechanism that allows user-provided code to be executed in response to specific system events and input/output requests. The large number of extension points provided by WordPress makes it challenging for new plugin developers to understand which extension points they should use, while the thousands of existing plugins make it hard to find existing extension point handler implementations for use as examples when creating a new plugin. In this paper, we present a lightweight analysis, supplemented with information mined from source comments and the webpages hosted by WordPress for each plugin, that guides developers to the right extension points and to existing implementations of handlers for these extension points. We also present empirical information about how plugins are used in practice, providing guidance to both tool and prospective plugin developers.</p>
+            </div>
+          </span>
+          
+          <span class="paper">
+            <p class="title">A Case Study of Program Comprehension Effort and Technical Debt Estimations &nbsp; <label for="checkbox_06">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/singh87426.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="info">Vallary Singh, <em>Lori Pollock</em>, Will Snipes, and Nicholas A. Kraft</p>
+            <input type="checkbox" id="checkbox_06" value="value">
+            <div class="abstract">
+              <p style="margin-top:10px;">This paper describes a case study of using developer activity logs as indicators of a program comprehension effort by analyzing temporal sequences of developer actions (e.g., navigation and edit actions). We analyze developer activity data spanning 109,065 events and 69 hours of work on a medium-sized industrial application. We examine potential correlations between different measures of developer activity, code change metrics and code smells to gain insight into questions that could direct future technical debt interest estimation. To gain more insights into the data, we follow our analysis with commit message analysis and a developer interview. Our results indicate that developer activity as an estimate of program comprehension effort is correlated with both change proneness and static metrics for code smells.</p>
+            </div>
+          </span>
+          
+          <span class="paper">
+            <p class="title">On Method Ordering &nbsp; <label for="checkbox_07">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/geffen87420.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="info"><em>Yorai Geffen</em> and Shahar Maoz</p>
+            <input type="checkbox" id="checkbox_07" value="value">
+            <div class="abstract">
+              <p style="margin-top:10px;">As the order of methods in a Java class has no effect on its semantics, an engineer can choose any order she prefers. Which code conventions regarding methods ordering are common in practice, if any? Are some orders better than others in making the code easier to understand? Can good orders be computed and applied automatically?
+            </div>
+          </span>
+        </div>
+
+        <hr>
+        <p class="time">3:30 - 4:00 pm</p>
+        <div class="sectionBox">
+          <p class="section">Coffee Break</p>
+        </div>
+
+        <hr>
+        <p class="time">4:00 - 5:30 pm</p>
+        <div class="sectionBox">
+          <p class="section">Technical Research: Supporting Software Developers &nbsp; <a class="pdfLink" href="http://131.123.42.38/icpc16/sessions/ICPC16_TR_Session3.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+          <p class="info">Session Chair: Denys Poshyvanyk</p>
+          
+          <span class="paper">
+            <p class="title">Identifying Modularization Patterns by Visual Comparison of Multiple Hierarchies &nbsp; <label for="checkbox_08">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/beck87414.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="info"><em>Fabian Beck</em>, Jan Melcher, and Daniel Weiskopf</p>
+            <input type="checkbox" id="checkbox_08" value="value">
+            <div class="abstract">
+              <p style="margin-top:10px;">Software is modularized to make its high complexity manageable. However, a multitude of modularization criteria exists and is applied. Hence, to extend, reuse, or restructure a system, it is important for developers to understand which criteria have been used. To this end, we provide an interactive visualization approach that compares the current modularization of a system to several software clustering results. The visualization is based on juxtaposed icicle plot representations of the hierarchical modularizations, encoding similarity by color. A detailed comparison is facilitated by an advanced selection concept. Coupling graphs, which form the basis for software clustering, can be explored on demand in matrix representations. We discuss typical modularization patterns that indicate criteria used for structuring the software or suggest opportunities for partial remodularization of the system. We apply the approach to analyze 16 open source Java projects. The results show that identifying those modularization patterns provides valuable insights and can be done efficiently.</p>
+            </div>
+          </span>
+          
+          <span class="paper">
+            <p class="title">Glyph-Based Software Component Identification &nbsp; <label for="checkbox_09">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/fernandez87416.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="info">Ignacio Fernandez, <em>Alexandre Bergel</em>, Juan Pablo Sandoval Alcocer, Alejandro José Infante Rica, and Tudor Girba</p>
+              <input type="checkbox" id="checkbox_09" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">Glyphs are automatically generated visual icons, commonly employed as an object identification technique. Although popular in the Human Computer Interaction community, glyphs are rarely employed to address software engineering problems.</p><p>We extended the VisualID glyph technique to cope with structural software elements and used it to address two issues in software maintenance: identify classes with the same dependencies and classes with a similar set of methods. We have compared VisualID against three visual representations: textual, graph (nodes and edges), and dependency structural matrix. Our experiments indicate that VisualID significantly helps identify classes with the same dependencies and classes with similar methods when compared with visual techniques commonly used in software maintenance.</p>
+              </div>
+          </span>
+          
+          <span class="paper">
+            <p class="title">Taming the IDE with Fine-grained Interaction Data &nbsp; <label for="checkbox_10">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/minelli87422.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="info"><em>Roberto Minelli</em>, Andrea Mocci, Romain Robbes, and Michele Lanza</p>
+            <input type="checkbox" id="checkbox_10" value="value">
+            <div class="abstract">
+              <p style="margin-top:10px;">Integrated Development Environments (IDEs) lack effective support to browse complex relationships between source code elements. As a result, developers are often forced to exploit multiple user interface components at the same time, bringing the IDE into a complex, “chaotic” state. Keeping track of these relationships demands increased source code navigation and cognitive load, leading to productivity deficits documented in observational studies. Beyond small-scale studies, the amount and nature of the chaos experienced by developers in the wild is unclear, and more importantly it is unclear how to tame it.</p><p>Based on a dataset of fine-grained interaction data, we propose several metrics to characterize and quantify the “level of chaos” of an IDE. Our results suggest that developers spend, on average, more than 30% of their time in a chaotic environment, and that this may affect their productivity. To support developers, we devise and evaluate simple strategies that automatically alter the UI of the IDE. We find that even simple strategies may considerably reduce the level of chaos both in terms of effective space occupancy and time spent in a chaotic environment.</p>
+            </div>
+          </span>
+          
+          <span class="paper">
+            <p class="title">Learning to Rank for Bug Report Assignee Recommendation &nbsp; <label for="checkbox_11">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/tian87424.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="info">Yuan Tian, Dinusha Wijedasa, <em>David Lo</em>, and Claire Le Goues</p>
+            <input type="checkbox" id="checkbox_11" value="value">
+            <div class="abstract">
+              <p style="margin-top:10px;">Projects receive a large number of bug reports, and resolving these reports take considerable time and human resources. To aid developers in the resolution of bug reports, various automated techniques have been proposed to identify and recommend developers to address newly reported bugs. Two families of bug assignee recommendation techniques include those that recommend developers who have fixed similar bugs before (a.k.a. activity-based techniques) and those recommend suitable developers based on the location of the bug (a.k.a. location-based techniques). Previously, each of these techniques has been investigated separately.</p><p>In this work, we propose a unified model that combines information from both developers’ previous activities and suspicious program locations associated with a bug report in the form of similarity features. We have evaluated our proposed approach on more than 11,000 bug reports from Eclipse JDT, Eclipse SWT and ArgoUML projects. Our experiments show that our unified model can outperform a location-based baseline by Anvik et al. and an activity-based baseline by Shokripour et al. In terms of correct recommendations at top-1 position, our unified model outperforms the activity-based baseline 50.0%-100.0%, and the location-based baseline by 11.1%-27.0%.</p>
+            </div>
+          </span>
+        </div>
+
+        <hr>
+        <p class="time">6:30 - 7:00 pm</p>
+        <div class="sectionBox">
+          <p class="section">Meet for walk to Banquet</p>
+        </div>
+
+        <hr>
+        <p class="time">7:00 pm</p>
+        <div class="sectionBox">
+          <p class="section" style="padding-bottom:15px;">Banquet: North By Northwest Stonelake, 10010 N Capital of TX Hwy, Austin, TX 78759</p>
+        </div>
+
+        <hr style="margin-top:0; margin-bottom:15px; clear:both;">
+        
+        <h3 id="day2">Tuesday, May 17</h3>
+
+        <p class="time">9:00 - 10:15 am</p>
+        <div class="sectionBox">
+          <p class="section">Most Influential Paper </p>
+          <p class="info">Session Chairs: Jonathan I. Maletic and Gabriele Bavota</p>
+
+          <span class="paper">
+            <p class="title">What's in a Name? A Study of Identifiers (ICPC’06) &nbsp; <label for="checkbox_12">Abstract</label> | <a href="http://ieeexplPAPERPDFLINKr target="_blank"e.ieee.org/xpls/abs_all.jsp?arnumber=1631100&tag=1" target="_blank">Info</a></p>
+            <p class="info">Dawn Lawrie, Christopher Morrell, Henry Feild, and David Binkley</p>
+            <input type="checkbox" id="checkbox_12" value="value">
+            <div class="abstract">
+              <p style="margin-top:10px;" style="font-style:normal; text-indent:0px;">ICPC’06 Abstract</p>
+              <p>Readers of programs have two main sources of domain information: identifier names and comments. When functions are uncommented, as many are, comprehension is almost exclusively dependent on the identifier names. Assuming that writers of programs want to create quality identifiers (e.g., include relevant domain knowledge) how should they go about it? For example, do the initials of a concept name provide enough information to represent the concept? If not, and a longer identifier is needed, is an abbreviation satisfactory or does the concept need to be captured in an identifier that includes full words? Results from a study designed to investigate these questions are reported. The study involved over 100 programmers who were asked to describe twelve different functions. The functions used three different "levels" of identifiers: single letters, abbreviations, and full words. Responses allow the level of comprehension associated with the different levels to be studied. The functions include standard algorithms studied in computer science courses as well as functions extracted from production code. The results show that full word identifiers lead to the best comprehension; however, in many cases, there is no statistical difference between full words and abbreviation</p>
+            </div>
+          </span>
+        </div>
+        <br>
+        <p class="time">10:15 - 10:30 am</p>
+        <div class="sectionBox">
+          <p class="section">Tool Demonstration Introduction</p>
+        </div>
+
+        <hr>
+        <p class="time">10:30 - 11:00 am</p>
+        <div class="sectionBox">
+          <p class="section">Coffee Break</p>
+        </div>
+
+        <hr>
+        <p class="time">11:00 - 12:30 pm</p>
+        <div class="sectionBox">
+          <div class="sectionColumnA">
+            <p class="section">Tool Demonstrations &nbsp; <a class="pdfLink" href="http://131.123.42.38/icpc16/sessions/ICPC16_TD_Session1.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="info">Session Chair: Felienne Hermans</p>
+            
+            <span class="paper">
+            <p class="title">FeedBaG: An Interaction Tracker for Visual Studio &nbsp; <label for="checkbox_13">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/amann87435.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info">Sven Amann, <em>Sebastian Proksch</em> and Sarah Nadi</p>
+              <input type="checkbox" id="checkbox_13" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">Integrated Development Environments (IDEs) provide a convenient standalone solution that supports developers during various phases of software development. In order to provide better support for developers within such IDEs, we need to understand how developers use them. To infer useful conclusions, such information should be gathered for different types of IDEs, for different programming languages, and in different development settings.</p><p>In this paper, we present FEEDBAG, an extension for Visual Studio that tracks developers’ interactions with the IDE. FEED-BAG generates a rich stream of interaction events and provides means for developers to review and submit the data to a server. We recently used the tool in a study, recording more than 6,300 hours of work time. Future studies with different user groups are needed to explore and compare IDE-usage aspects, like code-comprehension assistance, in detail. Therefore, we publish FEEDBAG and encourage other researchers to use it as well.</p>
+              </div>
+            </span>
+
+            <span class="paper">
+            <p class="title">InfectoMeter: A Tool that Helps to Place Bug Fixes &nbsp; <label for="checkbox_14">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/azadmanesh87439.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info"><em>Mohammad Azadmanesh</em> and Matthias Hauswirth</p>
+              <input type="checkbox" id="checkbox_14" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">Given different ways to fix a failure in a program run, you may want to fix it such that future runs of the same
+              </div>
+            </span>
+
+            <span class="paper">
+            <p class="title">Inline: Now You're Coding with Portals &nbsp; <label for="checkbox_15">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/breckel87440.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info"><em>Alexander Breckel</em> and Matthias Tichy</p>
+              <input type="checkbox" id="checkbox_15" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">Programmers use diverse tools for code understanding to access various types of context information like interface definitions, revision histories, and debugging values. Integrated development environments support specialized visualization mechanisms for such context types. While these mechanisms in principle enable programmers to access required information, the diversity of visualizations as well as the distance between code locations and related information may slow down development. We present a generic approach to embed various types of context uniformly into the main source code view in close proximity to the relevant source code by using a concept called code portals. Furthermore, embedded content can be organized and manipulated directly using operations already familiar to programmers. We illustrate the approach using different types of context, and present preliminary results of a qualitative study indicating that our approach is usable and improves program comprehension and productivity in general. The approach is implemented in a prototypical source code editor.</p>
+              </div>
+            </span>
+
+            <span class="paper">
+            <p class="title">WAVI: A Reverse Engineering Tool for Web Applications &nbsp; <label for="checkbox_16">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/cloutier87441.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info"><em>Jonathan Cloutier</em>, Sègla Kpodjedo and Ghizlane El Boussaidi</p>
+              <input type="checkbox" id="checkbox_16" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">Web developers face some unique challenges when trying to understand, modify and document the structure of their web applications. The heterogeneity and complexity of the underlying technologies and languages heighten comprehension problems. In particular, JavaScript, as an essential part of the Web ecosystem, is a language that offers a flexibility that can make its code hard to grasp, when it comes to comprehension and documentation tasks. In this paper, we present the first iteration of WAVI (WebAppViewer), a reverse engineering tool that uses static analysis and a filter-based mechanism to retrieve and document the structure of a Web application. WAVI is able to extract elements coming from essential web languages and frameworks such as HTML, JavaScript, CSS and Node.js. The tool makes use of some simple, effective heuristics to accurately retrieve dependency links for files and methods. WAVI also offers the visualisation of the extracted information as force-directed graphs and customized class diagrams. The effectiveness of WAVI is evaluated with experiments that demonstrate that (i) it can resolve JavaScript calls better than a recent technique, and (ii) its visualisation modules are intuitive and scalable.</p>
+              </div>
+            </span>
+
+            <span class="paper">
+            <p class="title">PORBS: A Parallel Observation-based Slicer &nbsp; <label for="checkbox_17">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/islam87436.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info"><em>Syed Islam</em> and Dave Binkley</p>
+              <input type="checkbox" id="checkbox_17" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">This paper presents PORBS, a parallelised observation-based slicing tool. The tool itself is written in Java making it platform independent and leverages the build chain of the system being sliced to avoid the need to replicate complex compiler analysis. The target audience of PORBS is software engineers and researchers working with and on tools and techniques for software comprehension, debugging, re-engineering, and maintenance.</p>
+              </div>
+            </span>
+
+            <span class="paper">
+            <p class="title">STAC: A Tool for Static Textual Analysis of Code &nbsp; <label for="checkbox_18">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/khatiwada87434.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info">Saket Khatiwada, Michael Kelly and <em>Anas Mahmoud</em></p>
+              <input type="checkbox" id="checkbox_18" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">Static textual analysis techniques have been recently applied to process and synthesize source code. The underlying tenet is that important information is embedded in code identifiers and internal code comments. Such information can be analyzed to provide automatic aid for several software engineering activities. To facilitate this line of work, we present STAC, a tool for supporting Static Textual Analysis of Code. STAC is designed as a light-weight stand-alone tool that provides a practical one-stop solution for code indexing. Code indexing is the process of extracting important textual information from source code. Accurate indexing has been found to significantly influence the performance of code retrieval and analysis methods. STAC provides features for extracting and processing textual patterns found in Java, C++, and C# code artifacts. These features include identifier splitting, stemming, lemmatization, and spell-checking. STAC is also provided as an API to help researchers to integrate basic code indexing features into their code.</p>
+              </div>
+            </span>
+
+            <span class="paper">
+            <p class="title">Hey! Are You Injecting Side Effect?: A Tool for Detecting Purity Changes in Java Methods &nbsp; <label for="checkbox_19">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/ogura87437.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info"><em>Naoto Ogura</em>, Jiachen Yang, Keisuke Hotta, Yoshiki Higo and Shinji Kusumoto</p>
+              <input type="checkbox" id="checkbox_19" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">Methods not having side effects (pure methods) are beneficial in some situations. For example, data race does not occur among pure methods in multi-thread programs. Another example is that there are some cases where developers expect methods are pure, such as equals, hashCode, and getter methods in Java. This paper presents a tool finding code changes where methods become pure/impure. This tool can prevent developers from inducing purity-related bugs to methods. The authors have applied the tool to two open source systems and found (1) a dozen of methods moved to pure/impure repeatedly and (2) there were many cases where purity of methods had changed without code changes.</p>
+              </div>
+            </span>
+
+            <span class="paper">
+            <p class="title">WB4SP: A Tool to Build the Word Base for Specific Programs &nbsp; <label for="checkbox_20">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/sun87438.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info">Weisong Sun, <em>Xiaobing Sun</em>, Hui Yang and Bin Li</p>
+              <input type="checkbox" id="checkbox_20" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">Software becomes increasingly complex with its continuous maintenance activities. Given a system under maintenance, developers used to employing code search techniques to locate the code of their interests. However, they may have difficulties in understanding the source code elements and the relationship among them in the searching results. If there is a word base for a specific system, the developers can refer it to help locate and recover the source code elements and their relationships, which can improve the maintenance efficiency. In this paper, we present a tool, WB4SP(Word Base for Specific Programs), which focuses on building the word base for a specific system. WB4SP can retrieve the words, recover the relationship between them, and display the evolution of these words during the software evolution.</p>
+              </div>
+            </span>
+
+          </div>
+          <div class="sectionColumnB" id="spacedPapers">
+            <p class="section">Short Papers: Getting Deep Insight into Your Software &nbsp; <a class="pdfLink" href="http://131.123.42.38/icpc16/sessions/ICPC16_SP_Session1.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="info">Session Chair: Bogdan Dit</p>
+            <span class="paper">
+            <p class="title">Investigating the Android Apps' Success: An Empirical Study &nbsp; <label for="checkbox_21">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/guerrouj87444.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info"><em>Latifa Guerrouj</em> and Olga Baysal</p>
+              <input type="checkbox" id="checkbox_21" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">Measuring the success of software systems was not a trivial task in the past. Nowadays, mobile apps provide a uniform schema, i.e., the average ratings provided by the apps’ users to gauge their success. While recent research has focused on examining the relationship between change- and fault- proneness and apps’ lack of success, as well as qualitatively analyzing the reasons behind the apps’ users dissatisfaction, there is little empirical evidence on the factors related to the success of mobile apps. In this paper, we explore the relationships between the mobile apps’ success and a set of metrics that not only characterize the apps themselves but also the quality of the APIs used by the apps, as well as user attributes when they interact with the apps. In particular, we measure API quality in terms of bugs fixed in APIs used by apps and changes that occurred in the API methods. We examine different kinds of changes including changes in the interfaces, implementation, and exception handling. For user-related factors, we leverage the number of app’s downloads and installations, and users’ reviews. Through an empirical study of 474 free Android apps, we find that factors such as the number of users’ reviews provided for an app, app’s category and size appear to have an impact on the app’s success.</p>
+              </div>
+            </span>
+            <span class="paper">
+            <p class="title">Retrofitting Automatic Testing through Library Tests Reusing &nbsp; <label for="checkbox_22">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/ma87452.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info"><em>Lei Ma</em>, Cheng Zhang, Bing Yu, and Jianjun Zhao</p>
+              <input type="checkbox" id="checkbox_22" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">Test cases are useful for program comprehension. Developers often understand dynamic behavior of systems by running their test cases. As manual testing is expensive, automatic testing has been extensively studied to reduce the cost. However, without sufficient knowledge of the software under test, it is difficult for automated testing techniques to create effective test cases, especially for software that requires complex inputs.</p><p>In this paper, we propose to reuse existing test cases from the libraries of software under test, to generate better test cases. We have the observation that, when developers start to test the target software, the test cases of its dependent libraries are often available. Therefore, we propose to perform program analysis on these artifacts to extract relevant code fragments to create test sequences. We further seed these sequences to a random test generator GRT to generate test cases for target software. The preliminary experiments show that the technique significantly improves the effectiveness of GRT. Our in-depth analysis reveals that several dependency metrics are good indicators of the potential benefits of applying our technique on specific programs and their libraries.</p>
+              </div>
+            </span>
+            <span class="paper">
+            <p class="title">Measuring Energy Footprint of Software Features &nbsp; <label for="checkbox_23">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/islam87447.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info"><em>Syed Islam</em>, Adel Noureddine and Rabih Bashroush</p>
+              <input type="checkbox" id="checkbox_23" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">With the proliferation of Software systems and the rise of paradigms such the Internet of Things, Cyber-Physical Systems and Smart Cities to name a few, the energy consumed by software applications is emerging as a major concern. Hence, it has become vital that software engineers have a better understanding of the energy consumed by the code they write. At software level, work so far has focused on measuring the energy consumption at function and application level. In this paper, we propose a novel approach to measure energy consumption at a feature level, cross-cutting multiple functions, classes and systems. We argue the importance of such measurement and the new insight it provides to non-traditional stakeholders such as service providers. We then demonstrate, using an experiment, how the measurement can be done with a combination of tools, namely our program slicing tool (PORBS) and energy measurement tool (Jolinar).</p>
+              </div>
+            </span>
+            <span class="paper">
+            <p class="title">Human-Machine Resolution of Invisible Control Flow &nbsp; <label for="checkbox_24">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/kothari87446.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info"><em>Suraj Kothari</em>, Ahmed Tamrawi, and Jon Mathews</p>
+              <input type="checkbox" id="checkbox_24" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">Abstract—Invisible Control Flow (ICF) results from dynamic binding and asynchronous processing. For modern software replete with ICF, the ability to analyze and resolve ICF is crucial for verifying software. A fully automated analysis to resolve ICF suffers from imprecision and high computational complexity. As a practical alternative, we present a novel solution of interactive human-machine collaboration to resolve ICF.</p><p>Our approach is comprised of interactive program analysis and comprehension to systematically capture and link the clues crucial for resolving ICF. We present the tool support we have developed using the query language and visualization capabilities of the Atlas Platform. We illustrate the approach using examples where resolving ICF is crucial to verify software and show a complex bug in the Linux kernel discovered by resolving ICF.</p>
+              </div>
+            </span>
+            <span class="paper">
+            <p class="title">Extracting Configuration Parameter Interactions using Static Analysis &nbsp; <label for="checkbox_25">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/metcalf87454.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info"><em>Chelsea Metcalf</em>, <em>Farhaan Fowze</em>, Tuba Yavuz, and Jose Fortes</p>
+              <input type="checkbox" id="checkbox_25" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">Complex software systems come with a huge number of configuration parameters for tuning their performance as well as functionality. It is a challenge for the users of such systems to understand how various parameters interact, and causing them to use the default configuration settings to avoid problems. Studies show that a lot of performance optimization opportunities are missed when complex software systems are run with the default configuration settings. This paper proposes a graph-based representation of configuration parameter interactions that are extracted using a scaleable static analysis approach. Experimental results obtained with a case study on a data analysis framework, Apache Hadoop, suggest that the proposed approach is effective in capturing some of the interactions at the component level.</p>
+              </div>
+            </span>
+            <span class="paper">
+            <p class="title">Android Build Dependency Analysis &nbsp; <label for="checkbox_26">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/zhang87445.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info"><em>Bo Zhang</em>, Vasil Tenev, and Martin Becker</p>
+              <input type="checkbox" id="checkbox_26" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">In order to derive executable software artefacts, the build system needs to be maintained properly along with the evolution of source code. However, in large software projects the building process often becomes effort-consuming, and sometimes the building process contains defects or even fails. To cope with these challenges, the first step is to understand the build process. In this paper, we take Android as the example system, and propose an automated approach to analyzing the Android build dependency structure (including extraction of building jobs, related artefacts, duration, etc.). Moreover, the analysis results of Android 5 and 6 are compared in order to identify build differences between these two releases. The extracted build dependencies and comparison results are also visualized with tool support. As the analysis approach and tools are not limited to Android, it can be also used for extracting the build dependency structure of other systems.</p>
+              </div>
+            </span>
+          </div>
+        </div>
+
+        <hr class="clearHr">
+        <hr>
+        <p class="time">12:30 - 2:00 pm</p>
+        <div class="sectionBox">
+          <p class="section">Lunch Break</p>
+        </div>
+
+        <hr>
+        <p class="time">2:00 - 3:30 pm</p>
+        <div class="sectionBox">
+          <div class="sectionColumnA">
+            <p class="section">Technical Research: Language Usage &nbsp; <a class="pdfLink" href="http://131.123.42.38/icpc16/sessions/ICPC16_TR_Session4.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="info">Session Chair: Lori Pollock</p>
+
+            <span class="paper">
+            <p class="title">Can We Find Stable Alternatives for Unstable Eclipse Interfaces? &nbsp; <label for="checkbox_27">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/kawuma87428.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info">Simon Kawuma, <em>John Businge</em>, and Engineer Bainomugisha</p>
+              <input type="checkbox" id="checkbox_27" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">The Eclipse framework is a popular and widely adopted framework that has been evolving for over a decade. Like many other evolving software systems, the Eclipse framework provides both stable and supported interfaces (APIs) and unstable, discouraged, and unsupported interfaces (non-APIs). However, despite being discouraged by Eclipse, the usage of bad interfaces is not uncommon. Our previous research has confirmed that as Eclipse states, indeed APIs are stable while non-APIs are unstable. Applications using non-APIs face compatibility challenges in new Eclipse releases. Furthermore, our previous studies further revealed that the reason why application developers use the unstable interfaces is because they cannot find stable interfaces with the functionality that they require. Moreover, in a study we conducted, Eclipse application developers stated that they manually find the functionality from Eclipse. Eclipse being a very large complex software system with a large number of committers, we hypothesize that as developers manually search for the functionality they they require, it is possible that they miss stable interfaces offering the same functionality. To this end, using code clone detection techniques, we analyzed 18 major releases of Eclipse for possible clones. Our findings are three fold: i) we discover that indeed there exist clones in Eclipse, ii) we also discovered that some of the identified clones originate from different Eclipse projects, iii) our findings reveal that there is no significant number of APIs (less than 1%) offering the same or similar functionality as the non-APIs in all Eclipse releases we studied. This reveals that there are very few syntactic clones between API and non-API, thus developers were forced to either use non-API or find an API that exists, that is similar in functionality, but not in syntax.</p>
+              </div>
+            </span>
+            <br>
+            <span class="paper">
+            <p class="title">A Cooperative Approach for Combining Client-based and Library-based API Usage Pattern Mining &nbsp; <label for="checkbox_28">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/saied87425.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info"><em>Mohamed Aymen Saied</em> and Houari Sahraoui</p>
+              <input type="checkbox" id="checkbox_28" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">Software developers need to cope with the complexity of Application Programming Interfaces (APIs) of external libraries or frameworks. Typical APIs provide thousands of methods to their client programs, and these methods are not used independently of each other. Much existing work has provided different techniques to mine API usage patterns based on client programs in order to help developers understanding and using existing libraries. Other techniques propose to overcome the strong constraint of clients’ dependency and infer API usage patterns only using the library source code. In this paper, we propose a cooperative usage pattern mining technique (COUPminer) that combines client-based and library-based usage pattern mining. We evaluated our technique through four APIs and the obtained results show that the cooperative approach allows taking advantage at the same time from the precision of client-based technique and from the generalizability of library-based techniques.</p>
+              </div>
+            </span>
+            <br>
+            <span class="paper">
+            <p class="title">A Novel Approach for Estimating Truck Factors &nbsp; <label for="checkbox_29">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/avelino87423.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info"><em>Guilherme Avelino</em>, Leonardo Passos, Andre Hora, and Marco Tulio Valente</p>
+              <input type="checkbox" id="checkbox_29" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">Truck Factor (TF) is a metric proposed by the agile community as a tool to identify concentration of knowledge in software development environments. It states the minimal number of developers that have to be hit by a truck (or quit) before a project is incapacitated. In other words, TF helps to measure how prepared is a project to deal with developer turnover. Despite its clear relevance, few studies explore this metric. Altogether there is no consensus about how to calculate it, and no supporting evidence backing estimates for systems in the wild. To mitigate both issues, we propose a novel (and automated) approach for estimating TF-values, which we execute against a corpus of 133 popular project in GitHub. We later survey developers as a means to assess the reliability of our results. Among others, we find that the majority of our target systems (65%) have TF &le; 2. Surveying developers from 67 target systems provides confidence towards our estimates; in 84% of the valid answers we collect, developers agree or partially agree that the TF’s authors are the main authors of their systems; in 53% we receive a positive or partially positive answer regarding our estimated truck factors.</p>
+              </div>
+            </span>
+            <br>
+            <span class="paper">
+            <p class="title">Can We Enforce a Benefit for Dynamically Typed Languages in Comparison to Statically Typed Ones? A Controlled Experiment &nbsp; <label for="checkbox_30">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/okon87431.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info">Sebastian Okon and <em>Stefan Hanenberg</em></p>
+              <input type="checkbox" id="checkbox_30" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">There are a number of experiments that show a benefit for statically typed programming languages. However, it is unclear whether these results are mainly driven by the expectations that developers do benefit from static type systems, i.e. whether the results reflect on the experimenters’ bias. From that perspective, it seems consequent to design an experiment that tries to reveals the opposite: to enforce a benefit for dynamically typed languages. This paper describes an experiment that tries to enforce such a benefit for dynamically typed languages in an experimental setting. Four (quite artificial) tasks were designed from which the experimenters expected to measure a clear benefit for dynamically typed languages. However, only in two cases such a benefit could be measured. What is even more interesting is that two other tasks (again, explicitly designed to show a benefit for dynamically typed languages) showed the opposite.</p>
+              </div>
+            </span>
+          </div>
+          <div class="sectionColumnB">
+            <p class="section">Short Papers:  Comprehension You Can Use &nbsp; <a class="pdfLink" href="http://131.123.42.38/icpc16/sessions/ICPC16_SP_Session2.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="info">Session Chair: Latifa Guerrouj</p>
+
+            <span class="paper">
+            <p class="title">Software Development and Tool Usability &nbsp; <label for="checkbox_31">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/dillon87443.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info"><em>Brian Dillon</em> and Richard Thompson</p>
+              <input type="checkbox" id="checkbox_31" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">Tools are used at every stage of the software life cycle with particular recent emphasis on the maintenance period. Evidence shows that maintenance tools are underused, even by the developers who create them. Integrated development environments were created to empower developers, but they have remained virtually unchanged since the late 1990s. This paper examines the challenges of creating development tools, analyzes the usability of two frequently used tools, and suggests that poor tool usability may be inhibiting more efficient software development.</p>
+              </div>
+            </span>
+
+            <span class="paper">
+            <p class="title">Detecting Exploratory Programming Behaviors for Introductory Programming Exercises &nbsp; <label for="checkbox_32">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/makihara87456.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info"><em>Erina Makihara</em>, Hiroshi Igaki, Norihiro Yoshida, Kenji Fujiwara, and Hajimu Iida</p>
+              <input type="checkbox" id="checkbox_32" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">Developers often perform the repeating cycle of implementation and evaluation when they need to deal with the unfamiliar portion of the source code. This cycle is named as exploratory programming. We regard exploratory programming as an effective way not only to improve novice’s programming skill but also to support educators in programming exercise in University. Because when novices often use the exploratory programming, it means novices struggle to solve their assignments. Therefore, educators should grasp which elements, APIs or blocks novices often used exploratory programming for. In this paper, firstly we propose the definition of novice’s exploratory programming to collect logs of exploratory based on various granularity by novices. Secondly, we propose an algorithm based on our proposed definition to automatically detect exploratory programming behaviors. We also conducted a small case study. As a result of automatic detection, our proposed algorithm allows us to know what elements of program novices often feel difficult and struggle for.</p>
+              </div>
+            </span>
+
+            <span class="paper">
+            <p class="title">Embedding Programming Context into Source Code &nbsp; <label for="checkbox_33">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/breckel87455.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info"><em>Alexander Breckel</em> and Matthias Tichy</p>
+              <input type="checkbox" id="checkbox_33" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">Programmers use diverse tools for code understanding to access various types of context information like interface definitions, revision histories, and debugging values. Integrated development environments support specialized visualization mechanisms for such context types. While these mechanisms in principle enable programmers to access required information, the diversity of visualizations as well as the distance between code locations and related information may slow down development. We present a generic approach to embed various types of context uniformly into the main source code view in close proximity to the relevant source code by using a concept called code portals. Furthermore, embedded content can be organized and manipulated directly using operations already familiar to programmers. We illustrate the approach using different types of context, and present preliminary results of a qualitative study indicating that our approach is usable and improves program comprehension and productivity in general. The approach is implemented in a prototypical source code editor.</p>
+              </div>
+            </span>
+
+            <span class="paper">
+            <p class="title">Synchronized Static and Dynamic Visualization in a Web-Based Programming Environment &nbsp; <label for="checkbox_34">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/yang87451.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info"><em>Jeong Yang</em>, Young Lee, and David Hicks</p>
+              <input type="checkbox" id="checkbox_34" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">This paper presents an approach of static and dynamic visualizations synchronized along with source code in a web-based programming environment, JavelinaCode. Using JavelinaCode, student programmers can write Java programs directly in a frontend web browser without any software or plug-in installation. They are provided with a view of the static state of a Java program in UML class diagrams and the dynamic runtime state of the program by stepping forwards and backwards through program execution. A case study has revealed that our approach is useful, in particular, to trace and detect an object flow anomaly caused by method overriding and polymorphism. A preliminary comparison test result also has shown that through our web-based platform-independent environment, student programmers are freed from concern with continuous version changes and evolutions of the Java language, plug-ins, and operating systems.</p>
+              </div>
+            </span>
+
+            <span class="paper">
+            <p class="title">Case Studies of Optimized Sequence Diagram for Program Comprehension &nbsp; <label for="checkbox_35">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/srinivasan87457.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info"><em>Madhusudan Srinivasan</em>, Jeong Yang, and Young Lee</p>
+              <input type="checkbox" id="checkbox_35" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">In large project, source code becomes increasing complex and lengthy so program comprehension plays an important and significant role for developers. Sequence diagram generated using static source code or dynamic only approach provides limited execution coverage, additionally contains redundant, dead and fault driven methods, which increase the size of the diagram and complexity. In this paper, to address the problems, optimized sequence diagrams were developed by combining static source code and dynamic only approach, also incorporating various levels of abstraction in order to reduce complexity and provide complete behavior of the system. Case studies determined from the sequence diagram for three systems generated based on source code only and fully dynamic approach proved that the proposed optimized sequence diagrams were less complex and provided more detailed description of the functionality of the system.</p>
+              </div>
+            </span>
+
+            <span class="paper">
+            <p class="title">Comprehending Source Code of Large Software System for Reuse &nbsp; <label for="checkbox_36">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/kulkarni87442.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info"><em>Aniket Kulkarni</em></p>
+              <input type="checkbox" id="checkbox_36" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">Comprehending source code of large software system for code reuse is an important problem. It is due to very high cost of software maintenance. In this paper, the author shares the experience on comprehending code-base of PRISM - a model-based program analysis tool developed by Tata Consultancy Services - containing in total more than 500 KLOC. During this activity, the author not only detected two bugs in existing PRISM software system while comprehending more than half of the total code (approximately 300 KLOC), but also added feature of Application Programming Interface (API) for Intermediate Representation (IR) transformation utility for ’C’ language consisting of 1 KLOC. The author applied combination of key techniques such as lexical and dynamic analyses, models such as Brook, Soloway to understand code-base and, mixed top-down and bottom-up approaches for comprehension. The author observed that speed of comprehension and reuse later increased multi-fold because half of code-base (approximately 250 KLOC) is automatically generated from specification and thus by focusing on understanding less than 25 KLOC.</p>
+              </div>
+            </span>
+          </div>
+        </div>
+
+        <hr class="clearHr">
+        <hr>
+        <p class="time">3:30 - 4:00 pm</p>
+        <div class="sectionBox">
+          <p class="section">Coffee Break</p>
+        </div>
+
+        <hr>
+        <p class="time">4:00 - 5:30 pm</p>
+        <div class="sectionBox">
+          <div class="sectionColumnA">
+            <p class="section">Technical Research: Assessing Code &nbsp; <a class="pdfLink" href="http://131.123.42.38/icpc16/sessions/ICPC16_TR_Session5.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="info">Session Chair: Collin McMillan</p>
+            
+            <span class="paper">
+            <p class="title">Identifying Functionally Similar Code in Complex Codebases &nbsp; <label for="checkbox_37">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/su87419.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info"><em>Fang-Hsiang Su</em>, Jonathan Bell, Gail Kaiser, and Simha Sethumadhavan</p>
+              <input type="checkbox" id="checkbox_37" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">Identifying similar code in software systems can assist many software engineering tasks such as program understanding and software refactoring. While most approaches focus on identifying code that looks alike, some techniques aim at detecting code that functions alike. Detecting these functional clones — code that functions alike — in object oriented languages remains an open question because of the difficulty in exposing and comparing programs’ functionality effectively. We propose a novel technique, In-Vivo Clone Detection, that detects functional clones in arbitrary programs by identifying and mining their inputs and outputs. The key insight is to use existing workloads to execute programs and then measure functional similarities between programs based on their inputs and outputs, which mitigates the problems in object oriented languages reported by prior work. We implement such technique in our system, HitoshiIO, which is open source and freely available. Our experimental results show that HitoshiIO detects more than 800 functional clones across a corpus of 118 projects. In a random sample of the detected clones, HitoshiIO achieves 68+% true positive rate with only 15% false positive rate.</p>
+              </div>
+            </span>
+            <br>
+            <span class="paper">
+            <p class="title">On Automatically Detecting Similar Android Apps &nbsp; <label for="checkbox_38">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/linares-vasquez87430.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info">Mario Linares-Vasquez, Andrew Holtzhauer, and <em>Denys Poshyvanyk</em></p>
+              <input type="checkbox" id="checkbox_38" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">Detecting similar applications is a challenging problem, since it implies that similar high-level features and their low-level implementations can be detected and matched automatically. We propose an approach for automatically detecting Closely reLated applications in ANdroid (CLANdroid) by relying on advanced Information Retrieval techniques and five semantic anchors: identifiers, Android APIs, intents, permissions, and sensors. To evaluate CLANdroid we created a benchmark consisting of 14,450 apps along with information on similar apps provided by Google Play. We also compared effectiveness of different semantic anchors for detecting similar apps as perceived by 27 users. The results show that using Android-specific semantic anchors are useful for detecting similar Android apps across different categories. We also measured the impact of third-party libraries and obfuscated code when identifying similar Android apps, and our results suggest that there is significant difference in the accuracy when third-party libraries are excluded.</p>
+              </div>
+            </span>
+            <br>
+            <span class="paper">
+            <p class="title">Rule-Directed Code Clone Synchronization &nbsp; <label for="checkbox_39">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/cheng87417.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info"><em>Xiao Cheng</em>, Hao Zhong, Yuting Chen, Zhenjiang Hu, and Jianjun Zhao</p>
+              <input type="checkbox" id="checkbox_39" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">Code clones are prevalent in software systems due to many factors in software development. Detecting code clones and managing consistency between them along code evolution can be very useful for reducing clone-related bugs and maintenance costs. Despite some early attempts at detecting code clones and managing the consistency between them, the state-of-the-art tool can only handle simple code clones whose structures are identical or quite similar. However, existing empirical studies show that clones can have quite different structures with their evolution, which can easily go beyond the capability of the state-of-the-art tool. In this paper, we propose CCSync, a novel, rule-directed approach, which paves the structure differences between the code clones and synchronizes them even when code clones become quite different in their structures. The key steps of this approach are, given two code clones, to (1) extract a synchronization rule from the relationship between the clones, and (2) once one code fragment is updated, propagate the modifications to the other following the synchronization rule. We have implemented a tool for CCSync and evaluated its effectiveness on five Java projects. Our results shows that there are many code clones suitable for synchronization, and our tool achieves precisions of up to 92% and recalls of up to 84%. In particular, more than 76% of our generated revisions are identical with manual revisions.</p>
+              </div>
+            </span>
+            <br>
+            <span class="paper">
+            <p class="title">Are Unreachable Methods Harmful? Results from a Controlled Experiment &nbsp; <label for="checkbox_40">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/romano87432.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info">Simone Romano, Christopher Vendome, <em>Giuseppe Scanniello</em>, and Denys Poshyvanyk</p>
+              <input type="checkbox" id="checkbox_40" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">In this paper, we present the results of a controlled experiment conducted to assess whether the presence of unreachable methods in source code affects source code comprehensibility and modifiability. A total of 47 undergraduate students at the University of Basilicata participated in this experiment. We divided the participants in two groups. The participants in the first group were asked to comprehend code base containing unreachable methods and implement five change requests in that code base. The participants in the second group were asked to accomplish exactly the same tasks as the participants in the first group, however, the source code provided to them did not contain any unreachable methods. The results of the study indicate that code comprehensibility is significantly higher when source code does not contain unreachable methods. However, we did not observe a statistically significant difference for code modifiability. From these results, we distill lessons and implications for practitioners as well as possible avenues for further research.</p>
+              </div>
+            </span>
+          </div>
+          <div class="sectionColumnB">
+            <p class="section">Short Papers: Attack of the Development Team &nbsp; <a class="pdfLink" href="http://131.123.42.38/icpc16/sessions/ICPC16_SP_Session3.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="info">Session Chair: Lingxiao Jiang</p>
+
+            <span class="paper">
+            <p class="title">Defending Against the Attack of the Micro-clones &nbsp; <label for="checkbox_41">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/tonder87458.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info"><em>Rijnard van Tonder</em> and Claire Le Goues</p>
+              <input type="checkbox" id="checkbox_41" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">Micro-clones are small pieces of redundant code, such as repeated subexpressions or statements. In this paper, we establish the considerations and value toward automated detection and removal of micro-clones at scale. We leverage the Boa software mining infrastructure to detect micro-clones in a data set containing 380,125 Java repositories, and yield thousands of instances where redundant code may be safely removed. By filtering our results to target popular Java projects on GitHub, we proceed to issue 43 pull requests that patch micro-clones. In summary, 95% of our patches to active GitHub repositories are merged rapidly (within 15 hours on average). Moreover, none of our patches were contested; they either constituted a real flaw, or have not been considered due to repository inactivity. Our results suggest that the detection and removal of micro-clones is valued by developers, can be automated at scale, and may be fixed with rapid turnaround times.</p>
+              </div>
+            </span>
+
+            <span class="paper">
+            <p class="title">Towards Quality Gates in Continuous Delivery and Deployment &nbsp; <label for="checkbox_42">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/schermann87453.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info"><em>Gerald Schermann</em>, Jürgen Cito, Philipp Leitner, and Harald Gall</p>
+              <input type="checkbox" id="checkbox_42" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">Quality gates, steps required to ensure the reliability of code changes, are supposed to increase the confidence stakeholders have in a release. In today’s fast paced environments, we have less time to perform the necessary precautions to minimize the risk of a faulty release. This leads to an inherent trade-off between risk of lower release quality and time to market. We provide a model for this trade-off of release “confidence” and “velocity” that led to the formulation of 4 categories (cautious, balanced, problematic, madness), in which companies can be classified in. We showcase real examples of these categories as case studies based on previous empirical studies. We close by presenting possible transitions between categories that guide future research.</p>
+              </div>
+            </span>
+
+            <span class="paper">
+            <p class="title">Revisiting the Relationship Between Code Smells and Refactoring &nbsp; <label for="checkbox_43">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/yoshida87449.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info"><em>Norihiro Yoshida</em>, Tsubasa Saika, Eunjong Choi, Ali Ouni, and Katsuro Inoue</p>
+              <input type="checkbox" id="checkbox_43" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">Refactoring is a critical technique in evolving software systems. Martin Fowler presented a catalogue of refactoring patterns that defines a list of code smells and their corresponding refactoring patterns. This list aimed at supporting programmers in finding suitable refactoring patterns that remove code smells from their systems. However, a recent empirical study by Bavota et al. shows that refactoring rarely removes code smells which do not align with Fowler’s catalog. To bridge the gap between them, we revisit the relationship between code smells and refactorings. In this study, we investigate whether developers apply appropriate refactoring patterns to fix code smells in three open source software systems.</p>
+              </div>
+            </span>
+
+            <span class="paper">
+            <p class="title">Generating Clone References with Less Human Subjectivity &nbsp; <label for="checkbox_44">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/yuki87448.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info"><em>Yusuke Yuki</em>, Yoshiki Higo, Keisuke Hotta, and Shinji Kusumoto</p>
+              <input type="checkbox" id="checkbox_44" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">In evaluating code clone detection tools, a benchmark is created to measure their precision and recall. Benchmarks in previous research have either of the following issues: the first one is that they depend on the code clone definitions of benchmark creators; the second one is that they are not code clones occurring in actual development process. To get rid of both the two issues, we propose a methodology that creates code clone references based on code clones occurring in development process without any human judgements. More concretely, we use multiple revisions included in the source code repository of target software to identify merged methods in the past development process. We regard merged methods as real code clones. The authors’ benchmark can evaluate detection accuracy of code clone detection tools more objectivity.</p>
+              </div>
+            </span>
+
+            <span class="paper">
+            <p class="title">Understanding Interactive Debugging with Swarm Debug Infrastructure &nbsp; <label for="checkbox_45">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/petrillo87450.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+              <p class="info"><em>Fabio Petrillo</em>, Zéphyrin Soh, Foutse Khomh, Marcelo Pimenta, Carla Freitas, and Yann-Gaël Guéhéneuc</p>
+              <input type="checkbox" id="checkbox_45" value="value">
+              <div class="abstract">
+                <p style="margin-top:10px;">Debugging is a laborious activity in which developers spend lot of time navigating through code, looking for starting points, and stepping through statements. In this paper, we present the Swarm Debug Infrastructure (SDI) with which researchers can collect and share data about developers’ interactive debugging activities. SDI allows collecting and sharing debugging data that are useful to answer research questions about interactive debugging activities. We assess the effectiveness of the SDI through an experiment to understand how developers apply interactive debugging.</p>
+              </div>
+            </span>
+          </div>
+        </div>
+
+        <hr class="clearHr">
+
+        <hr>
+        <p class="time">5:30 - 6:30 pm</p>
+        <div class="sectionBox">
+          <p class="section">Open Steering Committee Meeting with Presentation of ICPC 2017</p>
+        </div>
+
+      </div>
+      
+      <hr style="border:1px solid rgba(255,255,255,0.00); margin:0px; padding:0px; clear:both;">
+    </div>
+    <!-- End Main Content -->
+  
+  <hr style="border:1px solid rgba(255,255,255,0.00); margin:0px; padding:0px; clear:both;">
+</div>
+
+<div class="footer">
+  <div class="sponsors" id="sponsors"></div>
+  <div class="footerBottom">
+    <span>Contact: <a href="mailto:icpc2016@gmail.com" target="_top" style="color:white; text-decoration:none;">icpc2016@gmail.com</a></span>
+    <span style="float:right;">ICPC 2016 &nbsp;&nbsp;&nbsp;&nbsp; May 16-17, 2016 &nbsp;&nbsp;&nbsp;&nbsp; Renaissance Austin Hotel 9721 Arboretum Boulevard Austin, Texas 78759 USA</span>
+  </div>
+</div>
+
+</body>
+</html>
