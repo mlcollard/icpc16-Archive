@@ -279,12 +279,16 @@
   .pdfLink {
     display: inline-block;
     width: 45px;
-    display: none;
   }
   .pdfImg {
     margin: 0;
     width: 12px;
     margin: 0 0 0 4px;
+  }
+  .starImg {
+    margin: 0;
+    width: 12px;
+    margin: 0 4px 0 0;
   }
   input[type="checkbox"] {
     display:none;
@@ -293,6 +297,9 @@
     color:#956e73;
     font-weight: 900;
     cursor:pointer;
+  }
+  #proceedingsLink {
+    float:none; clear: both; margin: auto; width: 315px;;
   }
   
   @media print {
@@ -317,14 +324,17 @@
   @media only screen and (min-width: 715px) {
       /* For tablet portrait: */
       .container h2, .container h3, .container hr, .section, .title, .info {margin-left: 20px; margin-right: 20px}
+      #proceedingsLink {float:none; clear: both; margin: auto; width: 315px;}
   }
   @media only screen and (min-width: 920px) {
       /* For tablet landscape: */
      .container h2, .container h3, .container hr, .section, .title, .info {margin-left: 40px; margin-right: 40px}
+     #proceedingsLink {float:right; clear: none; margin: 30px 40px 0 0;}
   }
   @media only screen and (min-width: 1190px) {
       /* For desktop: */
       .container h2, .container h3, .container hr, .section, .title, .info, .infoLinkBox {margin-left: 60px; margin-right: 60px}
+      #proceedingsLink {float: right; clear: none; margin: 30px 60px 0 0;}
       .abstract {margin: 0 60px 0 60px;}
       
   }
@@ -427,6 +437,8 @@
         <h2 id="defaultTitle">Program</h2>
         <p class="dayLinks"><a href="#day1">Day 1</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#day2">Day 2</a></p>
 
+        <p id="proceedingsLink">Proceedings: <a href="http://131.123.42.38/icpc16/ICPC16Proceedings.pdf" target="_blank"><abbr title="Complete Preprint Proceedings">Preprint PDF<img src="images/pdf.png" alt="PDF" class="pdfImg"></abbr></a>&nbsp; | <a href="http://131.123.42.38/icpc16/ICPC16ReaderProceedings.pdf" target="_blank"><abbr title="Tablet-friendly proceedings with margins cropped">Reader PDF<img src="images/pdf.png" alt="PDF" class="pdfImg"></abbr></a></p>
+
         <hr style="margin-top:0; margin-bottom:5px; clear:both;">
 
         <h3 id="day1">Monday, May 16</h3>
@@ -436,8 +448,7 @@
           <p class="section">ICPC 2016 Opening</p>
         </div>
         <div class="sectionBox">
-          <p class="section"><a href="keynote.html">Keynote</a></p>
-          <p class="title" style="font-style: italic;">"Better Code"</p>
+          <p class="section"><a href="keynote.html">Keynote: Better Code</a></p>
           <p class="info">Sean Parent, Adobe Systems</p>
         </div>
 
@@ -450,10 +461,10 @@
         <hr>
         <p class="time">11:00 - 12:30 pm</p>
         <div class="sectionBox">
-          <p class="section">Technical Research: Code Quality</p>
+          <p class="section">Technical Research: Code Quality &nbsp; <a class="pdfLink" href="http://131.123.42.38/icpc16/sessions/ICPC16_TR_Session1.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
           <p class="info">Session Chair: Michele Lanza</p>
           <span class="paper">
-            <p class="title">A Textual-based Technique for Smell Detection &nbsp; <label for="checkbox_00">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">A Textual-based Technique for Smell Detection &nbsp; <label for="checkbox_00">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/palomba87418.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
             <p class="info"><em>Fabio Palomba</em>, Annibale Panichella, Andrea De Lucia, Rocco Oliveto, and Andy Zaidman</p>
             <input type="checkbox" id="checkbox_00" value="value">
             <div class="abstract">
@@ -462,7 +473,7 @@
           </span>
           
           <span class="paper">
-            <p class="title">Context-Based Code Smells Prioritization for Prefactoring &nbsp; <label for="checkbox_01">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Context-Based Code Smells Prioritization for Prefactoring &nbsp; <label for="checkbox_01">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/sae-lim87421.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
             <p class="info"><em>Natthawute Sae-Lim</em>, Shinpei Hayashi, and Motoshi Saeki</p>
             <input type="checkbox" id="checkbox_01" value="value">
             <div class="abstract">
@@ -471,7 +482,7 @@
           </span>
           
           <span class="paper">
-            <p class="title">Do Code Smells Hamper Novice Programming? A Controlled Experiment on Scratch Programs &nbsp; <label for="checkbox_02">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Do Code Smells Hamper Novice Programming? A Controlled Experiment on Scratch Programs &nbsp; <label for="checkbox_02">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/hermans87433.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
             <p class="info"><em>Felienne Hermans</em> and Efthimia Aivaloglou</p>
             <input type="checkbox" id="checkbox_02" value="value">
             <div class="abstract">
@@ -480,7 +491,7 @@
           </span>
           
           <span class="paper">
-            <p class="title">Improving Code Readability Models with Textual Features &nbsp; <label for="checkbox_03">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Improving Code Readability Models with Textual Features &nbsp; <label for="checkbox_03">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/scalabrino87429.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
             <p class="info"><em>Simone Scalabrino</em>, Mario Linares-Vásquez, Denys Poshyvanyk, and Rocco Oliveto</p>
             <input type="checkbox" id="checkbox_03" value="value">
             <div class="abstract">
@@ -498,11 +509,11 @@
         <hr>
         <p class="time">2:00 - 3:30 pm</p>
         <div class="sectionBox">
-          <p class="section">Technical Research: Program Comprehension</p>
+          <p class="section">Technical Research: Program Comprehension &nbsp; <a class="pdfLink" href="http://131.123.42.38/icpc16/sessions/ICPC16_TR_Session2.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
           <p class="info">Session Chair: Romain Robbes</p>
           
           <span class="paper">
-            <p class="title">Multistaging to Understand: Distilling the Essence of Java Code Examples &nbsp; <label for="checkbox_04">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Multistaging to Understand: Distilling the Essence of Java Code Examples &nbsp; <label for="checkbox_04">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/sanchez87415.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
             <p class="info"><em>Huascar Sanchez</em>, Jim Whitehead, and Martin Schaef</p>
             <input type="checkbox" id="checkbox_04" value="value">
             <div class="abstract">
@@ -511,7 +522,7 @@
           </span>
           
           <span class="paper">
-            <p class="title">Navigating the WordPress Plugin Landscape &nbsp; <label for="checkbox_05">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Navigating the WordPress Plugin Landscape &nbsp; <label for="checkbox_05">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/hills87427.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
             <p class="info"><em>Mark Hills</em></p>
             <input type="checkbox" id="checkbox_05" value="value">
             <div class="abstract">
@@ -520,7 +531,7 @@
           </span>
           
           <span class="paper">
-            <p class="title">A Case Study of Program Comprehension Effort and Technical Debt Estimations &nbsp; <label for="checkbox_06">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">A Case Study of Program Comprehension Effort and Technical Debt Estimations &nbsp; <label for="checkbox_06">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/singh87426.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
             <p class="info">Vallary Singh, <em>Lori Pollock</em>, Will Snipes, and Nicholas A. Kraft</p>
             <input type="checkbox" id="checkbox_06" value="value">
             <div class="abstract">
@@ -529,7 +540,7 @@
           </span>
           
           <span class="paper">
-            <p class="title">On Method Ordering &nbsp; <label for="checkbox_07">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">On Method Ordering &nbsp; <label for="checkbox_07">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/geffen87420.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
             <p class="info"><em>Yorai Geffen</em> and Shahar Maoz</p>
             <input type="checkbox" id="checkbox_07" value="value">
             <div class="abstract">
@@ -547,11 +558,11 @@
         <hr>
         <p class="time">4:00 - 5:30 pm</p>
         <div class="sectionBox">
-          <p class="section">Technical Research: Supporting Software Developers</p>
+          <p class="section">Technical Research: Supporting Software Developers &nbsp; <a class="pdfLink" href="http://131.123.42.38/icpc16/sessions/ICPC16_TR_Session3.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
           <p class="info">Session Chair: Denys Poshyvanyk</p>
           
           <span class="paper">
-            <p class="title">Identifying Modularization Patterns by Visual Comparison of Multiple Hierarchies &nbsp; <label for="checkbox_08">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Identifying Modularization Patterns by Visual Comparison of Multiple Hierarchies &nbsp; <label for="checkbox_08">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/beck87414.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
             <p class="info"><em>Fabian Beck</em>, Jan Melcher, and Daniel Weiskopf</p>
             <input type="checkbox" id="checkbox_08" value="value">
             <div class="abstract">
@@ -560,7 +571,7 @@
           </span>
           
           <span class="paper">
-            <p class="title">Glyph-Based Software Component Identification &nbsp; <label for="checkbox_09">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Glyph-Based Software Component Identification &nbsp; <label for="checkbox_09">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/fernandez87416.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
             <p class="info">Ignacio Fernandez, <em>Alexandre Bergel</em>, Juan Pablo Sandoval Alcocer, Alejandro José Infante Rica, and Tudor Girba</p>
               <input type="checkbox" id="checkbox_09" value="value">
               <div class="abstract">
@@ -569,7 +580,7 @@
           </span>
           
           <span class="paper">
-            <p class="title">Taming the IDE with Fine-grained Interaction Data &nbsp; <label for="checkbox_10">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Taming the IDE with Fine-grained Interaction Data &nbsp; <label for="checkbox_10">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/minelli87422.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
             <p class="info"><em>Roberto Minelli</em>, Andrea Mocci, Romain Robbes, and Michele Lanza</p>
             <input type="checkbox" id="checkbox_10" value="value">
             <div class="abstract">
@@ -578,7 +589,7 @@
           </span>
           
           <span class="paper">
-            <p class="title">Learning to Rank for Bug Report Assignee Recommendation &nbsp; <label for="checkbox_11">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Learning to Rank for Bug Report Assignee Recommendation &nbsp; <label for="checkbox_11">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/tian87424.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
             <p class="info">Yuan Tian, Dinusha Wijedasa, <em>David Lo</em>, and Claire Le Goues</p>
             <input type="checkbox" id="checkbox_11" value="value">
             <div class="abstract">
@@ -609,7 +620,7 @@
           <p class="info">Session Chairs: Jonathan I. Maletic and Gabriele Bavota</p>
 
           <span class="paper">
-            <p class="title">What's in a Name? A Study of Identifiers (ICPC’06) &nbsp; <label for="checkbox_12">Abstract</label> | <a href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=1631100&tag=1" target="_blank">Info</a></p>
+            <p class="title">What's in a Name? A Study of Identifiers (ICPC’06) &nbsp; <label for="checkbox_12">Abstract</label> | <a href="http://ieeexplPAPERPDFLINKr target="_blank"e.ieee.org/xpls/abs_all.jsp?arnumber=1631100&tag=1" target="_blank">Info</a></p>
             <p class="info">Dawn Lawrie, Christopher Morrell, Henry Feild, and David Binkley</p>
             <input type="checkbox" id="checkbox_12" value="value">
             <div class="abstract">
@@ -634,11 +645,11 @@
         <p class="time">11:00 - 12:30 pm</p>
         <div class="sectionBox">
           <div class="sectionColumnA">
-            <p class="section">Tool Demonstrations</p>
+            <p class="section">Tool Demonstrations &nbsp; <a class="pdfLink" href="http://131.123.42.38/icpc16/sessions/ICPC16_TD_Session1.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
             <p class="info">Session Chair: Felienne Hermans</p>
             
             <span class="paper">
-            <p class="title">FeedBaG: An Interaction Tracker for Visual Studio &nbsp; <label for="checkbox_13">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">FeedBaG: An Interaction Tracker for Visual Studio &nbsp; <label for="checkbox_13">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/amann87435.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info">Sven Amann, <em>Sebastian Proksch</em> and Sarah Nadi</p>
               <input type="checkbox" id="checkbox_13" value="value">
               <div class="abstract">
@@ -647,7 +658,7 @@
             </span>
 
             <span class="paper">
-            <p class="title">InfectoMeter: A Tool that Helps to Place Bug Fixes &nbsp; <label for="checkbox_14">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">InfectoMeter: A Tool that Helps to Place Bug Fixes &nbsp; <label for="checkbox_14">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/azadmanesh87439.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info"><em>Mohammad Azadmanesh</em> and Matthias Hauswirth</p>
               <input type="checkbox" id="checkbox_14" value="value">
               <div class="abstract">
@@ -656,7 +667,7 @@
             </span>
 
             <span class="paper">
-            <p class="title">Inline: Now You're Coding with Portals &nbsp; <label for="checkbox_15">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Inline: Now You're Coding with Portals &nbsp; <label for="checkbox_15">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/breckel87440.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info"><em>Alexander Breckel</em> and Matthias Tichy</p>
               <input type="checkbox" id="checkbox_15" value="value">
               <div class="abstract">
@@ -665,7 +676,7 @@
             </span>
 
             <span class="paper">
-            <p class="title">WAVI: A Reverse Engineering Tool for Web Applications &nbsp; <label for="checkbox_16">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">WAVI: A Reverse Engineering Tool for Web Applications &nbsp; <label for="checkbox_16">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/cloutier87441.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info"><em>Jonathan Cloutier</em>, Sègla Kpodjedo and Ghizlane El Boussaidi</p>
               <input type="checkbox" id="checkbox_16" value="value">
               <div class="abstract">
@@ -674,7 +685,7 @@
             </span>
 
             <span class="paper">
-            <p class="title">PORBS: A Parallel Observation-based Slicer &nbsp; <label for="checkbox_17">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">PORBS: A Parallel Observation-based Slicer &nbsp; <label for="checkbox_17">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/islam87436.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info"><em>Syed Islam</em> and Dave Binkley</p>
               <input type="checkbox" id="checkbox_17" value="value">
               <div class="abstract">
@@ -683,7 +694,7 @@
             </span>
 
             <span class="paper">
-            <p class="title">STAC: A Tool for Static Textual Analysis of Code &nbsp; <label for="checkbox_18">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">STAC: A Tool for Static Textual Analysis of Code &nbsp; <label for="checkbox_18">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/khatiwada87434.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info">Saket Khatiwada, Michael Kelly and <em>Anas Mahmoud</em></p>
               <input type="checkbox" id="checkbox_18" value="value">
               <div class="abstract">
@@ -692,7 +703,7 @@
             </span>
 
             <span class="paper">
-            <p class="title">Hey! Are You Injecting Side Effect?: A Tool for Detecting Purity Changes in Java Methods &nbsp; <label for="checkbox_19">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Hey! Are You Injecting Side Effect?: A Tool for Detecting Purity Changes in Java Methods &nbsp; <label for="checkbox_19">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/ogura87437.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info"><em>Naoto Ogura</em>, Jiachen Yang, Keisuke Hotta, Yoshiki Higo and Shinji Kusumoto</p>
               <input type="checkbox" id="checkbox_19" value="value">
               <div class="abstract">
@@ -701,7 +712,7 @@
             </span>
 
             <span class="paper">
-            <p class="title">WB4SP: A Tool to Build the Word Base for Specific Programs &nbsp; <label for="checkbox_20">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">WB4SP: A Tool to Build the Word Base for Specific Programs &nbsp; <label for="checkbox_20">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/sun87438.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info">Weisong Sun, <em>Xiaobing Sun</em>, Hui Yang and Bin Li</p>
               <input type="checkbox" id="checkbox_20" value="value">
               <div class="abstract">
@@ -711,10 +722,10 @@
 
           </div>
           <div class="sectionColumnB" id="spacedPapers">
-            <p class="section">Short Papers: Getting Deep Insight into Your Software</p>
+            <p class="section">Short Papers: Getting Deep Insight into Your Software &nbsp; <a class="pdfLink" href="http://131.123.42.38/icpc16/sessions/ICPC16_SP_Session1.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
             <p class="info">Session Chair: Bogdan Dit</p>
             <span class="paper">
-            <p class="title">Investigating the Android Apps' Success: An Empirical Study &nbsp; <label for="checkbox_21">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Investigating the Android Apps' Success: An Empirical Study &nbsp; <label for="checkbox_21">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/guerrouj87444.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info"><em>Latifa Guerrouj</em> and Olga Baysal</p>
               <input type="checkbox" id="checkbox_21" value="value">
               <div class="abstract">
@@ -722,7 +733,7 @@
               </div>
             </span>
             <span class="paper">
-            <p class="title">Retrofitting Automatic Testing through Library Tests Reusing &nbsp; <label for="checkbox_22">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Retrofitting Automatic Testing through Library Tests Reusing &nbsp; <label for="checkbox_22">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/ma87452.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info"><em>Lei Ma</em>, Cheng Zhang, Bing Yu, and Jianjun Zhao</p>
               <input type="checkbox" id="checkbox_22" value="value">
               <div class="abstract">
@@ -730,7 +741,7 @@
               </div>
             </span>
             <span class="paper">
-            <p class="title">Measuring Energy Footprint of Software Features &nbsp; <label for="checkbox_23">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Measuring Energy Footprint of Software Features &nbsp; <label for="checkbox_23">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/islam87447.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info"><em>Syed Islam</em>, Adel Noureddine and Rabih Bashroush</p>
               <input type="checkbox" id="checkbox_23" value="value">
               <div class="abstract">
@@ -738,7 +749,7 @@
               </div>
             </span>
             <span class="paper">
-            <p class="title">Human-Machine Resolution of Invisible Control Flow &nbsp; <label for="checkbox_24">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Human-Machine Resolution of Invisible Control Flow &nbsp; <label for="checkbox_24">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/kothari87446.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info"><em>Suraj Kothari</em>, Ahmed Tamrawi, and Jon Mathews</p>
               <input type="checkbox" id="checkbox_24" value="value">
               <div class="abstract">
@@ -746,7 +757,7 @@
               </div>
             </span>
             <span class="paper">
-            <p class="title">Extracting Configuration Parameter Interactions using Static Analysis &nbsp; <label for="checkbox_25">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Extracting Configuration Parameter Interactions using Static Analysis &nbsp; <label for="checkbox_25">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/metcalf87454.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info"><em>Chelsea Metcalf</em>, <em>Farhaan Fowze</em>, Tuba Yavuz, and Jose Fortes</p>
               <input type="checkbox" id="checkbox_25" value="value">
               <div class="abstract">
@@ -754,7 +765,7 @@
               </div>
             </span>
             <span class="paper">
-            <p class="title">Android Build Dependency Analysis &nbsp; <label for="checkbox_26">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Android Build Dependency Analysis &nbsp; <label for="checkbox_26">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/zhang87445.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info"><em>Bo Zhang</em>, Vasil Tenev, and Martin Becker</p>
               <input type="checkbox" id="checkbox_26" value="value">
               <div class="abstract">
@@ -775,11 +786,11 @@
         <p class="time">2:00 - 3:30 pm</p>
         <div class="sectionBox">
           <div class="sectionColumnA">
-            <p class="section">Technical Research: Language Usage</p>
+            <p class="section">Technical Research: Language Usage &nbsp; <a class="pdfLink" href="http://131.123.42.38/icpc16/sessions/ICPC16_TR_Session4.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
             <p class="info">Session Chair: Lori Pollock</p>
 
             <span class="paper">
-            <p class="title">Can we find Stable Alternatives for Unstable Eclipse Interfaces? &nbsp; <label for="checkbox_27">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Can We Find Stable Alternatives for Unstable Eclipse Interfaces? &nbsp; <label for="checkbox_27">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/kawuma87428.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info">Simon Kawuma, <em>John Businge</em>, and Engineer Bainomugisha</p>
               <input type="checkbox" id="checkbox_27" value="value">
               <div class="abstract">
@@ -788,7 +799,7 @@
             </span>
             <br>
             <span class="paper">
-            <p class="title">A Cooperative Approach for Combining Client-based and Library-based API Usage Pattern Mining &nbsp; <label for="checkbox_28">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">A Cooperative Approach for Combining Client-based and Library-based API Usage Pattern Mining &nbsp; <label for="checkbox_28">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/saied87425.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info"><em>Mohamed Aymen Saied</em> and Houari Sahraoui</p>
               <input type="checkbox" id="checkbox_28" value="value">
               <div class="abstract">
@@ -797,7 +808,7 @@
             </span>
             <br>
             <span class="paper">
-            <p class="title">A Novel Approach for Estimating Truck Factors &nbsp; <label for="checkbox_29">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">A Novel Approach for Estimating Truck Factors &nbsp; <label for="checkbox_29">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/avelino87423.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info"><em>Guilherme Avelino</em>, Leonardo Passos, Andre Hora, and Marco Tulio Valente</p>
               <input type="checkbox" id="checkbox_29" value="value">
               <div class="abstract">
@@ -806,7 +817,7 @@
             </span>
             <br>
             <span class="paper">
-            <p class="title">Can We Enforce a Benefit for Dynamically Typed Languages in Comparison to Statically Typed Ones? A Controlled Experiment &nbsp; <label for="checkbox_30">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Can We Enforce a Benefit for Dynamically Typed Languages in Comparison to Statically Typed Ones? A Controlled Experiment &nbsp; <label for="checkbox_30">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/okon87431.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info">Sebastian Okon and <em>Stefan Hanenberg</em></p>
               <input type="checkbox" id="checkbox_30" value="value">
               <div class="abstract">
@@ -815,11 +826,11 @@
             </span>
           </div>
           <div class="sectionColumnB">
-            <p class="section">Short Papers:  Comprehension You Can Use</p>
+            <p class="section">Short Papers:  Comprehension You Can Use &nbsp; <a class="pdfLink" href="http://131.123.42.38/icpc16/sessions/ICPC16_SP_Session2.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
             <p class="info">Session Chair: Latifa Guerrouj</p>
 
             <span class="paper">
-            <p class="title">Software Development and Tool Usability &nbsp; <label for="checkbox_31">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Software Development and Tool Usability &nbsp; <label for="checkbox_31">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/dillon87443.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info"><em>Brian Dillon</em> and Richard Thompson</p>
               <input type="checkbox" id="checkbox_31" value="value">
               <div class="abstract">
@@ -828,7 +839,7 @@
             </span>
 
             <span class="paper">
-            <p class="title">Detecting Exploratory Programming Behaviors for Introductory Programming Exercises &nbsp; <label for="checkbox_32">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Detecting Exploratory Programming Behaviors for Introductory Programming Exercises &nbsp; <label for="checkbox_32">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/makihara87456.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info"><em>Erina Makihara</em>, Hiroshi Igaki, Norihiro Yoshida, Kenji Fujiwara, and Hajimu Iida</p>
               <input type="checkbox" id="checkbox_32" value="value">
               <div class="abstract">
@@ -837,7 +848,7 @@
             </span>
 
             <span class="paper">
-            <p class="title">Embedding Programming Context into Source Code &nbsp; <label for="checkbox_33">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Embedding Programming Context into Source Code &nbsp; <label for="checkbox_33">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/breckel87455.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info"><em>Alexander Breckel</em> and Matthias Tichy</p>
               <input type="checkbox" id="checkbox_33" value="value">
               <div class="abstract">
@@ -846,7 +857,7 @@
             </span>
 
             <span class="paper">
-            <p class="title">Synchronized Static and Dynamic Visualization in a Web-Based Programming Environment &nbsp; <label for="checkbox_34">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Synchronized Static and Dynamic Visualization in a Web-Based Programming Environment &nbsp; <label for="checkbox_34">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/yang87451.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info"><em>Jeong Yang</em>, Young Lee, and David Hicks</p>
               <input type="checkbox" id="checkbox_34" value="value">
               <div class="abstract">
@@ -855,7 +866,7 @@
             </span>
 
             <span class="paper">
-            <p class="title">Case Studies of Optimized Sequence Diagram for Program Comprehension &nbsp; <label for="checkbox_35">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Case Studies of Optimized Sequence Diagram for Program Comprehension &nbsp; <label for="checkbox_35">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/srinivasan87457.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info"><em>Madhusudan Srinivasan</em>, Jeong Yang, and Young Lee</p>
               <input type="checkbox" id="checkbox_35" value="value">
               <div class="abstract">
@@ -864,7 +875,7 @@
             </span>
 
             <span class="paper">
-            <p class="title">Comprehending Source Code of Large Software System for Reuse &nbsp; <label for="checkbox_36">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Comprehending Source Code of Large Software System for Reuse &nbsp; <label for="checkbox_36">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/kulkarni87442.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info"><em>Aniket Kulkarni</em></p>
               <input type="checkbox" id="checkbox_36" value="value">
               <div class="abstract">
@@ -885,11 +896,11 @@
         <p class="time">4:00 - 5:30 pm</p>
         <div class="sectionBox">
           <div class="sectionColumnA">
-            <p class="section">Technical Research: Assessing Code</p>
+            <p class="section">Technical Research: Assessing Code &nbsp; <a class="pdfLink" href="http://131.123.42.38/icpc16/sessions/ICPC16_TR_Session5.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
             <p class="info">Session Chair: Collin McMillan</p>
             
             <span class="paper">
-            <p class="title">Identifying Functionally Similar Code in Complex Codebases &nbsp; <label for="checkbox_37">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Identifying Functionally Similar Code in Complex Codebases &nbsp; <label for="checkbox_37">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/su87419.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info"><em>Fang-Hsiang Su</em>, Jonathan Bell, Gail Kaiser, and Simha Sethumadhavan</p>
               <input type="checkbox" id="checkbox_37" value="value">
               <div class="abstract">
@@ -898,7 +909,7 @@
             </span>
             <br>
             <span class="paper">
-            <p class="title">On Automatically Detecting Similar Android Apps &nbsp; <label for="checkbox_38">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">On Automatically Detecting Similar Android Apps &nbsp; <label for="checkbox_38">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/linares-vasquez87430.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info">Mario Linares-Vasquez, Andrew Holtzhauer, and <em>Denys Poshyvanyk</em></p>
               <input type="checkbox" id="checkbox_38" value="value">
               <div class="abstract">
@@ -907,7 +918,7 @@
             </span>
             <br>
             <span class="paper">
-            <p class="title">Rule-Directed Code Clone Synchronization &nbsp; <label for="checkbox_39">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Rule-Directed Code Clone Synchronization &nbsp; <label for="checkbox_39">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/cheng87417.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info"><em>Xiao Cheng</em>, Hao Zhong, Yuting Chen, Zhenjiang Hu, and Jianjun Zhao</p>
               <input type="checkbox" id="checkbox_39" value="value">
               <div class="abstract">
@@ -916,7 +927,7 @@
             </span>
             <br>
             <span class="paper">
-            <p class="title">Are Unreachable Methods Harmful? Results from a Controlled Experiment &nbsp; <label for="checkbox_40">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Are Unreachable Methods Harmful? Results from a Controlled Experiment &nbsp; <label for="checkbox_40">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/romano87432.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info">Simone Romano, Christopher Vendome, <em>Giuseppe Scanniello</em>, and Denys Poshyvanyk</p>
               <input type="checkbox" id="checkbox_40" value="value">
               <div class="abstract">
@@ -925,11 +936,11 @@
             </span>
           </div>
           <div class="sectionColumnB">
-            <p class="section">Short Papers: Attack of the Development Team</p>
+            <p class="section">Short Papers: Attack of the Development Team &nbsp; <a class="pdfLink" href="http://131.123.42.38/icpc16/sessions/ICPC16_SP_Session3.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
             <p class="info">Session Chair: Lingxiao Jiang</p>
 
             <span class="paper">
-            <p class="title">Defending Against the Attack of the Micro-clones &nbsp; <label for="checkbox_41">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Defending Against the Attack of the Micro-clones &nbsp; <label for="checkbox_41">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/tonder87458.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info"><em>Rijnard van Tonder</em> and Claire Le Goues</p>
               <input type="checkbox" id="checkbox_41" value="value">
               <div class="abstract">
@@ -938,7 +949,7 @@
             </span>
 
             <span class="paper">
-            <p class="title">Towards Quality Gates in Continuous Delivery and Deployment &nbsp; <label for="checkbox_42">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Towards Quality Gates in Continuous Delivery and Deployment &nbsp; <label for="checkbox_42">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/schermann87453.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info"><em>Gerald Schermann</em>, Jürgen Cito, Philipp Leitner, and Harald Gall</p>
               <input type="checkbox" id="checkbox_42" value="value">
               <div class="abstract">
@@ -947,7 +958,7 @@
             </span>
 
             <span class="paper">
-            <p class="title">Revisiting the Relationship Between Code Smells and Refactoring &nbsp; <label for="checkbox_43">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Revisiting the Relationship Between Code Smells and Refactoring &nbsp; <label for="checkbox_43">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/yoshida87449.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info"><em>Norihiro Yoshida</em>, Tsubasa Saika, Eunjong Choi, Ali Ouni, and Katsuro Inoue</p>
               <input type="checkbox" id="checkbox_43" value="value">
               <div class="abstract">
@@ -956,7 +967,7 @@
             </span>
 
             <span class="paper">
-            <p class="title">Generating Clone References with Less Human Subjectivity &nbsp; <label for="checkbox_44">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Generating Clone References with Less Human Subjectivity &nbsp; <label for="checkbox_44">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/yuki87448.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info"><em>Yusuke Yuki</em>, Yoshiki Higo, Keisuke Hotta, and Shinji Kusumoto</p>
               <input type="checkbox" id="checkbox_44" value="value">
               <div class="abstract">
@@ -965,7 +976,7 @@
             </span>
 
             <span class="paper">
-            <p class="title">Understanding Interactive Debugging with Swarm Debug Infrastructure &nbsp; <label for="checkbox_45">Abstract</label> <a class="pdfLink" href="#">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="title">Understanding Interactive Debugging with Swarm Debug Infrastructure &nbsp; <label for="checkbox_45">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/petrillo87450.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
               <p class="info"><em>Fabio Petrillo</em>, Zéphyrin Soh, Foutse Khomh, Marcelo Pimenta, Carla Freitas, and Yann-Gaël Guéhéneuc</p>
               <input type="checkbox" id="checkbox_45" value="value">
               <div class="abstract">
