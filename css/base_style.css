@@ -70,9 +70,10 @@ a {
 .header_bottom {
     height:40px;
     width:100%;
+    clear:both;
 }
 .logo {
-    width:202px;
+    width:210px;
     height:50px;
     margin:auto;
 }
@@ -292,11 +293,15 @@ a {
 }
 #headerText {
     position: relative; 
-    left:40px; 
+    /*left:40px; */
     margin:0;
-    padding-right: 40px;
     display: none;
-  }
+}
+#nextEvent {
+    margin:14px 0 0 120px; 
+    display:none; 
+    float: none;
+}
 @media only screen and (min-width: 715px) {
     /* For tablet portrait: */
     html {background-image:url(../images/background.jpg);}
@@ -331,7 +336,8 @@ a {
     .sponsorContainer {width:100%;float:left;}
     .footerBottom {width:695px; display:block; font-size:10px;}
     .spacer {width:8px; display:block;}
-    #headerText {text-align:center; margin:0px; display:inherit;}
+    #headerText {text-align:center; margin:0 60px 0 270px; display:inherit;}
+    #nextEvent {display: none;}
 }
 @media only screen and (min-width: 920px) {
     /* For tablet landscape: */
@@ -366,7 +372,8 @@ a {
     .sponsorContainer {width:660px;float:left;}
     .footerBottom {width:900px; display:block; font-size:12px;}
     .spacer {width:52px; display:block;}
-    #headerText {text-align:left; margin:10px; display: inherit;}
+    #headerText {text-align:center; margin:5px 0 0 0; display:inherit;}
+    #nextEvent {text-align:center; margin:0; display:inherit;}
 }
 @media only screen and (min-width: 1190px) {
     /* For desktop: */
@@ -401,7 +408,8 @@ a {
     .sponsorContainer {width:930px;float:left;}
     .footerBottom {width:1170px; display:block; font-size:15px;}
     .spacer {width:112px; display:block;}
-    #headerText {text-align:left; margin:10px; display: inherit;}
+    #headerText {text-align:left; margin:12px 0 0 30px; display: block; float:left; width: 700px; height: 25px;}
+    #nextEvent {text-align:right; margin:12px 0 0 0; display: block; float:left; width: 230px; height: 25px;}
     /*
     .navExpand {display:none;}
     .navItem {width:auto; padding:0 28px 0 29px; font-size:14px; line-height:38px; display:block; border:1px solid #FFF;}
