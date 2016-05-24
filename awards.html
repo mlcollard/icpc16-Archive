@@ -1,0 +1,516 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<title>Program - ICPC16</title>
+<link rel="stylesheet" type="text/css" href="./css/base_style.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    var n = true;
+    $("#news").load("news.html"); 
+    $("#sponsors").load("sponsors.html"); 
+    $("#expand").click(function(){
+    if (n) {
+      n = false;
+      $( "#menu0" ).addClass( "navToggle" );
+      $( "#menu1" ).addClass( "navToggle" );
+      $( "#menu2" ).addClass( "navToggle" );
+      $( "#menu3" ).addClass( "navToggle" );
+      $( "#menu4" ).addClass( "navToggle" );
+      $( "#menu5" ).addClass( "navToggle" );
+      $( "#menu6" ).addClass( "navToggle" );
+      $( "#menu7" ).addClass( "navToggle" );
+      $( "#menu8" ).addClass( "navToggle" );
+    } else {
+      n = true;
+      $( "#menu0" ).removeClass( "navToggle" );
+      $( "#menu1" ).removeClass( "navToggle" );
+      $( "#menu2" ).removeClass( "navToggle" );
+      $( "#menu3" ).removeClass( "navToggle" );
+      $( "#menu4" ).removeClass( "navToggle" );
+      $( "#menu5" ).removeClass( "navToggle" );
+      $( "#menu6" ).removeClass( "navToggle" );
+      $( "#menu7" ).removeClass( "navToggle" );
+      $( "#menu8" ).removeClass( "navToggle" );
+    }
+    })
+    $("#moreDetails").click(function(){
+      $("#moreDetails").addClass("hidden");
+      $("#lessDetails").removeClass("hidden");
+      $("#detailContent").removeClass("hidden");
+    })
+    $("#lessDetails").click(function(){
+      $("#moreDetails").removeClass("hidden");
+      $("#lessDetails").addClass("hidden");
+      $("#detailContent").addClass("hidden");
+    });
+  });
+</script>
+<style type="text/css">
+  p, hr {
+    margin-left:15px;
+    margin-right:15px;
+  }
+  .container {
+    color:black;
+    background-color:rgba(255,255,255,0.8);
+    padding-bottom:30px;
+  }
+  .container h1 {
+    font-size:24px;
+    margin-left:30px;
+    margin-right:30px;
+    font-weight:600;
+  }
+  .container h2 {
+    color:black;
+    font-weight:500;
+    text-align:left;
+    margin-left:30px;
+    margin-right:30px;
+    margin-bottom:5px;
+  }
+  .container hr {
+    border:0;
+    height:1px;
+    background:rgba(0,0,0,0.20);
+    margin-left:0;
+    margin-right:0;
+  }
+  td {
+    border: 1px solid blue;
+  }
+  .description {
+    clear:both;
+    margin:0;
+    margin-right:30px;
+    padding:0;
+    padding-left:150px;
+    font-weight:100;
+  }
+  .print {
+    clear:both;
+    margin:0;
+    padding:0;
+    padding-left:150px;
+    color:#956e73;
+    font-weight:900;
+  }
+  .container a {
+    color:#956e73;
+    font-weight:900;
+    text-decoration: none;
+  }
+  .container h2 {
+    margin-left: 60px;
+    margin-right: 60px;
+    margin: 30px 20px 0 20px;
+    color:#000;
+    text-transform: uppercase;
+  }
+  .container h3 {
+    color:#000;
+    font-family: Avenir, Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size:16px;
+    font-weight: 500;
+    text-align:left;
+    margin:10px 20px 0px 20px;
+}
+  .container ul {
+    margin-top: -7px;
+    margin-left: 70px;
+  }
+  .container li {
+    margin-top: 5px;
+  }
+  .container ul {
+    list-style: none;
+  }
+  .container ul li:before {
+    content:"•"; 
+    font-size:10pt;
+    margin-left: -16px;
+    margin-right: 10px;
+  }
+  .container .left {
+    float: left;
+    clear: both;
+    width:150px;
+    margin:0 0 0 90px;
+  }
+  .container .right {
+    float: left;
+    text-align: right;
+    width:85px;
+    margin:0;
+  }
+  .container .invisible {
+    clear: both;
+    border: none;
+    height: 0;
+  }
+  .heavy {
+    font-weight: 500;
+  }
+  .hidden {
+    display: none;
+  }
+  #moreDetails {
+    font-weight: 900;
+    color:#956e73;
+    cursor: pointer;
+  }
+  #lessDetails {
+    font-weight: 900;
+    color:#956e73;
+    cursor: pointer;
+  }
+  .time {
+    width: 100%;
+    margin: 8px 0 8px 0;
+    padding: 0px;
+    clear: both;
+    font-weight: 100;
+    line-height: 1.2;
+    text-align: center;
+    float: left;
+  }
+  .section {
+    margin: 8px 0 0 20px;
+    padding: 0px;
+    font-weight: 900;
+    line-height: 1.2;
+    clear: both;
+    border: none;
+  }
+  .sectionSplit {
+    margin: 8px 0 0 0;
+    padding: 0px;
+    font-weight: 900;
+    float: left;
+    width: 50%;
+  }
+  .title {
+    margin: 8px 10px 0 20px;
+    padding: 0px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .info {
+    margin: 0 10px 0 20px;
+    padding: 0px;
+    font-weight: 100;
+    line-height: 1.2;
+  }
+  .abstract {
+    margin: 0 10px 0 20px;
+    padding: 0px;
+    font-weight: 100;
+    line-height: 1.2;
+    font-style: italic;
+    margin-top: 0px;
+    clear: both;
+    max-height: 0px;
+    margin-top: 0px;
+    overflow: hidden;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transition: all 1s ease;
+    
+  }
+  input[type="checkbox"]:checked + .abstract{
+    max-height: 500px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+
+  .abstract p {
+    text-indent: 20px;
+    margin: 0px;
+    font-size: 12px;
+  }
+  .sectionBox {
+    width:100%;
+    margin-bottom: 0;
+  }
+  .sectionColumnA {
+    float: left;
+    width:50%;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    border-right: 1px solid rgb(190,184,185);
+  }
+  .sectionColumnB {
+    float: left;
+    width:50%;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    border-left: 1px solid rgb(190,184,185);
+    position: relative;
+    left: -1px;
+  }
+  .dayLinks {
+    margin: 32px 0 0 0;
+    float: left;
+  }
+  #printTitle {
+    display: none;
+  }
+  #defaultTitle {
+    width: 120px;
+    float: left;
+    margin-right: 0;
+  }
+  #day1, #day2 {
+    text-align: center;
+  }
+  .container hr {
+    clear: both;
+    margin: 8px 0 0 0;
+  }
+  .container .clearHr {
+    background-color:rgba(0,0,0,0);
+  }
+  #spacedPapers .title {
+    margin-top: 20px;
+  }
+  .pdfLink {
+    display: inline-block;
+    width: 45px;
+  }
+  .pdfImg {
+    margin: 0;
+    width: 12px;
+    margin: 0 0 0 4px;
+  }
+  .starImg {
+    margin: 0;
+    width: 12px;
+    margin: 0 4px 0 0;
+  }
+  input[type="checkbox"] {
+    display:none;
+  }
+  label {
+    color:#956e73;
+    font-weight: 900;
+    cursor:pointer;
+  }
+  #proceedingsLink {
+    float:none; clear: both; margin: auto; width: 315px;;
+  }
+  
+  @media print {
+    .title {color:black;}
+    .infoLinkBox {display: none;}
+    .header {display: none;}
+    .footer {display: none;}
+    .dayLinks {display: none;}
+    .container hr {border-top: 1px solid rgba(0,0,0,0.20); margin: 5px 0 0 2px;}
+    .container .clearHr {border: none;}
+    #defaultTitle{display: none}
+    #printTitle {display: block; text-align: center;}
+    .container h2 {font-size: 12px;}
+    .container h3 {font-size: 10px;}
+    .container .time, .container .section, .container .title, .container .info, .abstract p{font-size: 9px;}
+    .time {margin: 5px 0 5px 0;}
+    .sectionSplit {margin: 5px 0 0 0;}
+    #spacedPapers .title, .title {margin: 5px 5px 0 20px;}
+    .info {margin: 0 5px 0 20px;}
+    br {display: none;}
+  }
+  @media only screen and (min-width: 715px) {
+      /* For tablet portrait: */
+      .container h2, .container h3, .container hr, .section, .title, .info {margin-left: 20px; margin-right: 20px}
+      #proceedingsLink {float:none; clear: both; margin: auto; width: 315px;}
+  }
+  @media only screen and (min-width: 920px) {
+      /* For tablet landscape: */
+     .container h2, .container h3, .container hr, .section, .title, .info {margin-left: 40px; margin-right: 40px}
+     #proceedingsLink {float:right; clear: none; margin: 30px 40px 0 0;}
+  }
+  @media only screen and (min-width: 1190px) {
+      /* For desktop: */
+      .container h2, .container h3, .container hr, .section, .title, .info, .infoLinkBox {margin-left: 60px; margin-right: 60px}
+      #proceedingsLink {float: right; clear: none; margin: 30px 60px 0 0;}
+      .abstract {margin: 0 60px 0 60px;}
+      
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header"> 
+    <div class="header_top">
+      <span>Contact: <a href="mailto:icpc2016@gmail.com" target="_top" style="color:white; text-decoration:none;">icpc2016@gmail.com</a></span>
+      <span style="float:right;">ICPC 2016 &nbsp;&nbsp;&nbsp;&nbsp; May 16-17, 2016 &nbsp;&nbsp;&nbsp;&nbsp; Renaissance Austin Hotel 9721 Arboretum Boulevard Austin, Texas 78759 USA</span>
+    </div>
+    <div class="header_mid">
+      <div class="logo">
+        <img src="./images/icpc_logo.png" width="210" height="50" alt="ICPC '16 Austin">
+      </div>
+      <h2 id="headerText">24<sup style="font-size:10px;">TH</sup> IEEE INTERNATIONAL CONFERENCE ON PROGRAM COMPREHENSION</h2>
+      <h2 id="nextEvent"><a href="http://www2.unibas.it/icpc2017/" target="_blank">Next Event: ICPC’17</a></h2>
+    </div>
+    
+    <!-- Navigation Menu -->
+    <div class="header_bottom">
+
+      <div id="expand" class="navExpand">
+        <div style="width:40px; height:40px; margin:auto; ">
+          <img src="./images/menu.gif" alt="MENU" width="40" height="40">
+        </div>
+      </div>
+      <div class="navLine"></div>
+
+      <a href="index.html">
+        <div id="menu0" class="navItem">HOME</div></a>
+      <div class="navLine"></div>
+      
+      <a href="#">
+        <div id="menu8" class="navItem navCurrent">AWARDS</div></a>
+      <div class="navLine"></div>
+
+      <a href="keynote.html">
+        <div id="menu1" class="navItem">KEYNOTE</div></a>
+      <div class="navLine"></div>
+
+      <a href="program-schedule.html">
+        <div id="menu2" class="navItem">PROGRAM</div></a>
+      <div class="navLine"></div>
+
+      <a href="banquet.html">
+        <div id="menu3" class="navItem">BANQUET</div></a>
+      <div class="navLine"></div>
+
+      <a href="call.html">
+        <div id="menu4" class="navItem">CALL</div></a>
+      <div class="navLine"></div>
+
+      <a href="organization-program.html">
+        <div id="menu5" class="navItem">ORGANIZATION</div></a>
+      <div class="navLine"></div>
+
+      <a href="registration.html">
+        <div id="menu6" class="navItem">REGISTRATION</div></a>
+      <div class="navLine"></div>
+
+      <a href="http://2016.icse.cs.txstate.edu/venue" target="_blank">
+        <div id="menu7" class="navItem">VENUE</div></a>
+      <div class="navLine"></div>
+
+    </div>
+    <!-- End Navigation Menu -->
+
+  </div>
+  <!-- End Header -->
+  <hr style="border:1px solid rgba(255,255,255,0.00); margin:0px; padding:0px; clear:both;">
+  
+    <!-- Main Content -->
+    <div class="content">
+    
+      <!-- Sidebar -->
+      <div class="sidebar">
+
+        <div id="twitter">
+          <h2 style="text-align:center;">TWEETS <a style="text-decoration:none;" href="https://twitter.com/icpc16" target="_blank">@icpc16</a></h2>
+          <hr>
+          <a class="twitter-timeline" style="display:block;text-align:center; margin:15px;" data-dnt="true" href="https://twitter.com/icpc16" data-widget-id="715744792026685440" data-chrome="noheader nofooter noborders transparent">View on Twitter</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+
+        <div id="newsBox">
+          <h2 style="text-align:center;">LATEST NEWS</h2>
+          <hr>
+          <div id="news"></div>
+        </div>
+
+      </div>
+      <!-- End Sidebar -->
+
+      <div class="container">
+
+        <h2 id="printTitle">Awards - ICPC 2016</h2>
+        <h2 id="defaultTitle">Awards</h2>
+
+        <hr style="margin-top:0; margin-bottom:5px; clear:both;">
+
+        <div class="sectionBox">
+          <p class="section">Most Influential Paper</p>
+          <span class="paper">
+            <p class="title">What's in a Name? A Study of Identifiers (ICPC’06) &nbsp; <label for="checkbox_12">Abstract</label> | <a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=1631100&newsearch=true&queryText=what's%20in%20a%20name" target="_blank">Info</a> | <a class="pdfLink" href="http://131.123.42.38/icpc16/mip2016.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="info">Dawn Lawrie, Christopher Morrell, Henry Feild, and David Binkley</p>
+            <input type="checkbox" id="checkbox_12" value="value">
+            <div class="abstract">
+              <p style="margin-top:10px;" style="font-style:normal; text-indent:0px;">ICPC’06 Abstract</p>
+              <p>Readers of programs have two main sources of domain information: identifier names and comments. When functions are uncommented, as many are, comprehension is almost exclusively dependent on the identifier names. Assuming that writers of programs want to create quality identifiers (e.g., include relevant domain knowledge) how should they go about it? For example, do the initials of a concept name provide enough information to represent the concept? If not, and a longer identifier is needed, is an abbreviation satisfactory or does the concept need to be captured in an identifier that includes full words? Results from a study designed to investigate these questions are reported. The study involved over 100 programmers who were asked to describe twelve different functions. The functions used three different "levels" of identifiers: single letters, abbreviations, and full words. Responses allow the level of comprehension associated with the different levels to be studied. The functions include standard algorithms studied in computer science courses as well as functions extracted from production code. The results show that full word identifiers lead to the best comprehension; however, in many cases, there is no statistical difference between full words and abbreviation</p>
+            </div>
+          </span>
+        </div>
+        <hr>
+        <div class="sectionBox">
+          <p class="section">Distinguished Papers</p>
+          <span class="paper">
+            <p class="title">Identifying Functionally Similar Code in Complex Codebases &nbsp; <label for="checkbox_37">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/su87419.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="info"><em>Fang-Hsiang Su</em>, Jonathan Bell, Gail Kaiser, and Simha Sethumadhavan</p>
+            <input type="checkbox" id="checkbox_37" value="value">
+            <div class="abstract">
+              <p style="margin-top:10px;">Identifying similar code in software systems can assist many software engineering tasks such as program understanding and software refactoring. While most approaches focus on identifying code that looks alike, some techniques aim at detecting code that functions alike. Detecting these functional clones — code that functions alike — in object oriented languages remains an open question because of the difficulty in exposing and comparing programs’ functionality effectively. We propose a novel technique, In-Vivo Clone Detection, that detects functional clones in arbitrary programs by identifying and mining their inputs and outputs. The key insight is to use existing workloads to execute programs and then measure functional similarities between programs based on their inputs and outputs, which mitigates the problems in object oriented languages reported by prior work. We implement such technique in our system, HitoshiIO, which is open source and freely available. Our experimental results show that HitoshiIO detects more than 800 functional clones across a corpus of 118 projects. In a random sample of the detected clones, HitoshiIO achieves 68+% true positive rate with only 15% false positive rate.</p>
+            </div>
+          </span>
+          <span class="paper">
+            <p class="title">Improving Code Readability Models with Textual Features &nbsp; <label for="checkbox_03">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/scalabrino87429.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="info"><em>Simone Scalabrino</em>, Mario Linares-Vásquez, Denys Poshyvanyk, and Rocco Oliveto</p>
+            <input type="checkbox" id="checkbox_03" value="value">
+            <div class="abstract">
+              <p style="margin-top:10px;">Code reading is one of the most frequent activities in software maintenance; before implementing changes, it is necessary to fully understand source code often written by other developers. Thus, readability is a crucial aspect of source code that may significantly influence program comprehension effort. In general, models used to estimate software readability take into account only structural aspects of source code, e.g., line length and a number of comments. However, source code is a particular form of text; therefore, a code readability model should not ignore the textual aspects of source code encapsulated in identifiers and comments. In this paper, we propose a set of textual features aimed at measuring code readability. We evaluated the proposed textual features on 600 code snippets manually evaluated (in terms of readability) by 5K+ people. The results demonstrate that the proposed features complement classic structural features when predicting code readability judgments. Consequently, a code readability model based on a richer set of features, including the ones proposed in this paper, achieves a significantly higher accuracy as compared to all of the state-of-the-art readability models.</p>
+            </div>
+          </span>
+        </div>
+        <hr>
+        <div class="sectionBox">
+          <p class="section">Best Short Paper</p>
+          <span class="paper">
+            <p class="title">Towards Quality Gates in Continuous Delivery and Deployment &nbsp; <label for="checkbox_42">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/schermann87453.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="info"><em>Gerald Schermann</em>, Jürgen Cito, Philipp Leitner, and Harald Gall</p>
+            <input type="checkbox" id="checkbox_42" value="value">
+            <div class="abstract">
+              <p style="margin-top:10px;">Quality gates, steps required to ensure the reliability of code changes, are supposed to increase the confidence stakeholders have in a release. In today’s fast paced environments, we have less time to perform the necessary precautions to minimize the risk of a faulty release. This leads to an inherent trade-off between risk of lower release quality and time to market. We provide a model for this trade-off of release “confidence” and “velocity” that led to the formulation of 4 categories (cautious, balanced, problematic, madness), in which companies can be classified in. We showcase real examples of these categories as case studies based on previous empirical studies. We close by presenting possible transitions between categories that guide future research.</p>
+            </div>
+          </span>
+        </div>
+        <hr>
+        <div class="sectionBox">
+          <p class="section">Best Tool Demo Paper</p>
+          <span class="paper">
+            <p class="title">Inline: Now You're Coding with Portals &nbsp; <label for="checkbox_15">Abstract</label> | <a class="pdfLink" href="http://131.123.42.38/icpc16/papers/breckel87440.pdf" target="_blank">PDF<img src="images/pdf.png" alt="Link" class="pdfImg"></a></p>
+            <p class="info"><em>Alexander Breckel</em> and Matthias Tichy</p>
+            <input type="checkbox" id="checkbox_15" value="value">
+            <div class="abstract">
+              <p style="margin-top:10px;">Programmers use diverse tools for code understanding to access various types of context information like interface definitions, revision histories, and debugging values. Integrated development environments support specialized visualization mechanisms for such context types. While these mechanisms in principle enable programmers to access required information, the diversity of visualizations as well as the distance between code locations and related information may slow down development. We present a generic approach to embed various types of context uniformly into the main source code view in close proximity to the relevant source code by using a concept called code portals. Furthermore, embedded content can be organized and manipulated directly using operations already familiar to programmers. We illustrate the approach using different types of context, and present preliminary results of a qualitative study indicating that our approach is usable and improves program comprehension and productivity in general. The approach is implemented in a prototypical source code editor.</p>
+            </div>
+          </span>
+        </div>
+      </div>
+      
+      <hr style="border:1px solid rgba(255,255,255,0.00); margin:0px; padding:0px; clear:both;">
+    </div>
+    <!-- End Main Content -->
+  
+  <hr style="border:1px solid rgba(255,255,255,0.00); margin:0px; padding:0px; clear:both;">
+</div>
+
+<div class="footer">
+  <div class="sponsors" id="sponsors"></div>
+  <div class="footerBottom">
+    <span>Contact: <a href="mailto:icpc2016@gmail.com" target="_top" style="color:white; text-decoration:none;">icpc2016@gmail.com</a></span>
+    <span style="float:right;">ICPC 2016 &nbsp;&nbsp;&nbsp;&nbsp; May 16-17, 2016 &nbsp;&nbsp;&nbsp;&nbsp; Renaissance Austin Hotel 9721 Arboretum Boulevard Austin, Texas 78759 USA</span>
+  </div>
+</div>
+
+</body>
+</html>
